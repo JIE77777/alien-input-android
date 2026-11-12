@@ -1,0 +1,55 @@
+{
+  "repository": "https://github.com/SivanLaai/rime-pure",
+  "commit": "93601c6774385e6830ed3e3120b4e63888efc983",
+  "files": [
+    {
+      "path": "LICENSE",
+      "file": "LICENSE",
+      "sha256": "17628284af21780bb8895949a4e58ce8c49ce112f71fc1a7a44aa6ffd0f78deb",
+      "git_blob": "2786eabba88c70a2be30a17fa1cd6d61f5074757"
+    },
+    {
+      "path": "trime/rime/tongwenfeng_plus.trime.yaml",
+      "file": "tongwenfeng_plus.trime.yaml",
+      "sha256": "0f844f4301ec992f9b6ba5adcce826ee4ac6898649983ada9c9e9eb60919ab91",
+      "git_blob": "739474ef5ca26455ee97227e3dbe3e67dbf42418"
+    },
+    {
+      "path": "schemes/Clover四叶草九宫拼音/clover_jiugong.schema.yaml",
+      "file": "clover_jiugong.schema.yaml",
+      "sha256": "7325925897771eb6497ef0c282726044c65c262488f709ca5c49d3a882f8a814",
+      "git_blob": "3dde1e57f8b68e8d145e83c7f9d38987727d311d"
+    },
+    {
+      "path": "schemes/Clover四叶草拼音/clover.dict.yaml",
+      "file": "clover.dict.yaml",
+      "sha256": "5f4985e9a3bc7ad2f6d296da57ea3728f4e75aa1e6117228fa1b3d6521675234",
+      "git_blob": "17b060ce25f419c17fa949fb3080ec3a2a756a15"
+    },
+    {
+      "path": "schemes/Clover四叶草拼音/clover.base.dict.yaml",
+      "file": "clover.base.dict.yaml",
+      "sha256": "39f23b0ae2eec13b6420a1a3cda05d199541e0231e0efeef864bb8060f592ec8",
+      "git_blob": "e0cecd51a1b19fde5da7b5f6c6d717dab1b7ff2c"
+    },
+    {
+      "path": "schemes/Clover四叶草拼音/huayu.dict.yaml",
+      "file": "huayu.dict.yaml",
+      "sha256": "ad9d8f4907956f0d518975a27c119a7c07fb45f933b480c2d3dbd5186c1e5f25",
+      "git_blob": "2cd8096faf0119d8cdfd7912111252bfe003db5d"
+    },
+    {
+      "path": "schemes/Clover四叶草拼音/zh-hans-t-huayu-v7-bgw.gram",
+      "file": "zh-hans-t-huayu-v7-bgw.gram",
+      "sha256": "662ebad82e7fa25808fd36c830e180835a58b8478c564dfbe53d59310cb89ced",
+      "git_blob": "4d7c977697de6b176be852bb1fa2475c29af5879"
+    },
+    {
+      "path": "schemes/Clover四叶草拼音/custom_phrase.txt",
+      "file": "custom_phrase.txt",
+      "sha256": "94474e1d380e32b5a4e1ad870262aa5b1a368f3bc1ed00899fbcabdba9084a08",
+      "git_blob": "dafe3022b8af6aa779b502df08c9ed1aee790b5d"
+    }
+  ],
+  "normalized_theme_sha256": "19cdaee1eb4b6118847e3dbe656068d8f76a8333019bcbc9448cc098c1f2a9de"
+}

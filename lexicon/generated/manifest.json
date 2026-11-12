@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "entries": 2264,
+  "terms": 2749,
+  "source": "alien-input/v6.12.4",
+  "source_sha256": "57c6607e4dd2cdf9a230734a46577928b71095e3d1e019113f5f2202a899c9c1",
+  "standard_sha256": "1b2da216ad0b017946d52ff225a211819ef8b66250b39088b7b43346ae098dcf",
+  "supplements_sha256": "df3a8ab313c8d490ec28093e3c675e35040cb3c3ca5fbdbcb094c216753fcde7",
+  "lexicon_sha256": "6bf4066ddeec60dabc536cb9f4157c3fc01325d3a7aa5998dcea921d39b73eb4",
+  "excluded_shape_aliases": [
+    {
+      "id": "F1090",
+      "alias": "角线",
+      "reason": "shape-only"
+    },
+    {
+      "id": "F1090",
+      "alias": "L",
+      "reason": "shape-only"
+    },
+    {
+      "id": "F0552",
+      "alias": "方框",
+      "reason": "shape-only"
+    },
+    {
+      "id": "F0552",
+      "alias": "框",
+      "reason": "shape-only"
+    },
+    {
+      "id": "F0547",
+      "alias": "两横",
+      "reason": "shape-only"
+    },
+    {
+      "id": "F0547",
+      "alias": "双横",
+      "reason": "shape-only"
+    },
+    {
+      "id": "F1143",
+      "alias": "上尖角",
+      "reason": "shape-only"
+    },
+    {
+      "id": "F1143",
+      "alias": "上尖",
+      "reason": "shape-only"
+    },
+    {
+      "id": "F1154",
+      "alias": "下尖角",
+      "reason": "shape-only"
+    },
+    {
+      "id": "F1154",
+      "alias": "下尖",
+      "reason": "shape-only"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+# Local environments and generated output
+.DS_Store
+__pycache__/
+*.pyc
+.gradle/
+**/build/
+local.properties
+**/local.properties
+*.apk
+*.aab
+*.jks
+*.keystore
+.env
+.env.*
+!.env.example
+
+# Pinned external working checkouts: restored by tools/bootstrap.py
+/trime/
+/vendor/rime-double-pinyin/
+/vendor/rime-pure/*
+!/vendor/rime-pure/README.md
+!/vendor/rime-pure/LICENSE
+!/vendor/rime-pure/upstream.json
+!/vendor/rime-pure/theme.normalized.json
+
+# Keep local game evidence and device captures locally; retain build metadata only
+/research/*
+!/research/game/
+/research/game/*
+!/research/game/glyph-map.json
+!/research/game/color-presets.json
+!/research/game/requirements-lock.txt

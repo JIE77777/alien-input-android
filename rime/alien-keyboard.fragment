@@ -1,0 +1,71 @@
+  alien_t9:
+    name: 九宫格拼音
+    author: Alien Input Android
+    ascii_mode: 0
+    ascii_keyboard: alien_english
+    reset_ascii_mode: true
+    width: 25
+    height: 48
+    keyboard_height: 240
+    keyboard_height_land: 160
+    lock: true
+    keys:
+      - {click: "'", label: "分词"}
+      - {click: a, label: "ABC"}
+      - {click: d, label: "DEF"}
+      - {click: BackSpace, label: "⌫"}
+      - {click: g, label: "GHI"}
+      - {click: j, label: "JKL"}
+      - {click: m, label: "MNO"}
+      - {click: Page_Up, label: "上一页"}
+      - {click: p, label: "PQRS"}
+      - {click: t, label: "TUV"}
+      - {click: w, label: "WXYZ"}
+      - {click: Page_Down, label: "下一页"}
+      - {click: Alien_english, long_click: Menu}
+      - {click: Keyboard_number, long_click: Keyboard_symbols, label: "123"}
+      - {click: space, label: "空格"}
+      - {click: Return, label: "确认"}
+  alien_english:
+    name: 英文查询
+    ascii_mode: 1
+    reset_ascii_mode: true
+    width: 10
+    height: 48
+    keyboard_height: 240
+    keyboard_height_land: 160
+    keys:
+      - {click: q}
+      - {click: w}
+      - {click: e}
+      - {click: r}
+      - {click: t}
+      - {click: y}
+      - {click: u}
+      - {click: i}
+      - {click: o}
+      - {click: p}
+      - {width: 5}
+      - {click: a}
+      - {click: s}
+      - {click: d}
+      - {click: f}
+      - {click: g}
+      - {click: h}
+      - {click: j}
+      - {click: k}
+      - {click: l}
+      - {width: 5}
+      - {click: z}
+      - {click: x}
+      - {click: c}
+      - {click: v}
+      - {click: b}
+      - {click: n}
+      - {click: m}
+      - {click: BackSpace, width: 30}
+      - {click: Keyboard_default, label: 中文, width: 20}
+      - {click: ',', width: 10}
+      - {click: space, width: 40}
+      - {click: '.', width: 10}
+      - {click: Return, width: 20}

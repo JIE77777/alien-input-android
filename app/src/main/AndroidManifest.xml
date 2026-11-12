@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="25" android:targetSdkVersion="35" />
+    <application android:label="Alien 外星输入法" android:theme="@style/AppTheme" android:icon="@drawable/ic_alien" android:allowBackup="false" android:supportsRtl="true">
+        <activity android:name=".MainActivity" android:exported="true" android:windowSoftInputMode="adjustResize">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+        </activity>
+        <service android:name=".AlienIme" android:label="Alien 外星输入法" android:permission="android.permission.BIND_INPUT_METHOD" android:exported="true">
+            <intent-filter><action android:name="android.view.InputMethod"/></intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/input_method"/>
+        </service>
+        <provider android:name=".ImageProvider" android:authorities="io.github.alieninput.android.images" android:exported="false" android:grantUriPermissions="true"/>
+    </application>
+</manifest>

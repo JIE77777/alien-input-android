@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "source": "alien-input-android/manual-query-aliases/1",
+  "entries": [
+    {"id": "F0835", "alias": ["you", "您"]},
+    {"id": "F0834", "alias": ["I", "me"]},
+    {"id": "F1047", "alias": ["食品", "吃的", "food"], "related": ["吃饭", "eat"]},
+    {"id": "F1050", "alias": ["eat", "drink"], "related": ["食物", "吃饭"], "note": "上游释义为吃喝；与食物相关，但不是同一词义。"},
+    {"id": "W:F1050.F1047", "alias": ["吃饭", "吃东西", "eat food"], "note": "以吃饭检索上游已收录的吃喝·食物组合，不表示精确翻译。"},
+    {"id": "F0908", "alias": ["你好", "您好", "hello", "hi", "greeting"], "note": "按问候用途匹配；不是把你好逐字翻译。"},
+    {"id": "F0836", "alias": ["咱们", "你和我"], "note": "上游别名解释为我与你。"}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/feierbuqiu/alien-input",
+  "tag": "v6.12.4",
+  "path": "src/js/numbers.js",
+  "sha256": "44adfd8c9bfc62eec7a45d3f926b43ae60d3e083877048308459ec63ac84a412",
+  "ported": "integer encoding and positive-power bar numeral drawing; bounded to 18 decimal digits"
+}

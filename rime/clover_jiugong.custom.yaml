@@ -1,0 +1,4 @@
+# Deploy the legacy schema ID as a compatibility dependency for existing installations.
+# The theme's native emoji panel needs no emoji transliteration dictionary.
+patch:
+  schema/dependencies: [alien_t9]

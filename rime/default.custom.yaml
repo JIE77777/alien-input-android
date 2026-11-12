@@ -1,0 +1,6 @@
+patch:
+  schema_list:
+    - schema: clover_jiugong
+    - schema: luna_pinyin_simp
+    - schema: double_pinyin_flypy
+  menu/page_size: 8
