@@ -1,0 +1,26 @@
+外星人输入法 v0.2.0-alpha.2 — 2026-11-12
+
+CURRENT BUILD
+PASS 9787 checks; 2264 entries; host lookup p50 0.05 ms, p95 0.11 ms
+PASS PNG/text round trip, phrase boundaries, absent metadata, replacement and invalid inputs
+PASS 53009 four-slot grouped layout checks
+PASS 14481 native integer conversion and numeric search checks
+Clean app build: PASS (:app:clean followed by assembleDebug)
+Application label: 外星人输入法·测试
+Package: io.github.alieninput.trime.debug
+Version: 0.2.0-alpha.2 (20261112)
+ABI: arm64-v8a; minSdk: 26
+APK signature verification: PASS
+Signing certificate unchanged from previous installed build: PASS
+Certificate SHA256: 3aaedcbbef0b6006f0f5d9b3a37fc5394b75a5074fc6b7d92b7e6fef8225939d
+Packaged glyph hashes: PASS 1344/1344
+Packaged asset/native file comparison: PASS 1417 files unchanged
+APK SHA256: 32ed2f4ddeb73961e07798122b47c1b9a6ea7184d996946cc0a6149e1e221bc4
+
+HISTORICAL DEVICE EVIDENCE (PREVIOUS BUILD, NOT THIS APK)
+Previous APK SHA256: eca57ed22d4c65aa08d8cffe3bc3a68519570ad3844a546aecc9e6a0088dfd01
+Android 16: 1575 independent device checks passed.
+Numeric keyboard 1234 and repeated preview with draft retention passed.
+
+This rebuilt APK has not been installed or tested on a device yet.
+The user requested build and publication first; device verification will follow.

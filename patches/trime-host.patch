@@ -1,8 +1,8 @@
 diff --git a/app/build.gradle.kts b/app/build.gradle.kts
-index 76d686e..4a3111a 100644
+index 76d686e..53b277c 100644
 --- a/app/build.gradle.kts
 +++ b/app/build.gradle.kts
-@@ -9,21 +9,25 @@ plugins {
+@@ -9,24 +9,28 @@ plugins {
      id("com.osfans.trime.native-app-convention")
      id("com.osfans.trime.data-checksums")
      id("com.osfans.trime.native-cache-hash")
@@ -13,7 +13,7 @@ index 76d686e..4a3111a 100644
      alias(libs.plugins.kotlin.parcelize)
      alias(libs.plugins.ksp)
  }
- 
+
 +if (!file("prebuilt/official-assets.json").exists()) {
 +    apply(plugin = "com.osfans.trime.opencc-data")
 +}
@@ -22,19 +22,24 @@ index 76d686e..4a3111a 100644
      namespace = "com.osfans.trime"
      compileSdk = 37
      buildToolsVersion = "37.0.0"
- 
+
      defaultConfig {
 -        applicationId = "com.osfans.trime"
 -        minSdk = 21
 +        applicationId = "io.github.alieninput.trime"
 +        minSdk = 26
          targetSdk = 37
-         versionCode = 20261101
-         versionName = "3.3.13"
+-        versionCode = 20261101
+-        versionName = "3.3.13"
++        versionCode = 20261112
++        versionName = "0.2.0-alpha.2"
+
+         multiDexEnabled = true
+         buildConfigField("String", "BUILDER", "\"${project.builder}\"")
 @@ -41,6 +45,11 @@ android {
          archivesName = "${android.defaultConfig.applicationId}-$buildVersionName"
      }
- 
+
 +    sourceSets.getByName("main") {
 +        java.srcDir("../../semantic-core/src/main/java")
 +        java.srcDir("../../android-integration/src/main/java")
@@ -46,9 +51,9 @@ index 76d686e..4a3111a 100644
 @@ -70,7 +79,7 @@ android {
          debug {
              applicationIdSuffix = ".debug"
- 
+
 -            resValue("string", "trime_app_name", "@string/app_name_debug")
-+            resValue("string", "trime_app_name", "外星同文·测试")
++            resValue("string", "trime_app_name", "外星人输入法·测试")
          }
          all {
              // remove META-INF/version-control-info.textproto
@@ -59,7 +64,7 @@ index 4d110b9..a9c1c39 100644
 @@ -79,6 +79,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
                  tools:node="remove" />
          </provider>
- 
+
 +        <provider
 +            android:name="io.github.alieninput.androidsemantic.AlienImageProvider"
 +            android:authorities="${applicationId}.alien-images"
@@ -82,7 +87,7 @@ index c188927..2b41f5f 100644
            - schema: luna_pinyin_simp
 +          - schema: double_pinyin_flypy
      """
- 
+
      private val lock = Mutex()
 diff --git a/app/src/main/java/com/osfans/trime/ime/bar/InputBarDelegate.kt b/app/src/main/java/com/osfans/trime/ime/bar/InputBarDelegate.kt
 index ca2fcce..3249430 100644
@@ -106,7 +111,7 @@ index 319e436..993bfa6 100644
 @@ -64,6 +64,15 @@ class AlwaysUi(
          }
      }
- 
+
 +    private val alienButton = ToolButton(
 +        ctx,
 +        ToolBar.Button(foreground = ToolBar.Button.Foreground(style = "外星", fontSize = 12f)),
@@ -117,7 +122,7 @@ index 319e436..993bfa6 100644
 +    }
 +
      val buttonsUi = ButtonsBarUi(ctx, scope, onButtonClick)
- 
+
      val clipboardUi = ClipboardSuggestionUi(ctx, scope)
 @@ -107,10 +116,17 @@ class AlwaysUi(
                  centerVertically()
@@ -139,7 +144,7 @@ index 319e436..993bfa6 100644
                  endOfParent()
                  centerVertically()
 @@ -142,6 +158,7 @@ class AlwaysUi(
- 
+
      /** Restyles the toolbar area after a scheme switch. */
      fun refreshColors() {
 +        alienButton.refreshColors()
@@ -153,11 +158,11 @@ index 92ea752..8995c18 100644
 @@ -163,6 +163,8 @@ class InputView(
              return dp(value)
          }
- 
+
 +    private val alienPanelView = service.alienPanel.createView().apply { id = View.generateViewId() }
 +
      val keyboardView: View
- 
+
      /** Restyles colors after a scheme switch without rebuilding the view tree. */
 @@ -196,10 +198,17 @@ class InputView(
                          centerInParent()
@@ -184,7 +189,7 @@ index d2e71bf..d693189 100644
 +++ b/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt
 @@ -68,6 +68,33 @@ import timber.log.Timber
  /** [輸入法][InputMethodService]主程序  */
- 
+
  open class TrimeInputMethodService : LifecycleInputMethodService() {
 +    private var alien: io.github.alieninput.androidsemantic.AlienPanel? = null
 +    val alienPanel: io.github.alieninput.androidsemantic.AlienPanel get() = checkNotNull(alien)
@@ -215,7 +220,7 @@ index d2e71bf..d693189 100644
 +
      private lateinit var rime: RimeSession
      private val jobs = Channel<Job>(capacity = Channel.UNLIMITED)
- 
+
 @@ -205,6 +232,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          InputFeedbackManager.init(this)
          registerReceiver()
@@ -232,7 +237,7 @@ index d2e71bf..d693189 100644
 +            currentInputConnection?.performEditorAction(action)
          }
      }
- 
+
 @@ -443,6 +471,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
              candidatesStart,
              candidatesEnd,
@@ -252,7 +257,7 @@ index d2e71bf..d693189 100644
 @@ -589,6 +619,11 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          }
      }
- 
+
 +    override fun onFinishInput() {
 +        alien?.finish()
 +        super.onFinishInput()
@@ -286,7 +291,7 @@ index 8ec02b3..623bb25 100644
 +                            ic?.deleteSurroundingText(1, 0)
                          }
                      }
- 
+
                      delta > 0 -> {
                          if (deletedTextBuffer.isNotEmpty()) {
 -                            ic.commitText(deletedTextBuffer.removeFirst(), 1)
@@ -310,7 +315,7 @@ index c635ee2..13d3d0f 100644
 @@ -188,7 +188,7 @@ constructor(
          )
      }
- 
+
 -    private val input: EditText = editText {
 +    private val input: EditText = view({ context -> io.github.alieninput.androidsemantic.AlienPreviewEditor(context) }) {
          background = StateListDrawable().apply {
@@ -322,7 +327,7 @@ index 88865d2..301c131 100644
 +++ b/app/src/main/java/com/osfans/trime/ui/main/settings/KeyboardSettingsFragment.kt
 @@ -15,6 +15,24 @@ import kotlinx.coroutines.launch
  class KeyboardSettingsFragment : PreferenceDelegateFragment(AppPrefs.defaultInstance().keyboard) {
- 
+
      override fun onPreferenceUiCreated(screen: PreferenceScreen) {
 +        val imageColors = androidx.preference.ListPreference(requireContext()).apply {
 +            key = "alien_image_palette"

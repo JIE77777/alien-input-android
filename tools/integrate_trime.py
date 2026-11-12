@@ -136,13 +136,15 @@ patch(bar, '''            if (action.isNotEmpty()) {
 build = 'app/build.gradle.kts'
 patch(build, '        applicationId = "com.osfans.trime"', '        applicationId = "io.github.alieninput.trime"')
 patch(build, '        minSdk = 21', '        minSdk = 26')
+patch(build, '        versionCode = 20261101', '        versionCode = 20261112')
+patch(build, '        versionName = "3.3.13"', '        versionName = "0.2.0-alpha.2"')
 patch(build, '    buildFeatures {', '''    sourceSets.getByName("main") {
         java.srcDir("../../semantic-core/src/main/java")
         java.srcDir("../../android-integration/src/main/java")
     }
 
     buildFeatures {''')
-patch(build, 'resValue("string", "trime_app_name", "@string/app_name_debug")', 'resValue("string", "trime_app_name", "外星同文·测试")')
+patch(build, 'resValue("string", "trime_app_name", "@string/app_name_debug")', 'resValue("string", "trime_app_name", "外星人输入法·测试")')
 patch(build, '    id("com.osfans.trime.opencc-data")', '    // OpenCC data come from the pinned official APK in development builds.')
 patch(build, 'android {', '''if (!file("prebuilt/official-assets.json").exists()) {
     apply(plugin = "com.osfans.trime.opencc-data")

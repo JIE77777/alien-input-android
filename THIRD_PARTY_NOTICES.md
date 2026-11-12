@@ -40,7 +40,9 @@ normalization snapshot are in vendor/rime-pure. Compatibility modifications
 are isolated in tools/prepare_rime_pure.py. The upstream personal custom_phrase
 file is archived as provenance but is not installed into a user's dictionary.
 
-The three reviewed original game textures (big / you / food) are used in this
-local development build. They retain the game's original rights and are not
-covered by the code licenses above. Other glyphs keep the existing upstream
-assets until their mapping is reviewed. See research/game/glyph-map.json.
+Production glyphs use the complete alien-input v6.12.4 set with uniform alpha
+and antialiasing processing. The three reviewed original game textures
+(big / you / food) remain local research references and are not substituted
+into this release. Full mapping to the game textures is still pending.
+Glyph designs retain their original rights and are not covered by the code
+licenses above. See docs/game-resource-analysis.md and research/game/glyph-map.json.
