@@ -25,7 +25,7 @@ Gradle 可执行文件默认为 $DEV_ENV_ROOT/gradle/gradle-9.8.1/bin/gradle。�
 
 ## 读图与界面检查
 
-读图模板随 APK 打包，不下载模型。构建脚本从固定静态字形和归档的 Android 数字字形生成缩放模板，只依赖 Pillow。
+读图模板随 APK 打包，不下载模型。构建脚本从固定静态字形和归档的 Android 数字字形生成缩放模板，再使用现有 JDK 预计算识别特征。
 
 ```sh
 bash tools/build-device-checks.sh

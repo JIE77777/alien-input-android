@@ -4,7 +4,7 @@
 
 用中文或英文寻找外星文字，组合成图片发给同好；也能读回收到的外星图片，接着编辑。
 
-[下载已发布版本](https://github.com/JIE77777/alien-input-android/releases/latest) · [更新记录](CHANGELOG.md) · [反馈问题](https://github.com/JIE77777/alien-input-android/issues)
+[下载 v0.3.0-beta.1](https://github.com/JIE77777/alien-input-android/releases/tag/v0.3.0-beta.1) · [更新记录](CHANGELOG.md) · [反馈问题](https://github.com/JIE77777/alien-input-android/issues)
 
 ## 把来信写进日常
 
@@ -61,7 +61,7 @@
 
 ## 安装与升级
 
-支持 **Android 8.0 及以上、arm64-v8a**。[Release](https://github.com/JIE77777/alien-input-android/releases/latest) 提供 APK 和 SHA256 校验文件。当前分支为 v0.3.0-beta.1 开发候选版，尚未发布。
+支持 **Android 8.0 及以上、arm64-v8a**。[Release](https://github.com/JIE77777/alien-input-android/releases/tag/v0.3.0-beta.1) 提供 APK 和 SHA256 校验文件。本版为 Beta 预发布版，可覆盖升级上一版。
 
 已安装上一版的用户可直接覆盖升级，保留输入方案和个人词库。
 
