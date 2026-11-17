@@ -14,3 +14,5 @@ jobs:
           java-version: '17'
       - name: Semantic, PNG, layout and numeral regression checks
         run: bash tools/test-semantic.sh
+      - name: Experimental watermark payload integrity
+        run: python3 -m unittest discover -s experiments/watermark -p "test_*.py" -v
