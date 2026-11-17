@@ -37,3 +37,7 @@ adb shell am instrument -w -e suite full io.github.alieninput.recognitionfixture
 ```
 
 独立检查包使用自己的数据目录，不修改主应用图片稿。密集的 18 位数字在半尺寸 JPEG 中允许进入人工确认路径；检查要求整条首选字形序列仍正确。自动确认不能出现误认。详细结果见 [版本验证记录](release-beta1-verification.md)。
+
+### 识别模板
+
+资源准备会调用 `tools/build-recognition-model.sh`，使用现有 Java 工具链预计算识别特征。`reader-model.agr` 为 gzip 数据，避免 Android 构建工具对 `.gz` 资源自动解压改名。主构建最后通过 `tools/verify-apk-assets.py` 核对模型原始字节和全部运行时资源校验表。

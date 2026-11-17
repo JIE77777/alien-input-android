@@ -168,6 +168,8 @@ public final class DeviceChecks extends Instrumentation {
         panel.connection.commitText("food",1);click(root,"外星候选 食物 别名",true);
         panel.toggleVisibility();check(root.getVisibility()==View.GONE&&!panel.capturesInput(),"collapse restores ordinary input");
         panel.toggleVisibility();check(root.getVisibility()==View.VISIBLE&&find(root,"图片稿第 2 项 食物",true)!=null,"reopening preserves ordered draft");
+        click(root,"复制图",false);check(find(root,"已复制 ✓",false)!=null,"copy has persistent visible feedback");
+        check(find(root,"图片已复制，回到输入框粘贴即可",false)!=null,"copy explains where to paste");
         check(real.getEditable().toString().equals("existing"),"query text never reaches host editor");
         panel.insertImage();check(sent[0]==1,"explicit PNG delivery attempted");
         check(find(root,"图片稿第 2 项 食物",true)!=null,"rejected image preserves draft");
@@ -204,9 +206,15 @@ public final class DeviceChecks extends Instrumentation {
         panel.connection.commitText("1234",1);click(root,"外星候选 1234 数值",true);
         check(find(root,"图片稿第 1 项 1234",true)!=null,"decimal digits produce selectable native number draft");
         check(real.getEditable().toString().equals("existing"),"numeric query stays out of host editor");
-        click(root,"读图",false);
-        check(launched[0]!=null&&launched[0].getBooleanExtra("from_ime",false),"reader remembers IME entry");
+        launched[0]=null;click(root,"读图",false);
+        check(launched[0]==null&&find(root,"粘贴图片",false)!=null,"reader stays inside keyboard");
+        panel.connection.commitText("你",1);
+        check(find(root,"输入中文词语、英文或数字",false)==null&&find(root,"你",false)!=null,"typing from reader returns to query");
+        panel.connection.clear();click(root,"读图",false);
+        panel.pickImage();
+        check(launched[0]!=null&&launched[0].getComponent().getClassName().endsWith("ImagePickerActivity"),"gallery uses picker bridge only");
         check((launched[0].getFlags()&android.content.Intent.FLAG_ACTIVITY_MULTIPLE_TASK)!=0,"reader has its own returnable task");
+        EditorInfo bridge=new EditorInfo();bridge.packageName=info.packageName;bridge.inputType=InputType.TYPE_NULL;panel.finish();panel.start(bridge,false);check(!panel.enabled(),"same-package picker bridge does not consume return target");
         EditorInfo picker=new EditorInfo();picker.inputType=InputType.TYPE_CLASS_TEXT;picker.packageName="com.android.providers.media";
         panel.finish();panel.start(picker,false);check(!panel.capturesInput(),"photo picker search uses ordinary input");
         ImageDraftStore.append(context,Collections.singletonList(Collections.singletonList("F0306")));

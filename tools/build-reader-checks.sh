@@ -20,13 +20,15 @@ cat > "$OUT/AndroidManifest.xml" <<'XML'
 <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="35" />
 <application android:label="Alien reader checks" android:debuggable="true" />
 <instrumentation android:name="io.github.alieninput.androidsemantic.RecognitionChecks" android:targetPackage="io.github.alieninput.recognitionfixtures" />
+<instrumentation android:name="io.github.alieninput.androidsemantic.InlineReaderChecks" android:targetPackage="io.github.alieninput.recognitionfixtures" />
 </manifest>
 XML
 "$BT/aapt2" link -o "$OUT/base.apk" -I "$PLATFORM" --manifest "$OUT/AndroidManifest.xml" -A "$OUT/assets"
 "$JAVA_HOME/bin/javac" --release 8 -encoding UTF-8 -cp "$PLATFORM" -d "$OUT/classes" \
  semantic-core/src/main/java/io/github/alieninput/semantic/*.java \
  android-integration/src/main/java/io/github/alieninput/androidsemantic/*.java \
- android-integration/src/test/java/io/github/alieninput/androidsemantic/RecognitionChecks.java
+ android-integration/src/test/java/io/github/alieninput/androidsemantic/RecognitionChecks.java \
+ android-integration/src/test/java/io/github/alieninput/androidsemantic/InlineReaderChecks.java
 "$JAVA_HOME/bin/jar" cf "$OUT/classes.jar" -C "$OUT/classes" .
 "$BT/d8" --lib "$PLATFORM" --min-api 26 --output "$OUT/dex" "$OUT/classes.jar"
 cp "$OUT/base.apk" "$OUT/unsigned.apk"

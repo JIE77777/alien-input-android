@@ -58,20 +58,33 @@ index 76d686e..46797c6 100644
          all {
              // remove META-INF/version-control-info.textproto
 diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
-index 4d110b9..64af564 100644
+index 4d110b9..f87d1a2 100644
 --- a/app/src/main/AndroidManifest.xml
 +++ b/app/src/main/AndroidManifest.xml
-@@ -79,6 +79,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
+@@ -79,6 +79,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
                  tools:node="remove" />
          </provider>
  
 +        <provider android:name="io.github.alieninput.androidsemantic.AlienImageProvider" android:authorities="${applicationId}.alien-images" android:exported="false" android:grantUriPermissions="true" />
 +
++        <activity android:name="io.github.alieninput.androidsemantic.HomeActivity" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
++
 +        <activity android:name="io.github.alieninput.androidsemantic.ReadImageActivity" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
++
++        <activity android:name="io.github.alieninput.androidsemantic.ImagePickerActivity" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
 +
          <!-- Settings activity -->
          <activity
              android:name=".ui.main.MainActivity"
+@@ -118,7 +126,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
+             android:name="com.osfans.trime.MainLauncherAlias"
+             android:exported="true"
+             android:label="@string/trime_app_name"
+-            android:targetActivity=".ui.main.MainActivity">
++            android:targetActivity="io.github.alieninput.androidsemantic.HomeActivity">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+ 
 diff --git a/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt b/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt
 index c188927..2b41f5f 100644
 --- a/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt
@@ -182,7 +195,7 @@ index 92ea752..8995c18 100644
                      },
                  )
 diff --git a/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt b/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt
-index d2e71bf..d693189 100644
+index d2e71bf..ad506ff 100644
 --- a/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt
 +++ b/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt
 @@ -68,6 +68,33 @@ import timber.log.Timber
@@ -227,7 +240,15 @@ index d2e71bf..d693189 100644
          Timber.d("onCreate")
          decorView = window.window!!.decorView
          contentView = decorView.findViewById(android.R.id.content)
-@@ -350,7 +378,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -331,6 +359,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+     }
+ 
+     override fun onDestroy() {
++        alien?.destroy()
+         InputFeedbackManager.destroy()
+         inputView = null
+         recreateInputViewPrefs.forEach {
+@@ -350,7 +379,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          if (action == null) {
              sendDownUpKeyEvents(KeyEvent.KEYCODE_ENTER)
          } else {
@@ -236,7 +257,7 @@ index d2e71bf..d693189 100644
          }
      }
  
-@@ -443,6 +471,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -443,6 +472,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
              candidatesStart,
              candidatesEnd,
          )
@@ -244,7 +265,7 @@ index d2e71bf..d693189 100644
          cursorUpdateIndex += 1
          handleCursorUpdate(newSelStart, newSelEnd, candidatesStart, candidatesEnd, cursorUpdateIndex)
          inputView?.updateSelection(newSelStart, newSelEnd)
-@@ -536,6 +565,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -536,6 +566,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          attribute: EditorInfo,
          restarting: Boolean,
      ) {
@@ -252,7 +273,15 @@ index d2e71bf..d693189 100644
          composingText = ""
          Timber.d("onStartInput: restarting=$restarting")
          val isNullType = attribute.inputType and InputType.TYPE_MASK_CLASS == InputType.TYPE_NULL
-@@ -589,6 +619,11 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -567,6 +598,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+         attribute: EditorInfo,
+         restarting: Boolean,
+     ) {
++        alien?.resumeView()
+         Timber.d("onStartInputView: restarting=$restarting")
+         InputFeedbackManager.startInput()
+         postRimeJob {
+@@ -589,6 +621,11 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          }
      }
  
@@ -264,7 +293,7 @@ index d2e71bf..d693189 100644
      override fun onFinishInputView(finishingInput: Boolean) {
          Timber.d("onFinishInputView: finishingInput=$finishingInput")
          decorLocationUpdated = false
-@@ -936,7 +971,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -936,7 +973,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
      fun clearTextSelection() {
          val ic = currentInputConnection ?: return
          val etr = ExtractedTextRequest().apply { token = 0 }
@@ -298,7 +327,7 @@ index 8ec02b3..623bb25 100644
                      }
                  }
 diff --git a/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt b/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt
-index b67148c..bd4ff4d 100644
+index b67148c..8725168 100644
 --- a/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt
 +++ b/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt
 @@ -8,6 +8,7 @@ package com.osfans.trime.ui.main
@@ -318,7 +347,27 @@ index b67148c..bd4ff4d 100644
          }
          onBackPressedDispatcher.addCallback {
              if (binding.testInputPanel.isVisible) {
-@@ -168,7 +169,15 @@ class MainActivity : AppCompatActivity() {
+@@ -144,7 +145,7 @@ class MainActivity : AppCompatActivity() {
+ 
+         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+         processIntent(intent)
+-        checkNotificationPermission()
++        // Notification access remains optional; do not interrupt keyboard setup.
+     }
+ 
+     override fun onNewIntent(intent: Intent) {
+@@ -153,6 +154,10 @@ class MainActivity : AppCompatActivity() {
+     }
+ 
+     private fun processIntent(intent: Intent?) {
++        if (intent?.getBooleanExtra("alien_try_keyboard", false) == true) {
++            intent.removeExtra("alien_try_keyboard")
++            window.decorView.post { testInputPanel?.show(window) }
++        }
+         val action = intent?.action ?: return
+         when (action) {
+             Intent.ACTION_MAIN -> if (SetupActivity.shouldShowUp()) {
+@@ -168,7 +173,15 @@ class MainActivity : AppCompatActivity() {
      }
  
      private fun setupToolbarMenu(menu: Menu) {
@@ -334,6 +383,15 @@ index b67148c..bd4ff4d 100644
              menu.item(R.string.deploy, R.drawable.ic_baseline_refresh_reversed_24, showAsAction = true) {
                  viewModel.rime.launchOnReady { it.deploy() }
              },
+@@ -224,7 +237,7 @@ class MainActivity : AppCompatActivity() {
+ 
+     override fun onStop() {
+         super.onStop()
+-        testInputPanel?.dismiss()
++        // Keep the practice editor when returning from the system photo picker.
+     }
+ 
+     override fun onDestroy() {
 diff --git a/app/src/main/java/com/osfans/trime/ui/main/NavigationRoute.kt b/app/src/main/java/com/osfans/trime/ui/main/NavigationRoute.kt
 index 5be7ab9..d06725c 100644
 --- a/app/src/main/java/com/osfans/trime/ui/main/NavigationRoute.kt
@@ -398,6 +456,19 @@ index 88865d2..301c131 100644
          screen.findPreference<Preference>("custom_sound_effect_name")?.apply {
              setOnPreferenceClickListener {
                  lifecycleScope.launch {
+diff --git a/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt b/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt
+index 0fa2a87..1b33fbc 100644
+--- a/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt
++++ b/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt
+@@ -73,7 +73,7 @@ class SetupActivity : FragmentActivity() {
+     }
+ 
+     private fun completeSetup() {
+-        startActivity<MainActivity>()
++        startActivity<io.github.alieninput.androidsemantic.HomeActivity>()
+         finish()
+     }
+ 
 diff --git a/app/src/main/res/drawable/ic_app_icon_foreground.xml b/app/src/main/res/drawable/ic_app_icon_foreground.xml
 index ede482b..cd8120c 100644
 --- a/app/src/main/res/drawable/ic_app_icon_foreground.xml

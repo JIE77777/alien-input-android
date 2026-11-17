@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import java.io.*;
-import java.lang.ref.WeakReference;
+import java.nio.*;
+import java.util.zip.GZIPInputStream;
+import static io.github.alieninput.androidsemantic.GlyphMath.*;
 import java.util.*;
 
 /** Pixel-only reader for the production image layout. All work runs off the UI thread. */
@@ -30,17 +32,25 @@ public final class GlyphReader {
         public List<String> glyphs(){List<String> ids=new ArrayList<>();for(List<String> g:groups())ids.addAll(g);return ids;}
     }
     private static final int STATIC=1344, COUNT=1452, SIZE=100, FEATURE=48;
-    private static WeakReference<GlyphReader> cached=new WeakReference<>(null);
+    private static GlyphReader cached;
+    private static boolean registered;
     public static synchronized GlyphReader get(Context context)throws IOException{
-        GlyphReader reader=cached.get();if(reader==null){reader=new GlyphReader(context.getApplicationContext());cached=new WeakReference<>(reader);}return reader;
+        if(cached==null)cached=new GlyphReader(context.getApplicationContext());
+        if(!registered){registered=true;context.getApplicationContext().registerComponentCallbacks(new android.content.ComponentCallbacks2(){
+            public void onConfigurationChanged(android.content.res.Configuration c){}
+            public void onLowMemory(){releaseCache();}
+            public void onTrimMemory(int level){if(level>=TRIM_MEMORY_RUNNING_LOW&&level!=TRIM_MEMORY_UI_HIDDEN)releaseCache();}
+        });}
+        return cached;
     }
+    private static synchronized void releaseCache(){cached=null;}
     private static final class Template {
         final int id;final byte[] mask;final float[] feature,coarse;
-        Template(int id,byte[] mask){this.id=id;this.mask=mask;feature=vector(mask,100,100,48,48,.6f);coarse=resizeNormalized(feature,48,48,12,12);}
+        Template(int id,byte[] mask,float[] feature,float[] coarse){this.id=id;this.mask=mask;this.feature=feature;this.coarse=coarse;}
     }
     private static final class NumberModel {
         final int id,split;final float[] bars,base;
-        NumberModel(int id,int split,byte[] mask){this.id=id;this.split=split;float[][] f=numberFeatures(mask,split);bars=f[0];base=f[1];}
+        NumberModel(int id,int split,float[] bars,float[] base){this.id=id;this.split=split;this.bars=bars;this.base=base;}
     }
     private final List<Template> templates=new ArrayList<>();
     private final List<NumberModel> numbers=new ArrayList<>();
@@ -48,25 +58,15 @@ public final class GlyphReader {
     private GlyphReader(Context context)throws IOException{
         for(int i=0;i<STATIC;i++)ids[i]=String.format(Locale.ROOT,"F%04d",i+1);
         for(int c=1;c<=6;c++)for(int p=4;p<=21;p++)ids[STATIC+(c-1)*18+p-4]="N"+c+"P"+p;
-        for(int style=0;style<2;style++)for(int i=0;i<STATIC;i++){
-            interrupted();String dir=style==0?"alien/glyphs/":"alien/recognition-originals/";
-            try(InputStream in=context.getAssets().open(dir+ids[i]+".png")){
-                Bitmap b=BitmapFactory.decodeStream(in);if(b==null||b.getWidth()!=100||b.getHeight()!=100)throw new IOException("字库加载失败");
-                templates.add(new Template(i,alpha(b)));b.recycle();
-            }
-        }
-        AlienImages images=new AlienImages(context);
-        for(int i=STATIC;i<COUNT;i++){
-            interrupted();Bitmap b=images.glyph(ids[i]);if(b==null)throw new IOException("数字字库加载失败");byte[] mask=alpha(b);
-            templates.add(new Template(i,mask));int power=Integer.parseInt(ids[i].substring(3));int split=Math.round(100f*((power-1)*10+10)/(100+(power-1)*10));
-            numbers.add(new NumberModel(i,split,mask));
-            Bitmap half=Bitmap.createScaledBitmap(b,50,50,true),restored=Bitmap.createScaledBitmap(half,100,100,true);
-            byte[] reduced=alpha(restored);numbers.add(new NumberModel(i,split,reduced));templates.add(new Template(i,reduced));half.recycle();restored.recycle();
-            for(int size:new int[]{50,75})try(InputStream in=context.getAssets().open("alien/recognition-numerals/"+ids[i]+"-"+size+".png")){
-                Bitmap variant=BitmapFactory.decodeStream(in);if(variant==null)throw new IOException("数字模板加载失败");byte[] reducedVariant=alpha(variant);numbers.add(new NumberModel(i,split,reducedVariant));templates.add(new Template(i,reducedVariant));variant.recycle();
-            }
+        try(DataInputStream in=new DataInputStream(new BufferedInputStream(new GZIPInputStream(context.getAssets().open("alien/reader-model.agr")),131072))){
+            if(in.readInt()!=0x41475231)throw new IOException("读图字库版本不匹配");
+            int count=in.readInt();if(count!=3120)throw new IOException("读图字库不完整");
+            for(int i=0;i<count;i++){interrupted();int id=in.readInt();byte[] mask=new byte[10000];in.readFully(mask);templates.add(new Template(id,mask,readFloats(in,2304),readFloats(in,144)));}
+            int n=in.readInt();if(n!=432)throw new IOException("数字字库不完整");
+            for(int i=0;i<n;i++){interrupted();int id=in.readInt(),split=in.readInt();if(id<STATIC||id>=COUNT||split<1||split>=100)throw new IOException("数字字库不完整");numbers.add(new NumberModel(id,split,readFloats(in,split*100),readFloats(in,2304)));}
         }
     }
+    private static float[] readFloats(DataInputStream in,int n)throws IOException{byte[] bytes=new byte[n*4];in.readFully(bytes);float[] out=new float[n];ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).asFloatBuffer().get(out);return out;}
     private static void interrupted()throws InterruptedIOException{if(Thread.currentThread().isInterrupted())throw new InterruptedIOException("已取消");}
     private static byte[] alpha(Bitmap b){int[] pixels=new int[b.getWidth()*b.getHeight()];b.getPixels(pixels,0,b.getWidth(),0,0,b.getWidth(),b.getHeight());byte[] a=new byte[pixels.length];for(int i=0;i<a.length;i++)a[i]=(byte)(pixels[i]>>>24);return a;}
     public Result read(Bitmap source,Progress progress)throws IOException{
@@ -141,13 +141,4 @@ public final class GlyphReader {
         boolean layout=best.score>=.90f&&(ranked.size()==1||best.score-ranked.get(1).score>=.025f);
         if(!layout)for(Symbol s:best.symbols)s.confirmed=false;return new Row(best.symbols,best.score);
     }
-    private static float[][] numberFeatures(byte[] image,int split){float[] bars=blur(image,100,100,.3f);Arrays.fill(bars,split*100,bars.length,0);unit(bars);float[] base=vector(crop(image,100,100,0,split,100,100-split),100,100-split,48,48,.6f);return new float[][]{bars,base};}
-    private static int[] top(float[] scores,int count){int[] ids=new int[count];Arrays.fill(ids,-1);for(int i=0;i<scores.length;i++){int j=count-1;if(ids[j]>=0&&scores[i]<=scores[ids[j]])continue;while(j>0&&(ids[j-1]<0||scores[i]>scores[ids[j-1]])){ids[j]=ids[j-1];j--;}ids[j]=i;}return ids;}
-    private static float dot(float[] a,float[] b){float s=0;for(int i=0;i<a.length;i++)s+=a[i]*b[i];return s;}
-    private static void unit(float[] a){double sum=0;for(float v:a)sum+=v*v;float scale=(float)(1/Math.max(1e-8,Math.sqrt(sum)));for(int i=0;i<a.length;i++)a[i]*=scale;}
-    private static float[] vector(byte[] image,int w,int h,int ow,int oh,float sigma){return resizeNormalized(blur(image,w,h,sigma),w,h,ow,oh);}
-    private static float[] blur(byte[] image,int w,int h,float sigma){int r=sigma>.4f?2:1;float[] k=new float[r*2+1];float sum=0;for(int i=-r;i<=r;i++){k[i+r]=(float)Math.exp(-i*i/(2*sigma*sigma));sum+=k[i+r];}for(int i=0;i<k.length;i++)k[i]/=sum;float[] tmp=new float[w*h],out=new float[w*h];for(int y=0;y<h;y++)for(int x=0;x<w;x++)for(int i=-r;i<=r;i++)tmp[y*w+x]+=(image[y*w+Math.max(0,Math.min(w-1,x+i))]&255)*k[i+r];for(int y=0;y<h;y++)for(int x=0;x<w;x++)for(int i=-r;i<=r;i++)out[y*w+x]+=tmp[Math.max(0,Math.min(h-1,y+i))*w+x]*k[i+r];return out;}
-    private static float[] resizeNormalized(float[] a,int w,int h,int ow,int oh){float[] out=new float[ow*oh];for(int y=0;y<oh;y++){float py=Math.max(0,Math.min(h-1,(y+.5f)*h/oh-.5f));int y0=(int)py,y1=Math.min(h-1,y0+1);float fy=py-y0;for(int x=0;x<ow;x++){float px=Math.max(0,Math.min(w-1,(x+.5f)*w/ow-.5f));int x0=(int)px,x1=Math.min(w-1,x0+1);float fx=px-x0;out[y*ow+x]=(a[y0*w+x0]*(1-fx)+a[y0*w+x1]*fx)*(1-fy)+(a[y1*w+x0]*(1-fx)+a[y1*w+x1]*fx)*fy;}}unit(out);return out;}
-    private static byte[] crop(byte[] a,int w,int h,int x,int y,int ow,int oh){byte[] out=new byte[ow*oh];for(int yy=0;yy<oh;yy++){int sy=y+yy;if(sy<0||sy>=h)continue;int left=Math.max(0,x),right=Math.min(w,x+ow);if(right>left)System.arraycopy(a,sy*w+left,out,yy*ow+left-x,right-left);}return out;}
-    private static void paste(byte[] out,int w,int h,byte[] a,int aw,int ah,int x,int y){for(int yy=0;yy<ah;yy++)if(y+yy>=0&&y+yy<h)System.arraycopy(a,yy*aw,out,(y+yy)*w+x,aw);}
 }

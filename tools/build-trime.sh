@@ -12,3 +12,4 @@ python3 tools/prepare_trime_assets.py "$DEV_ENV_ROOT/downloads/trime-v3.3.13-arm
 GRADLE="$DEV_ENV_ROOT/gradle/gradle-9.8.1/bin/gradle"
 test -x "$GRADLE" || { echo 'Install verified Gradle 9.8.1 in the shared environment'; exit 1; }
 "$GRADLE" -p trime -PbuildABI=arm64-v8a :app:assembleDebug --console=plain "$@"
+python3 tools/verify-apk-assets.py

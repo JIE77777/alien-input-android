@@ -48,6 +48,7 @@ patch(service, '    private lateinit var rime: RimeSession', '''    private var 
 patch(service, '        super.onCreate()\n        Timber.d("onCreate")', '        super.onCreate()\n        alien = createAlienPanel()\n        Timber.d("onCreate")')
 patch(service, '        cursorUpdateIndex += 1', '        if (alien?.capturesInput() == true) return\n        cursorUpdateIndex += 1')
 patch(service, '        composingText = ""\n        Timber.d("onStartInput: restarting=$restarting")', '        alien?.start(attribute, restarting)\n        composingText = ""\n        Timber.d("onStartInput: restarting=$restarting")')
+patch(service, '        Timber.d("onStartInputView: restarting=$restarting")', '        alien?.resumeView()\n        Timber.d("onStartInputView: restarting=$restarting")')
 patch(service, '    override fun onFinishInputView(finishingInput: Boolean) {', '''    override fun onFinishInput() {
         alien?.finish()
         super.onFinishInput()
@@ -163,15 +164,15 @@ android {''')
 # Rebuild only our manifest entries so repeated integration stays idempotent.
 manifest_file = root / 'app/src/main/AndroidManifest.xml'
 manifest_text = manifest_file.read_text()
-manifest_text = re.sub(r'(?m)^[ \t]*<(?:provider|activity)\s+android:name="io\.github\.alieninput\.androidsemantic\.(?:AlienImageProvider|ReadImageActivity|HomeActivity|WriteMessageActivity)"[\s\S]*?/>[ \t]*\n?', '', manifest_text)
+manifest_text = re.sub(r'(?m)^[ \t]*<(?:provider|activity)\s+android:name="io\.github\.alieninput\.androidsemantic\.(?:AlienImageProvider|ReadImageActivity|HomeActivity|WriteMessageActivity|ImagePickerActivity)"[\s\S]*?/>[ \t]*\n?', '', manifest_text)
 components = '        <provider android:name="io.github.alieninput.androidsemantic.AlienImageProvider" android:authorities="${applicationId}.alien-images" android:exported="false" android:grantUriPermissions="true" />\n\n'
-for activity in ['ReadImageActivity']:
+for activity in ['HomeActivity', 'ReadImageActivity', 'ImagePickerActivity']:
     components += f'        <activity android:name="io.github.alieninput.androidsemantic.{activity}" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />\n\n'
 manifest_text = re.sub(r'(?m)^[ \t]*<!-- Settings activity -->', lambda m: components + '        <!-- Settings activity -->', manifest_text)
-manifest_text = manifest_text.replace('android:targetActivity="io.github.alieninput.androidsemantic.HomeActivity"', 'android:targetActivity=".ui.main.MainActivity"')
+manifest_text = manifest_text.replace('android:targetActivity=".ui.main.MainActivity"', 'android:targetActivity="io.github.alieninput.androidsemantic.HomeActivity"')
 manifest_file.write_text(re.sub(r'\n(?:[ \t]*\n){2,}', '\n\n', manifest_text))
 patch('app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt',
-      '        startActivity<io.github.alieninput.androidsemantic.HomeActivity>()', '        startActivity<MainActivity>()')
+      '        startActivity<MainActivity>()', '        startActivity<io.github.alieninput.androidsemantic.HomeActivity>()')
 patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
       '        val optionMenuItems = listOf(',
       '''        val readImageItem = menu.add("读图").apply {
@@ -194,6 +195,14 @@ patch('app/src/main/java/com/osfans/trime/ui/main/NavigationRoute.kt',
     (root.parent / 'android-integration/src/main/res/drawable/alien_launcher.xml').read_bytes())
 icon_background = root / 'app/src/main/res/values/ic_app_icon_background.xml'
 icon_background.write_text(re.sub(r'(<color name="ic_app_icon_background">)[^<]+', r'\g<1>#292A25', icon_background.read_text()))
+patch(service, '    override fun onDestroy() {', '    override fun onDestroy() {\n        alien?.destroy()')
+patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
+      '    private fun processIntent(intent: Intent?) {',
+      '    private fun processIntent(intent: Intent?) {\n        if (intent?.getBooleanExtra("alien_try_keyboard", false) == true) {\n            intent.removeExtra("alien_try_keyboard")\n            window.decorView.post { testInputPanel?.show(window) }\n        }')
+patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
+      '        checkNotificationPermission()', '        // Notification access remains optional; do not interrupt keyboard setup.')
+patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
+      '        testInputPanel?.dismiss()', '        // Keep the practice editor when returning from the system photo picker.')
 # Product labels: keep diagnostics in the developer area, use ordinary language in the main flow.
 for relative, title, slogan, try_label in [
     ('values-zh-rCN', '外星人输入法', '写下你的外星来信', '试写'),
