@@ -243,4 +243,47 @@ patch('app/src/main/java/com/osfans/trime/ui/main/settings/KeyboardSettingsFragm
         screen.addPreference(imageColors)
         screen.findPreference<Preference>("custom_sound_effect_name")?.apply {''')
 
+
+# A restored native schema may not emit a schema-change notification. Seed the
+# cache before READY so the first keyboard uses the actual input alphabet.
+patch('app/src/main/java/com/osfans/trime/core/Rime.kt', '''            fullCheck,
+        )
+    }
+
+    private fun processKeyInner''', '''            fullCheck,
+        )
+        statusCached = getRimeStatus()
+        schemaCached = RimeSchema(statusCached.schemaId)
+    }
+
+    private fun processKeyInner''')
+
+keyboard = 'app/src/main/java/com/osfans/trime/ime/keyboard/KeyboardWindow.kt'
+patch(keyboard, '    private var currentKeyboardId = ""', '    private var layoutSchemaId = ""\n    private var currentKeyboardId = ""')
+patch(keyboard, '        attachKeyboard(evalKeyboard(".default"))', '        layoutSchemaId = rime.run { statusCached }.schemaId\n        attachKeyboard(evalKeyboard(".default"))')
+patch(keyboard, '''    override fun onStartInput(info: EditorInfo) {
+        val targetKeyboard =''', '''    override fun onStartInput(info: EditorInfo) {
+        val schemaId = rime.run { statusCached }.schemaId
+        val schemaChanged = layoutSchemaId != schemaId
+        if (schemaChanged) {
+            // Do not carry a locked QWERTY layout across a restored T9 schema.
+            layoutSchemaId = schemaId
+            lastLockKeyboardId = ""
+            lastKeyboardId = ""
+        }
+        val targetKeyboard =''')
+patch(keyboard, '''    override fun onRimeSchemaUpdated(schema: SchemaItem) {
+        switchKeyboard(".default")
+    }''', '''    override fun onRimeSchemaUpdated(schema: SchemaItem) {
+        layoutSchemaId = ""
+        onStartInput(service.currentInputEditorInfo)
+    }''')
+patch(service, '''                ColorManager.addOnChangedListener(onColorChangeListener)
+''', '''                ColorManager.addOnChangedListener(onColorChangeListener)
+                // Input view creation can precede the engine's READY callback.
+                if (isInputViewShown) inputView?.startInput(currentInputEditorInfo, true)
+''')
+
+patch(keyboard, '        switchKeyboard(targetKeyboard)\n        val isAsciiMode', '        switchKeyboard(if (schemaChanged && targetKeyboard.isEmpty()) ".default" else targetKeyboard)\n        val isAsciiMode')
+
 print('Trime adapter applied')

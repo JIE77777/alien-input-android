@@ -85,6 +85,19 @@ index 4d110b9..f87d1a2 100644
              <intent-filter>
                  <action android:name="android.intent.action.MAIN" />
  
+diff --git a/app/src/main/java/com/osfans/trime/core/Rime.kt b/app/src/main/java/com/osfans/trime/core/Rime.kt
+index e2e2d3d..b422376 100644
+--- a/app/src/main/java/com/osfans/trime/core/Rime.kt
++++ b/app/src/main/java/com/osfans/trime/core/Rime.kt
+@@ -296,6 +296,8 @@ class Rime :
+             BuildConfig.BUILD_VERSION_NAME,
+             fullCheck,
+         )
++        statusCached = getRimeStatus()
++        schemaCached = RimeSchema(statusCached.schemaId)
+     }
+ 
+     private fun processKeyInner(value: Int, modifiers: Int, isVirtual: Boolean): Boolean {
 diff --git a/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt b/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt
 index c188927..2b41f5f 100644
 --- a/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt
@@ -195,7 +208,7 @@ index 92ea752..8995c18 100644
                      },
                  )
 diff --git a/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt b/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt
-index d2e71bf..ad506ff 100644
+index d2e71bf..753d2c6 100644
 --- a/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt
 +++ b/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt
 @@ -68,6 +68,33 @@ import timber.log.Timber
@@ -232,7 +245,14 @@ index d2e71bf..ad506ff 100644
      private lateinit var rime: RimeSession
      private val jobs = Channel<Job>(capacity = Channel.UNLIMITED)
  
-@@ -205,6 +232,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -200,11 +227,14 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+                 ThemeManager.init(resources.configuration)
+                 ThemeManager.addOnChangedListener(onThemeChangeListener)
+                 ColorManager.addOnChangedListener(onColorChangeListener)
++                // Input view creation can precede the engine's READY callback.
++                if (isInputViewShown) inputView?.startInput(currentInputEditorInfo, true)
+             }
+         }
          InputFeedbackManager.init(this)
          registerReceiver()
          super.onCreate()
@@ -240,7 +260,7 @@ index d2e71bf..ad506ff 100644
          Timber.d("onCreate")
          decorView = window.window!!.decorView
          contentView = decorView.findViewById(android.R.id.content)
-@@ -331,6 +359,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -331,6 +361,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
      }
  
      override fun onDestroy() {
@@ -248,7 +268,7 @@ index d2e71bf..ad506ff 100644
          InputFeedbackManager.destroy()
          inputView = null
          recreateInputViewPrefs.forEach {
-@@ -350,7 +379,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -350,7 +381,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          if (action == null) {
              sendDownUpKeyEvents(KeyEvent.KEYCODE_ENTER)
          } else {
@@ -257,7 +277,7 @@ index d2e71bf..ad506ff 100644
          }
      }
  
-@@ -443,6 +472,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -443,6 +474,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
              candidatesStart,
              candidatesEnd,
          )
@@ -265,7 +285,7 @@ index d2e71bf..ad506ff 100644
          cursorUpdateIndex += 1
          handleCursorUpdate(newSelStart, newSelEnd, candidatesStart, candidatesEnd, cursorUpdateIndex)
          inputView?.updateSelection(newSelStart, newSelEnd)
-@@ -536,6 +566,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -536,6 +568,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          attribute: EditorInfo,
          restarting: Boolean,
      ) {
@@ -273,7 +293,7 @@ index d2e71bf..ad506ff 100644
          composingText = ""
          Timber.d("onStartInput: restarting=$restarting")
          val isNullType = attribute.inputType and InputType.TYPE_MASK_CLASS == InputType.TYPE_NULL
-@@ -567,6 +598,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -567,6 +600,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          attribute: EditorInfo,
          restarting: Boolean,
      ) {
@@ -281,7 +301,7 @@ index d2e71bf..ad506ff 100644
          Timber.d("onStartInputView: restarting=$restarting")
          InputFeedbackManager.startInput()
          postRimeJob {
-@@ -589,6 +621,11 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -589,6 +623,11 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          }
      }
  
@@ -293,7 +313,7 @@ index d2e71bf..ad506ff 100644
      override fun onFinishInputView(finishingInput: Boolean) {
          Timber.d("onFinishInputView: finishingInput=$finishingInput")
          decorLocationUpdated = false
-@@ -936,7 +973,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
+@@ -936,7 +975,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
      fun clearTextSelection() {
          val ic = currentInputConnection ?: return
          val etr = ExtractedTextRequest().apply { token = 0 }
@@ -326,6 +346,60 @@ index 8ec02b3..623bb25 100644
                          }
                      }
                  }
+diff --git a/app/src/main/java/com/osfans/trime/ime/keyboard/KeyboardWindow.kt b/app/src/main/java/com/osfans/trime/ime/keyboard/KeyboardWindow.kt
+index 69cc596..57322f4 100644
+--- a/app/src/main/java/com/osfans/trime/ime/keyboard/KeyboardWindow.kt
++++ b/app/src/main/java/com/osfans/trime/ime/keyboard/KeyboardWindow.kt
+@@ -79,6 +79,7 @@ class KeyboardWindow(di: DI) :
+         get() = KeyboardWindow
+ 
+     private val presetKeyboardIds = theme.presetKeyboards.keys.toList()
++    private var layoutSchemaId = ""
+     private var currentKeyboardId = ""
+     private var lastKeyboardId = ""
+     private var lastLockKeyboardId = ""
+@@ -108,6 +109,7 @@ class KeyboardWindow(di: DI) :
+     override fun onCreateView(): View {
+         keyboardView = context.frameLayout(R.id.keyboard_view)
+         keyboardView.addOnLayoutChangeListener(onKeyboardViewLayoutChangeListener)
++        layoutSchemaId = rime.run { statusCached }.schemaId
+         attachKeyboard(evalKeyboard(".default"))
+         return keyboardView
+     }
+@@ -296,6 +298,14 @@ class KeyboardWindow(di: DI) :
+     }
+ 
+     override fun onStartInput(info: EditorInfo) {
++        val schemaId = rime.run { statusCached }.schemaId
++        val schemaChanged = layoutSchemaId != schemaId
++        if (schemaChanged) {
++            // Do not carry a locked QWERTY layout across a restored T9 schema.
++            layoutSchemaId = schemaId
++            lastLockKeyboardId = ""
++            lastKeyboardId = ""
++        }
+         val targetKeyboard =
+             when (info.imeOptions and EditorInfo.IME_FLAG_FORCE_ASCII) {
+                 EditorInfo.IME_FLAG_FORCE_ASCII -> ".ascii"
+@@ -324,7 +334,7 @@ class KeyboardWindow(di: DI) :
+                     }
+                 }
+             }
+-        switchKeyboard(targetKeyboard)
++        switchKeyboard(if (schemaChanged && targetKeyboard.isEmpty()) ".default" else targetKeyboard)
+         val isAsciiMode = rime.run { statusCached }.isAsciiMode
+         if (targetKeyboard == ".ascii" || targetKeyboard == "number") {
+             if (tempAsciiMode == null) {
+@@ -376,7 +386,8 @@ class KeyboardWindow(di: DI) :
+     }
+ 
+     override fun onRimeSchemaUpdated(schema: SchemaItem) {
+-        switchKeyboard(".default")
++        layoutSchemaId = ""
++        onStartInput(service.currentInputEditorInfo)
+     }
+ 
+     override fun onRimeOptionUpdated(value: RimeMessage.OptionMessage.Data) {
 diff --git a/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt b/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt
 index b67148c..8725168 100644
 --- a/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt
