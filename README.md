@@ -99,6 +99,8 @@ bash tools/build-trime.sh
 
 水印反解析的独立实验见 [水印原型与实测报告](experiments/watermark/README.md)。神经水印效果不足；新增低亮度短线编码已完成小规模微信 JPEG 恢复测试，尚未接入已发布 APK。
 
+直接字形识别见 [离线原型与实验报告](experiments/recognition/README.md)：利用现有字库及固定单行排版读取压缩图片，不依赖水印；尚未接入 APK。
+
 ## 致谢与许可
 
 - **Artless Games**：《外星来信》的创作者，提供了这套文字和探索它们的游戏。
