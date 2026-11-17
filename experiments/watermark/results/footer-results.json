@@ -1,0 +1,6153 @@
+{
+  "summary": [
+    {
+      "level": 32,
+      "transforms": {
+        "png_pixels_only": "7/7",
+        "jpeg_q90": "7/7",
+        "jpeg_q75": "7/7",
+        "jpeg_q50": "7/7",
+        "jpeg_q30": "7/7",
+        "width360_q75": "7/7",
+        "width240_q75": "7/7",
+        "width240_q50": "7/7",
+        "jpeg_3rounds": "7/7",
+        "crop5pct_each_edge_q75": "0/7",
+        "padding24_q75": "0/7"
+      }
+    },
+    {
+      "level": 48,
+      "transforms": {
+        "png_pixels_only": "7/7",
+        "jpeg_q90": "7/7",
+        "jpeg_q75": "7/7",
+        "jpeg_q50": "7/7",
+        "jpeg_q30": "7/7",
+        "width360_q75": "7/7",
+        "width240_q75": "7/7",
+        "width240_q50": "7/7",
+        "jpeg_3rounds": "7/7",
+        "crop5pct_each_edge_q75": "0/7",
+        "padding24_q75": "0/7"
+      }
+    },
+    {
+      "level": 64,
+      "transforms": {
+        "png_pixels_only": "7/7",
+        "jpeg_q90": "7/7",
+        "jpeg_q75": "7/7",
+        "jpeg_q50": "7/7",
+        "jpeg_q30": "7/7",
+        "width360_q75": "7/7",
+        "width240_q75": "7/7",
+        "width240_q50": "7/7",
+        "jpeg_3rounds": "7/7",
+        "crop5pct_each_edge_q75": "0/7",
+        "padding24_q75": "0/7"
+      }
+    },
+    {
+      "level": 96,
+      "transforms": {
+        "png_pixels_only": "7/7",
+        "jpeg_q90": "7/7",
+        "jpeg_q75": "7/7",
+        "jpeg_q50": "7/7",
+        "jpeg_q30": "7/7",
+        "width360_q75": "7/7",
+        "width240_q75": "7/7",
+        "width240_q50": "7/7",
+        "jpeg_3rounds": "7/7",
+        "crop5pct_each_edge_q75": "0/7",
+        "padding24_q75": "0/7"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 29.0
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 27.66
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 26.16
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 23.25
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 20.75
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 22.09
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 15.26
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 12.84
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 22.32
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "v-me-50",
+      "level": 32,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 43.0
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 41.95
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 39.71
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 38.24
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 35.1
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 33.25
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 23.58
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 21.52
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 35.65
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "v-me-50",
+      "level": 48,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 58.0
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 56.86
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 54.59
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 51.86
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 48.78
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 45.87
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 32.89
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 30.7
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 49.83
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "v-me-50",
+      "level": 64,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 87.0
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 85.74
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 82.76
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 79.88
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 76.72
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 70.91
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 50.85
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 47.68
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+      "corrected_bits": 0,
+      "mean_contrast": 77.92
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "v-me-50",
+      "level": 96,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 29.0
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 27.65
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 26.05
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 23.72
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 21.14
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 22.36
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 14.88
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 12.47
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 22.32
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "one",
+      "level": 32,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 43.0
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 41.96
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 39.73
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 38.23
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 35.66
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 33.54
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 23.08
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 20.38
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 35.72
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "one",
+      "level": 48,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 58.0
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 56.85
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 54.45
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 51.69
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 49.26
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 46.34
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 32.15
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 30.47
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 49.72
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "one",
+      "level": 64,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 87.0
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 85.75
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 82.79
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 79.97
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 76.53
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 71.47
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 49.75
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 46.44
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0834"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0834",
+      "corrected_bits": 0,
+      "mean_contrast": 77.73
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "one",
+      "level": 96,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 29.0
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 27.58
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 26.06
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 23.83
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 21.15
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 22.12
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 14.71
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 12.98
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 22.27
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "two",
+      "level": 32,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 43.0
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 41.95
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 39.77
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 38.1
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 35.43
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 33.48
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 22.91
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 21.63
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 35.57
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "two",
+      "level": 48,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 58.0
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 56.78
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 54.42
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 51.55
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 49.06
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 46.2
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 31.67
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 30.12
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 49.82
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "two",
+      "level": 64,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 87.0
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 85.7
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 82.69
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 79.99
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 76.4
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 71.23
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 50.06
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 46.09
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 77.56
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "two",
+      "level": 96,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 29.0
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 27.56
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 26.09
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 23.63
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 20.99
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 22.18
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 14.7
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 12.76
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 22.22
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "four-grouped",
+      "level": 32,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 43.0
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 41.95
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 39.74
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 37.99
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 35.56
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 33.21
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 23.66
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 20.69
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 35.58
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "four-grouped",
+      "level": 48,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 58.0
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 56.84
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 54.26
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 51.7
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 49.0
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 46.02
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 32.64
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 30.37
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 49.61
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "four-grouped",
+      "level": 64,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 87.0
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 85.71
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 82.79
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 79.99
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 76.62
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 71.08
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 50.08
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 47.59
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047",
+      "corrected_bits": 0,
+      "mean_contrast": 77.61
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "four-grouped",
+      "level": 96,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 29.0
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 27.53
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 26.03
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 23.64
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 20.92
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 22.37
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 14.47
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 12.47
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 22.34
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-1",
+      "level": 32,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 43.0
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 41.95
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 39.81
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 38.02
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 35.41
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 33.33
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 23.23
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 20.66
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 35.89
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-1",
+      "level": 48,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 58.0
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 56.83
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 54.38
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 51.59
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 49.04
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 46.22
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 32.11
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 29.44
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 49.81
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-1",
+      "level": 64,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 87.0
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 85.67
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 82.66
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 80.07
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 76.76
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 71.06
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 49.75
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 46.56
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415",
+      "corrected_bits": 0,
+      "mean_contrast": 77.5
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-1",
+      "level": 96,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 29.0
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 27.63
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 26.12
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 23.43
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 21.05
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 22.18
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 14.74
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 12.91
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 22.3
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-2",
+      "level": 32,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 43.0
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 41.9
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 39.7
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 38.12
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 35.22
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 33.19
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 23.58
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 21.35
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 35.75
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-2",
+      "level": 48,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 58.0
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 56.79
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 54.41
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 51.81
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 49.07
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 45.74
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 32.7
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 29.76
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 49.58
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-2",
+      "level": 64,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 87.0
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 85.69
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 82.82
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 79.74
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 76.5
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 70.67
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 50.37
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 47.2
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444",
+      "corrected_bits": 0,
+      "mean_contrast": 77.84
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-2",
+      "level": 96,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 29.0
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 27.67
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 26.09
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 23.53
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 21.06
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 21.93
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 15.32
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 13.11
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 22.41
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-3",
+      "level": 32,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 43.0
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 41.94
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 39.67
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 38.04
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 35.34
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 33.25
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 23.49
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 21.0
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 35.68
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-3",
+      "level": 48,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 58.0
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 56.82
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 54.44
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 51.8
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 49.13
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 46.04
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 32.44
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 30.87
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 49.79
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-3",
+      "level": 64,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "png_pixels_only",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 87.0
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "jpeg_q90",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 85.72
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "jpeg_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 82.87
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "jpeg_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 79.92
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "jpeg_q30",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 76.67
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "width360_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 70.73
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "width240_q75",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 50.34
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "width240_q50",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 47.48
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "jpeg_3rounds",
+      "exact": true,
+      "wrong": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023",
+      "corrected_bits": 0,
+      "mean_contrast": 77.9
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "crop5pct_each_edge_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "BCH failed"
+    },
+    {
+      "sample": "random-3",
+      "level": 96,
+      "transform": "padding24_q75",
+      "exact": false,
+      "wrong": false,
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    }
+  ],
+  "controls": [
+    {
+      "sample": "v-me-50",
+      "transform": "png_pixels_only",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "jpeg_q90",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "jpeg_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "jpeg_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "jpeg_q30",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "width360_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "width240_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "width240_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "jpeg_3rounds",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "crop5pct_each_edge_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "v-me-50",
+      "transform": "padding24_q75",
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "one",
+      "transform": "png_pixels_only",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "jpeg_q90",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "jpeg_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "jpeg_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "jpeg_q30",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "width360_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "width240_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "width240_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "jpeg_3rounds",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "crop5pct_each_edge_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "one",
+      "transform": "padding24_q75",
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "two",
+      "transform": "png_pixels_only",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "jpeg_q90",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "jpeg_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "jpeg_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "jpeg_q30",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "width360_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "width240_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "width240_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "jpeg_3rounds",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "crop5pct_each_edge_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "two",
+      "transform": "padding24_q75",
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "png_pixels_only",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "jpeg_q90",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "jpeg_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "jpeg_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "jpeg_q30",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "width360_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "width240_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "width240_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "jpeg_3rounds",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "crop5pct_each_edge_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "four-grouped",
+      "transform": "padding24_q75",
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-1",
+      "transform": "png_pixels_only",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "jpeg_q90",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "jpeg_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "jpeg_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "jpeg_q30",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "width360_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "width240_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "width240_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "jpeg_3rounds",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "crop5pct_each_edge_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-1",
+      "transform": "padding24_q75",
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-2",
+      "transform": "png_pixels_only",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "jpeg_q90",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "jpeg_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "jpeg_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "jpeg_q30",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "width360_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "width240_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "width240_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "jpeg_3rounds",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "crop5pct_each_edge_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-2",
+      "transform": "padding24_q75",
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    },
+    {
+      "sample": "random-3",
+      "transform": "png_pixels_only",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "jpeg_q90",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "jpeg_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "jpeg_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "jpeg_q30",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "width360_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "width240_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "width240_q50",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "jpeg_3rounds",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "crop5pct_each_edge_q75",
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "sample": "random-3",
+      "transform": "padding24_q75",
+      "status": "unreadable",
+      "reason": "Unsupported size/aspect ratio"
+    }
+  ],
+  "bch_corruption_tests": 180,
+  "wrong_messages": 0,
+  "negative_accepts": 0
+}

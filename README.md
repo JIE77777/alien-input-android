@@ -97,7 +97,7 @@ bash tools/build-trime.sh
 
 游戏资源解析、配色依据及待核对项保存在 [游戏研究记录](docs/game-resource-analysis.md)。生产字形采用整套上游素材统一处理；**尚未完成全部字形与游戏原始纹理的对应核实**。原始游戏文件与本地研究截图不随仓库分发。
 
-水印反解析的独立实验见 [水印原型与实测报告](experiments/watermark/README.md)。目前压缩后恢复率不足，尚未接入已发布 APK。
+水印反解析的独立实验见 [水印原型与实测报告](experiments/watermark/README.md)。神经水印效果不足；新增低亮度短线编码已完成小规模微信 JPEG 恢复测试，尚未接入已发布 APK。
 
 ## 致谢与许可
 

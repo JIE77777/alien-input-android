@@ -1,0 +1,18 @@
+{
+  "status": "decoded",
+  "groups": [
+    [
+      "F0902"
+    ],
+    [
+      "F0834"
+    ],
+    [
+      "F1305",
+      "F1302"
+    ]
+  ],
+  "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302",
+  "corrected_bits": 0,
+  "mean_contrast": 53.78
+}

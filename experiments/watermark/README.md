@@ -2,7 +2,7 @@
 
 这是独立的离线实验，尚未接入 Android 输入法或发布 APK。它使用 Adobe TrustMark 0.9.2，将字形编号和词组边界写进图片像素；解码器仅收到图片，不读取 PNG 文本、文件名、原始查询或发送端缓存。
 
-**实测状态：普通 JPEG 压缩后的恢复率尚不足以接入输入法。** 参见 [完整实验结果](results/REPORT.md) 与 [可解码的 JPEG 样例](results/v-me-50-compressed.jpg)。
+**实测更新：神经水印在此次微信测试中失败；新增的低亮度短线编码，两种亮度均完成一次微信 JPEG 恢复。** 参见 [微信测试与短线编码](results/WECHAT-FIELD-TEST.md)。均为独立实验，尚未接入 APK；单条消息的成功不能代表普遍成功率。早期神经水印实验见 [完整结果](results/REPORT.md)。
 
 ## 当前范围
 
@@ -89,3 +89,21 @@ python3 -m unittest discover -s experiments/watermark -p 'test_*.py' -v
 ```
 
 参数表可以独立使用，无需原始用户图片。
+
+
+## 低亮度短线编码实验
+
+仅使用同一环境中的 Pillow 与 BCH 实现，不加载神经模型。当前要求 480×208 黑底、底部留白，只支持 1～4 个静态字形；不支持截图定位、裁切、其他配色或动态数字。视觉与真实微信结果见 [实验记录](results/WECHAT-FIELD-TEST.md)。
+
+```sh
+"$WM_PY" experiments/watermark/footer.py encode \
+  --input docs/images/v-me-50.png --output build/watermark/footer.png \
+  --groups 'F0902;F0834;F1305,F1302' --level 32
+"$WM_PY" experiments/watermark/footer.py decode \
+  --input experiments/watermark/results/wechat-footer-32.jpg
+"$WM_PY" experiments/watermark/benchmark_footer.py \
+  --glyph-dir build/uniform-glyphs/glyphs --meme docs/images/v-me-50.png \
+  --output build/watermark/footer
+```
+
+这里的可见底纹也是数据的一部分，不能保证裁掉后仍能还原。程序验证纠错、CRC、字形范围和分组，解码失败时不输出猜测结果。
