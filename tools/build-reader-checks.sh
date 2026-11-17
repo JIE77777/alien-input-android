@@ -5,6 +5,7 @@ cd "$(dirname "$0")/.."
 BT="$ANDROID_HOME/build-tools/35.0.0"
 PLATFORM="$ANDROID_HOME/platforms/android-35/android.jar"
 OUT="$PWD/build/reader-checks"
+rm -rf "$OUT/classes" "$OUT/dex"
 mkdir -p "$OUT/classes" "$OUT/dex" "$OUT/assets/alien"
 "$DEV_ENV_ROOT/venvs/game-assets/bin/python" tools/prepare_uniform_glyphs.py --output build/uniform-glyphs/glyphs
 cp -R build/uniform-glyphs/glyphs "$OUT/assets/alien/"

@@ -9,7 +9,7 @@ import android.graphics.drawable.RippleDrawable;
 import android.view.*;
 import android.widget.*;
 
-/** Shared surfaces and typography for writing and reading a message. */
+/** Shared surfaces and typography for the keyboard panel and image reader. */
 final class ProductUi {
     static final int BG=0xfff5f2ea, PAPER=0xfffffdf8, INK=0xff292a25, MUTED=0xff76786e;
     static final int LINE=0xffe2dfd4, ACCENT=0xffead59d, SOFT=0xffece8dc;

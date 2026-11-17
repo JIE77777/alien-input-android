@@ -58,33 +58,20 @@ index 76d686e..46797c6 100644
          all {
              // remove META-INF/version-control-info.textproto
 diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
-index 4d110b9..ce1854d 100644
+index 4d110b9..64af564 100644
 --- a/app/src/main/AndroidManifest.xml
 +++ b/app/src/main/AndroidManifest.xml
-@@ -79,6 +79,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
+@@ -79,6 +79,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
                  tools:node="remove" />
          </provider>
  
 +        <provider android:name="io.github.alieninput.androidsemantic.AlienImageProvider" android:authorities="${applicationId}.alien-images" android:exported="false" android:grantUriPermissions="true" />
-+
-+        <activity android:name="io.github.alieninput.androidsemantic.HomeActivity" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
-+
-+        <activity android:name="io.github.alieninput.androidsemantic.WriteMessageActivity" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
 +
 +        <activity android:name="io.github.alieninput.androidsemantic.ReadImageActivity" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
 +
          <!-- Settings activity -->
          <activity
              android:name=".ui.main.MainActivity"
-@@ -118,7 +126,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
-             android:name="com.osfans.trime.MainLauncherAlias"
-             android:exported="true"
-             android:label="@string/trime_app_name"
--            android:targetActivity=".ui.main.MainActivity">
-+            android:targetActivity="io.github.alieninput.androidsemantic.HomeActivity">
-             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
- 
 diff --git a/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt b/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt
 index c188927..2b41f5f 100644
 --- a/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt
@@ -411,19 +398,6 @@ index 88865d2..301c131 100644
          screen.findPreference<Preference>("custom_sound_effect_name")?.apply {
              setOnPreferenceClickListener {
                  lifecycleScope.launch {
-diff --git a/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt b/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt
-index 0fa2a87..1b33fbc 100644
---- a/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt
-+++ b/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt
-@@ -73,7 +73,7 @@ class SetupActivity : FragmentActivity() {
-     }
- 
-     private fun completeSetup() {
--        startActivity<MainActivity>()
-+        startActivity<io.github.alieninput.androidsemantic.HomeActivity>()
-         finish()
-     }
- 
 diff --git a/app/src/main/res/drawable/ic_app_icon_foreground.xml b/app/src/main/res/drawable/ic_app_icon_foreground.xml
 index ede482b..cd8120c 100644
 --- a/app/src/main/res/drawable/ic_app_icon_foreground.xml

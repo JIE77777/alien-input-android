@@ -30,14 +30,13 @@ public final class ReadImageActivity extends Activity {
     private int generation;
     private List<List<String>> explicitGroups;
     @Override public void onCreate(Bundle state){super.onCreate(state);images=new AlienImages(this);ui=new ProductUi(this);
-        content=ui.screen(this);content.addView(ui.header(this,"读来信"));ui.gap(content,18);
-        content.addView(ui.title("让图片重新成为文字",24));ui.gap(content,10);
-        content.addView(ui.text("找回字形，确认后接着写。",14,ProductUi.MUTED));ui.gap(content,20);
+        content=ui.screen(this);content.addView(ui.header(this,"读图"));ui.gap(content,18);
+        content.addView(ui.text("读出图片里的字形，加入键盘图片稿。",14,ProductUi.MUTED));ui.gap(content,16);
         LinearLayout actions=row();select=button("选择图片",this::pick);paste=button("粘贴图片",this::paste);actions.addView(select,new LinearLayout.LayoutParams(0,dp(52),1));actions.addView(new View(this),new LinearLayout.LayoutParams(dp(10),1));actions.addView(paste,new LinearLayout.LayoutParams(0,dp(52),1));content.addView(actions);ui.gap(content,14);
         status=text("选择聊天中保存的完整图片。",13);content.addView(status);ui.gap(content,10);
         ScrollView scroll=new ScrollView(this);scroll.setVerticalScrollBarEnabled(false);LinearLayout body=column();preview=new ImageView(this);preview.setAdjustViewBounds(true);preview.setMaxHeight(dp(220));preview.setScaleType(ImageView.ScaleType.FIT_CENTER);preview.setClipToOutline(true);preview.setBackground(ui.shape(0xff090a08,16));preview.setVisibility(View.GONE);preview.setContentDescription("所选外星图片");body.addView(preview,new LinearLayout.LayoutParams(-1,-2));
         numbers=text("",15);body.addView(numbers);results=column();body.addView(results);
-        LinearLayout empty=ui.card();empty.addView(ui.title("读一张，再写一张",18));ui.gap(empty,12);empty.addView(ui.text("读出的字形会按行排列。\n点字形可以更换候选，橙色项等你确认。",14,ProductUi.MUTED));ui.gap(empty,18);empty.addView(ui.text("保留四周留白，更容易读清。",12,ProductUi.MUTED));results.addView(empty);
+        LinearLayout empty=ui.card();empty.addView(ui.title("从相册或剪贴板读取",18));ui.gap(empty,12);empty.addView(ui.text("读出的字形会按行排列。\n点字形可以更换候选，橙色项等你确认。",14,ProductUi.MUTED));ui.gap(empty,18);empty.addView(ui.text("保留四周留白，更容易读清。",12,ProductUi.MUTED));results.addView(empty);
         scroll.addView(body);content.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));ui.gap(content,12);
         add=ui.button("加入图片稿",true,this::addDraft);add.setEnabled(false);content.addView(add,new LinearLayout.LayoutParams(-1,dp(52)));setContentView(content);content.requestApplyInsets();
     }
@@ -76,11 +75,12 @@ public final class ReadImageActivity extends Activity {
     private void addDraft(){if(result==null||!result.confirmed())return;List<List<String>> groups=explicitGroups==null?result.groups():explicitGroups;
         if(explicitGroups==null&&embedded!=null){List<String> flat=new ArrayList<>();for(List<String> group:embedded.groups)flat.addAll(group);if(flat.equals(result.glyphs()))groups=embedded.groups;}
         if(!ImageDraftStore.append(this,groups)){new AlertDialog.Builder(this).setMessage("图片稿已有内容，加入后会超过 120 个字形。请先整理图片稿。").setPositiveButton("知道了",null).show();return;}
-        Toast.makeText(this,"已加入图片稿",Toast.LENGTH_SHORT).show();startActivity(new Intent(this,WriteMessageActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP));finish();}
+        Toast.makeText(this,"已加入图片稿，回到键盘继续编辑",Toast.LENGTH_SHORT).show();finish();}
     private int dp(int value){return Math.round(value*getResources().getDisplayMetrics().density);}
     private LinearLayout column(){LinearLayout v=new LinearLayout(this);v.setOrientation(LinearLayout.VERTICAL);return v;}
     private LinearLayout row(){LinearLayout v=new LinearLayout(this);v.setOrientation(LinearLayout.HORIZONTAL);return v;}
     private TextView text(String value,int size){TextView v=new TextView(this);v.setText(value);v.setTextSize(size);v.setTextColor(0xff302a23);v.setPadding(0,dp(6),0,dp(6));return v;}
     private Button button(String label,Runnable action){return ui.button(label,false,action);}
+    @Override public void finish(){if(getIntent().getBooleanExtra("from_ime",false))finishAndRemoveTask();else super.finish();}
     @Override protected void onDestroy(){generation++;if(task!=null)task.cancel(true);worker.shutdownNow();if(bitmap!=null){preview.setImageDrawable(null);bitmap.recycle();bitmap=null;}super.onDestroy();}
 }

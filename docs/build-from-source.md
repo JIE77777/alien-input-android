@@ -31,9 +31,6 @@ Gradle 可执行文件默认为 $DEV_ENV_ROOT/gradle/gradle-9.8.1/bin/gradle。�
 bash tools/build-device-checks.sh
 adb install -r build/device-checks/checks.apk
 adb shell am instrument -w io.github.alieninput.checks/io.github.alieninput.androidsemantic.DeviceChecks
-# 手机限制后台启动时，先把独立检查包的页面切到前台：
-adb shell am start -n io.github.alieninput.checks/io.github.alieninput.androidsemantic.WriteMessageActivity
-adb shell am instrument -w io.github.alieninput.checks/io.github.alieninput.androidsemantic.ProductChecks
 bash tools/build-reader-checks.sh
 adb install -r build/reader-checks/checks.apk
 adb shell am instrument -w -e suite full io.github.alieninput.recognitionfixtures/io.github.alieninput.androidsemantic.RecognitionChecks

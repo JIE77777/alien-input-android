@@ -165,13 +165,13 @@ manifest_file = root / 'app/src/main/AndroidManifest.xml'
 manifest_text = manifest_file.read_text()
 manifest_text = re.sub(r'(?m)^[ \t]*<(?:provider|activity)\s+android:name="io\.github\.alieninput\.androidsemantic\.(?:AlienImageProvider|ReadImageActivity|HomeActivity|WriteMessageActivity)"[\s\S]*?/>[ \t]*\n?', '', manifest_text)
 components = '        <provider android:name="io.github.alieninput.androidsemantic.AlienImageProvider" android:authorities="${applicationId}.alien-images" android:exported="false" android:grantUriPermissions="true" />\n\n'
-for activity in ['HomeActivity', 'WriteMessageActivity', 'ReadImageActivity']:
+for activity in ['ReadImageActivity']:
     components += f'        <activity android:name="io.github.alieninput.androidsemantic.{activity}" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />\n\n'
 manifest_text = re.sub(r'(?m)^[ \t]*<!-- Settings activity -->', lambda m: components + '        <!-- Settings activity -->', manifest_text)
-manifest_text = manifest_text.replace('android:targetActivity=".ui.main.MainActivity"', 'android:targetActivity="io.github.alieninput.androidsemantic.HomeActivity"')
+manifest_text = manifest_text.replace('android:targetActivity="io.github.alieninput.androidsemantic.HomeActivity"', 'android:targetActivity=".ui.main.MainActivity"')
 manifest_file.write_text(re.sub(r'\n(?:[ \t]*\n){2,}', '\n\n', manifest_text))
 patch('app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt',
-      '        startActivity<MainActivity>()', '        startActivity<io.github.alieninput.androidsemantic.HomeActivity>()')
+      '        startActivity<io.github.alieninput.androidsemantic.HomeActivity>()', '        startActivity<MainActivity>()')
 patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
       '        val optionMenuItems = listOf(',
       '''        val readImageItem = menu.add("读图").apply {

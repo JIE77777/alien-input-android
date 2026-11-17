@@ -35,7 +35,7 @@ public final class AlienPanel {
     private HorizontalScrollView draftScroll;
     private PopupWindow previewPopup;
     private TextView queryLabel,hint;
-    private Button toggle,output;
+    private Button toggle,copy,preview;
     private String shareReturnPackage;
     private boolean enabled,transitioning,allowed=true,learn=true;
     private int page,replace=-1,generation;
@@ -65,9 +65,17 @@ public final class AlienPanel {
         if(!enabled||transitioning)return;
         if(!query.isEmpty()||host.isComposing()){toast("请先选定当前词语，或点重输清除查询");return;}
         persistDraft();EditorInfo info=host.editorInfo();shareReturnPackage=info==null?null:info.packageName;
-        context.startActivity(new Intent(context,ReadImageActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        context.startActivity(new Intent(context,ReadImageActivity.class).putExtra("from_ime",true).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_MULTIPLE_TASK|Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS));
     }
-    private void more(View anchor){PopupMenu menu=new PopupMenu(context,anchor);menu.getMenu().add("复制编码").setOnMenuItemClickListener(item->{copyCode();return true;});menu.getMenu().add("分享图片").setOnMenuItemClickListener(item->{shareImage();return true;});menu.show();}
+    private void more(View anchor){
+        PopupMenu menu=new PopupMenu(context,anchor);
+        if(!isWechat(host.editorInfo()))menu.getMenu().add("插入图片").setOnMenuItemClickListener(item->{insertImage();return true;});
+        menu.getMenu().add("分享图片").setOnMenuItemClickListener(item->{shareImage();return true;});
+        menu.getMenu().add("复制编码").setOnMenuItemClickListener(item->{copyCode();return true;});
+        menu.getMenu().add("清空图片稿").setOnMenuItemClickListener(item->{clearDraft();return true;});menu.show();
+    }
+    void clearDraft(){if(!enabled)return;resetQuery();draft.clear();persistDraft();replace=-1;refresh();}
+    void insertImage(){send(false);}
     void shareImage(){send(true);}
     public boolean capturesInput(){return enabled||transitioning;}
     public boolean enabled(){return enabled;}
@@ -79,11 +87,11 @@ public final class AlienPanel {
     public void start(EditorInfo info,boolean restarting){
         dismissPreview();
         boolean resume=shareReturnPackage!=null&&shareReturnPackage.equals(info.packageName);
-        shareReturnPackage=null;
+        if(resume)shareReturnPackage=null;
         generation++;transitioning=false;enabled=resume;restoreDraft();replace=-1;connection.clear();
         int type=info.inputType&InputType.TYPE_MASK_CLASS,v=info.inputType&InputType.TYPE_MASK_VARIATION;
         boolean password=type==InputType.TYPE_CLASS_TEXT&&(v==InputType.TYPE_TEXT_VARIATION_PASSWORD||v==InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD||v==InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD);
-        allowed=lexicon!=null&&!password&&type==InputType.TYPE_CLASS_TEXT&&!"alien-compose".equals(info.privateImeOptions);
+        allowed=lexicon!=null&&!password&&type==InputType.TYPE_CLASS_TEXT;
         enabled=enabled&&allowed;
         learn=(info.imeOptions&EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)==0;
         refresh();
@@ -106,13 +114,12 @@ public final class AlienPanel {
     public View createView(){
         root=column();root.setBackgroundColor(ProductUi.BG);
         boolean compact=context.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
-        LinearLayout top=row();toggle=button("外星",this::toggle);weighted(top,toggle,compact?30:36);
-        weighted(top,button("清空",()->{if(!enabled)return;resetQuery();draft.clear();persistDraft();replace=-1;refresh();}),compact?30:36);
-        weighted(top,button("预览",this::preview),compact?30:36);
-        weighted(top,button("复制图",this::copyImage),compact?30:36);
-        weighted(top,button("读图",this::readImage),compact?30:36);
-        output=button("插入图",()->send(false));weighted(top,output,compact?30:36);
-        Button more=button("更多",()->{});more.setOnClickListener(v->more(v));weighted(top,more,compact?30:36);root.addView(top);
+        LinearLayout top=row();top.setPadding(dp(4),dp(4),dp(4),dp(4));
+        toggle=button("外星",this::toggle);weighted(top,toggle,compact?32:40);
+        weighted(top,button("读图",this::readImage),compact?32:40);
+        preview=button("预览",this::preview);weighted(top,preview,compact?32:40);
+        copy=button("复制图",this::copyImage);weighted(top,copy,compact?32:40);
+        Button more=button("更多",()->{});more.setOnClickListener(v->more(v));weighted(top,more,compact?32:40);root.addView(top);
         body=column();root.addView(body);
         LinearLayout queryRow=row();queryLabel=text("",13);weighted(queryRow,queryLabel,30);
         queryRow.addView(button("重输",this::resetQuery),new LinearLayout.LayoutParams(dp(55),dp(30)));body.addView(queryRow);
@@ -149,11 +156,11 @@ public final class AlienPanel {
     private void refresh(){
         if(root==null)return;
         root.setVisibility(enabled||transitioning?View.VISIBLE:View.GONE);
-        output.setVisibility(isWechat(host.editorInfo())?View.GONE:View.VISIBLE);
+        copy.setEnabled(!draft.items().isEmpty());preview.setEnabled(!draft.items().isEmpty());
         toggle.setText(transitioning?"切换中":enabled?"收起":"外星");toggle.setEnabled(allowed&&!transitioning);
         body.setVisibility(enabled?View.VISIBLE:View.GONE);
         if(!enabled)return;
-        queryLabel.setText((replace>=0?"替换第 "+(replace+1)+" 项 · ":"")+(query.isEmpty()?"中文选词；英文、数字可直接输入":query));
+        queryLabel.setText((replace>=0?"替换第 "+(replace+1)+" 项 · ":"")+(query.isEmpty()?"输入中文词语、英文或数字":query));
         candidates.removeAllViews();
         for(int i=page*4;i<Math.min(matches.size(),page*4+4);i++){
             Lexicon.Match m=matches.get(i);LinearLayout tile=column();tile.setGravity(Gravity.CENTER);tile.setBackground(new ProductUi(context).shape(ProductUi.PAPER,10));
@@ -167,7 +174,7 @@ public final class AlienPanel {
             tile.setOnLongClickListener(v->{toast(m.entry.label+" · "+kind(m.kind)+"："+m.matchedTerm+(m.entry.note.isEmpty()?"":"\n"+m.entry.note));return true;});
             LinearLayout.LayoutParams candidateParams=new LinearLayout.LayoutParams(0,-1,1);candidateParams.setMargins(dp(2),dp(2),dp(2),dp(2));candidates.addView(tile,candidateParams);
         }
-        hint.setText(query.isEmpty()?"逐词点选组合；点稿件中的词可替换，长按可删除":matches.isEmpty()?(Numerals.isInteger(Lexicon.normalize(query))?"整数最多支持 18 位十进制数字":"没有匹配结果，试试别的词或短语"):"共 "+matches.size()+" 项 · "+(page+1)+" / "+Math.max(1,(matches.size()+3)/4)+" 页 · 长按查看释义提示");
+        hint.setText(query.isEmpty()?(draft.items().isEmpty()?"选字后组合成图片，复制到聊天中发送":"已选 "+draft.glyphs().size()+" 个字形 · 点词条替换，长按删除"):matches.isEmpty()?(Numerals.isInteger(Lexicon.normalize(query))?"整数最多支持 18 位十进制数字":"没有匹配结果，试试别的词或短语"):(page+1)+" / "+Math.max(1,(matches.size()+3)/4)+" 页 · 点选加入，长按看释义");
         draftRow.removeAllViews();List<Lexicon.Entry> items=draft.items();
         for(int i=0;i<items.size();i++){
             final int at=i;Lexicon.Entry e=items.get(i);LinearLayout tile=row();tile.setBackgroundColor(i==replace?ProductUi.ACCENT:ProductUi.PAPER);
@@ -257,7 +264,7 @@ public final class AlienPanel {
     private LinearLayout column(){LinearLayout r=new LinearLayout(context);r.setOrientation(LinearLayout.VERTICAL);return r;}
     private TextView text(String value,int size){TextView t=new TextView(context);t.setText(value);t.setTextSize(size);t.setTextColor(ProductUi.INK);t.setPadding(dp(4),0,dp(4),0);return t;}
     private Button button(String label,Runnable action){Button b=new ProductUi(context).button(label,label.equals("复制图"),action);b.setText(label);b.setTextSize(11);b.setMinWidth(0);b.setMinimumWidth(0);b.setMinHeight(0);b.setMinimumHeight(0);b.setPadding(0,0,0,0);b.setOnClickListener(v->action.run());return b;}
-    private void weighted(LinearLayout row,View view,int height){row.addView(view,new LinearLayout.LayoutParams(0,dp(height),1));}
+    private void weighted(LinearLayout row,View view,int height){LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(0,dp(height),1);lp.setMargins(dp(2),0,dp(2),0);row.addView(view,lp);}
     private ImageView glyph(String id,int size){ImageView v=new ImageView(context);v.setImageBitmap(images.glyph(id));v.setColorFilter(ProductUi.INK,android.graphics.PorterDuff.Mode.SRC_IN);v.setLayoutParams(new LinearLayout.LayoutParams(dp(size),dp(size)));v.setContentDescription(id);return v;}
     private void toast(String message){Toast.makeText(context,message,Toast.LENGTH_SHORT).show();}
 }
