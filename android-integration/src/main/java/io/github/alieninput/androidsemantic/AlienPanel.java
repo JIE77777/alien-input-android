@@ -29,12 +29,20 @@ public final class AlienPanel {
     public final QueryConnection connection;
     private final Map<String,Integer> frequency=new HashMap<>();
     private Lexicon lexicon;
+    private GlyphNames names;
+    private String savedDraft="";
     private LinearLayout root,body,candidates,draftRow;
     private HorizontalScrollView draftScroll;
     private PopupWindow previewPopup;
     private TextView queryLabel,hint;
-    private Button toggle,output;
+    private Button toggle,copy,preview,read,write,more;
+    private TextView draftCount;
+    private long copiedUntil;
+    private final android.os.Handler feedback=new android.os.Handler(android.os.Looper.getMainLooper());
+    private KeyboardImageReader reader;
+    private boolean readerMode;
     private String shareReturnPackage;
+    private static java.lang.ref.WeakReference<AlienPanel> pickerOwner=new java.lang.ref.WeakReference<>(null);
     private boolean enabled,transitioning,allowed=true,learn=true;
     private int page,replace=-1,generation;
     private List<Lexicon.Match> matches=Collections.emptyList();
@@ -42,15 +50,61 @@ public final class AlienPanel {
     public AlienPanel(Host host){
         this.host=host;context=host.context();images=new AlienImages(context);
         connection=new QueryConnection(new View(context),new QueryConnection.Listener(){
-            public void changed(String value){if(!transitioning){query=value;page=0;search();}}
+            public void changed(String value){if(!transitioning){if(readerMode&&!value.isEmpty()){readerMode=false;if(reader!=null)reader.cancel();}query=value;page=0;search();}}
             public void emptyBackspace(){removeLast();}
             public void submit(){search();}
         });
         // Construct once per service. Entries are immutable and searches are local.
         try{lexicon=new Lexicon(new InputStreamReader(context.getAssets().open("alien/lexicon.tsv"),"UTF-8"));}
-        catch(IOException e){error="词典加载失败，请重新安装完整构建";allowed=false;}
+        catch(IOException e){error="暂时无法加载字库，请重新启动输入法";allowed=false;}
+        if(lexicon!=null)names=new GlyphNames(lexicon);
+        restoreDraft();
         loadFrequency();
     }
+    private void restoreDraft(){
+        String stored=ImageDraftStore.code(context);if(stored.equals(savedDraft))return;
+        copiedUntil=0;draft.clear();for(List<String> group:ImageDraftStore.read(context))draft.add(Lexicon.Entry.fromImage(group,names==null?"外星图片":names.group(group)));
+        savedDraft=stored;
+    }
+    private void persistDraft(){copiedUntil=0;ImageDraftStore.save(context,draft.groups());savedDraft=ImageDraftStore.code(context);}
+    private void readImage(){
+        if(!enabled||transitioning)return;
+        if(!query.isEmpty()||host.isComposing()){toast("请先选定当前词语，或点重输清除查询");return;}
+        readerMode=true;refresh();
+    }
+    void pickImage(){
+        persistDraft();readerMode=true;EditorInfo info=host.editorInfo();shareReturnPackage=info==null?null:info.packageName;
+        pickerOwner=new java.lang.ref.WeakReference<>(this);
+        context.startActivity(new Intent(context,ImagePickerActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_MULTIPLE_TASK|Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS));
+    }
+    static void pickerFinished(){AlienPanel panel=pickerOwner.get();pickerOwner.clear();if(panel!=null)panel.restoreKeyboard(panel.shareReturnPackage,0);}
+    private void restoreKeyboard(String expected,int attempt){
+        if(expected==null||!(context instanceof android.inputmethodservice.InputMethodService)||attempt>=5)return;
+        feedback.postDelayed(()->{android.inputmethodservice.InputMethodService service=(android.inputmethodservice.InputMethodService)context;
+            EditorInfo info=host.editorInfo();
+            if(info!=null&&expected.equals(info.packageName)&&host.editor()!=null){
+                if(android.os.Build.VERSION.SDK_INT>=28)service.requestShowSelf(InputMethodManager.SHOW_IMPLICIT);
+                else service.showWindow(true);
+            }
+            if(!service.isInputViewShown())restoreKeyboard(expected,attempt+1);
+        },250);
+    }
+    public void resumeView(){
+        EditorInfo info=host.editorInfo();
+        if(info!=null&&shareReturnPackage!=null&&shareReturnPackage.equals(info.packageName))start(info,true);
+        if(enabled&&readerMode&&reader!=null)reader.pending();
+    }
+    public void destroy(){if(pickerOwner.get()==this)pickerOwner.clear();if(reader!=null)reader.cancel();feedback.removeCallbacksAndMessages(null);}
+    private void more(View anchor){
+        PopupMenu menu=new PopupMenu(context,anchor);
+        if(!isWechat(host.editorInfo()))menu.getMenu().add("插入图片").setOnMenuItemClickListener(item->{insertImage();return true;});
+        menu.getMenu().add("分享图片").setOnMenuItemClickListener(item->{shareImage();return true;});
+        menu.getMenu().add("复制编码").setOnMenuItemClickListener(item->{copyCode();return true;});
+        menu.getMenu().add("清空图片稿").setOnMenuItemClickListener(item->{clearDraft();return true;});menu.show();
+    }
+    void clearDraft(){if(!enabled)return;resetQuery();draft.clear();persistDraft();replace=-1;refresh();}
+    void insertImage(){send(false);}
+    void shareImage(){send(true);}
     public boolean capturesInput(){return enabled||transitioning;}
     public boolean enabled(){return enabled;}
     private void loadFrequency(){
@@ -60,18 +114,22 @@ public final class AlienPanel {
     }
     public void start(EditorInfo info,boolean restarting){
         dismissPreview();
-        boolean resume=shareReturnPackage!=null&&shareReturnPackage.equals(info.packageName);
-        shareReturnPackage=null;
-        generation++;transitioning=false;enabled=resume;if(!resume)draft.clear();replace=-1;connection.clear();
+        boolean resume=shareReturnPackage!=null&&shareReturnPackage.equals(info.packageName)&&(info.inputType&InputType.TYPE_MASK_CLASS)==InputType.TYPE_CLASS_TEXT;
+        if(resume)shareReturnPackage=null;
+        if(!resume&&shareReturnPackage==null){readerMode=false;if(reader!=null)reader.cancel();}
+        generation++;transitioning=false;enabled=resume;restoreDraft();replace=-1;connection.clear();
         int type=info.inputType&InputType.TYPE_MASK_CLASS,v=info.inputType&InputType.TYPE_MASK_VARIATION;
         boolean password=type==InputType.TYPE_CLASS_TEXT&&(v==InputType.TYPE_TEXT_VARIATION_PASSWORD||v==InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD||v==InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD);
         allowed=lexicon!=null&&!password&&type==InputType.TYPE_CLASS_TEXT;
+        enabled=enabled&&allowed;
         learn=(info.imeOptions&EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)==0;
+        if(resume&&reader!=null)reader.pending();
         refresh();
     }
-    public void finish(){dismissPreview();generation++;enabled=false;transitioning=false;if(shareReturnPackage==null)draft.clear();replace=-1;connection.clear();refresh();}
+    public void finish(){dismissPreview();if(shareReturnPackage==null&&reader!=null)reader.cancel();generation++;enabled=false;transitioning=false;replace=-1;connection.clear();refresh();}
     public void toggleVisibility(){toggle();}
     private void toggle(){
+        restoreDraft();
         if(!allowed){toast(error.isEmpty()?"此输入框使用普通输入":error);return;}
         if(transitioning)return;
         if(host.isComposing()){toast("请先选定或清除当前拼音，再切换模式");return;}
@@ -84,23 +142,26 @@ public final class AlienPanel {
         });
     }
     public View createView(){
-        root=column();root.setBackgroundColor(Color.rgb(241,244,248));
+        root=column();root.setBackgroundColor(ProductUi.BG);
         boolean compact=context.getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
-        LinearLayout top=row();toggle=button("外星",this::toggle);weighted(top,toggle,compact?30:36);
-        weighted(top,button("清空",()->{if(!enabled)return;resetQuery();draft.clear();replace=-1;refresh();}),compact?30:36);
-        weighted(top,button("预览",this::preview),compact?30:36);
-        weighted(top,button("复制图",this::copyImage),compact?30:36);
-        weighted(top,button("编码",this::copyCode),compact?30:36);
-        output=button("插入图",()->send(false));weighted(top,output,compact?30:36);
-        weighted(top,button("分享",()->send(true)),compact?30:36);root.addView(top);
+        LinearLayout top=row();top.setPadding(dp(4),dp(3),dp(4),dp(3));
+        write=button("写字",()->{readerMode=false;if(reader!=null)reader.cancel();refresh();});read=button("读图",this::readImage);
+        top.addView(write,new LinearLayout.LayoutParams(dp(66),dp(34)));top.addView(read,new LinearLayout.LayoutParams(dp(66),dp(34)));
+        top.addView(new View(context),new LinearLayout.LayoutParams(0,1,1));
+        more=button("更多",()->{});more.setOnClickListener(v->more(v));top.addView(more,new LinearLayout.LayoutParams(dp(48),dp(34)));
+        toggle=button("外星",this::toggle);top.addView(toggle,new LinearLayout.LayoutParams(dp(48),dp(34)));root.addView(top);
         body=column();root.addView(body);
         LinearLayout queryRow=row();queryLabel=text("",13);weighted(queryRow,queryLabel,30);
         queryRow.addView(button("重输",this::resetQuery),new LinearLayout.LayoutParams(dp(55),dp(30)));body.addView(queryRow);
-        LinearLayout results=row();results.addView(button("‹",()->{page=Math.max(0,page-1);refresh();}),new LinearLayout.LayoutParams(dp(28),dp(compact?48:78)));
-        candidates=row();results.addView(candidates,new LinearLayout.LayoutParams(0,dp(compact?48:78),1));
-        results.addView(button("›",()->{if((page+1)*4<matches.size())page++;refresh();}),new LinearLayout.LayoutParams(dp(28),dp(compact?48:78)));body.addView(results);
+        LinearLayout results=row();results.addView(button("‹",()->{page=Math.max(0,page-1);refresh();}),new LinearLayout.LayoutParams(dp(28),dp(compact?48:64)));
+        candidates=row();results.addView(candidates,new LinearLayout.LayoutParams(0,dp(compact?48:64),1));
+        results.addView(button("›",()->{if((page+1)*4<matches.size())page++;refresh();}),new LinearLayout.LayoutParams(dp(28),dp(compact?48:64)));body.addView(results);
         hint=text("",11);body.addView(hint);
-        draftScroll=new HorizontalScrollView(context);draftRow=row();draftScroll.addView(draftRow);body.addView(draftScroll,new LinearLayout.LayoutParams(-1,dp(40)));
+        draftScroll=new HorizontalScrollView(context);draftRow=row();draftScroll.addView(draftRow);body.addView(draftScroll,new LinearLayout.LayoutParams(-1,dp(36)));
+        LinearLayout outputRow=row();outputRow.setPadding(dp(5),dp(3),dp(5),dp(3));draftCount=text("",12);outputRow.addView(draftCount,new LinearLayout.LayoutParams(0,-2,1));
+        preview=button("预览",this::preview);outputRow.addView(preview,new LinearLayout.LayoutParams(dp(62),dp(34)));
+        copy=button("复制图",this::copyImage);LinearLayout.LayoutParams copyParams=new LinearLayout.LayoutParams(dp(84),dp(34));copyParams.setMargins(dp(6),0,0,0);outputRow.addView(copy,copyParams);body.addView(outputRow);
+        if(reader!=null)reader.cancel();reader=new KeyboardImageReader(context,names,images,()->{restoreDraft();readerMode=false;refresh();},this::pickImage);root.addView(reader.view);
         refresh();return root;
     }
     private void resetQuery(){
@@ -117,44 +178,50 @@ public final class AlienPanel {
         boolean appended=replace<0;
         boolean ok=replace>=0?draft.replace(replace,entry):draft.add(entry);
         if(!ok){toast("每张图片最多 120 个字形");return;}
-        replace=-1;
-        if(learn&&!entry.id.startsWith("NUM:")){int n=Math.min(100000,frequency.getOrDefault(entry.id,0)+1);frequency.put(entry.id,n);context.getSharedPreferences("alien-ranking",0).edit().putInt(entry.id,n).apply();}
+        replace=-1;persistDraft();
+        if(learn&&!entry.id.startsWith("NUM:")&&!entry.id.startsWith("IMAGE:")){int n=Math.min(100000,frequency.getOrDefault(entry.id,0)+1);frequency.put(entry.id,n);context.getSharedPreferences("alien-ranking",0).edit().putInt(entry.id,n).apply();}
         resetQuery();refresh();
         if(appended&&draftScroll!=null)draftScroll.post(()->draftScroll.fullScroll(View.FOCUS_RIGHT));
     }
     private void removeLast(){
         List<Lexicon.Entry> items=draft.items();
-        if(!items.isEmpty()){draft.remove(items.size()-1);replace=-1;refresh();}
+        if(!items.isEmpty()){draft.remove(items.size()-1);persistDraft();replace=-1;refresh();}
     }
     private void refresh(){
         if(root==null)return;
         root.setVisibility(enabled||transitioning?View.VISIBLE:View.GONE);
-        output.setVisibility(isWechat(host.editorInfo())?View.GONE:View.VISIBLE);
+        copy.setEnabled(!draft.items().isEmpty());preview.setEnabled(!draft.items().isEmpty());
         toggle.setText(transitioning?"切换中":enabled?"收起":"外星");toggle.setEnabled(allowed&&!transitioning);
-        body.setVisibility(enabled?View.VISIBLE:View.GONE);
+        body.setVisibility(enabled&&!readerMode?View.VISIBLE:View.GONE);
+        ProductUi ui=new ProductUi(context);write.setBackground(ui.shape(readerMode?ProductUi.BG:ProductUi.ACCENT,10));read.setBackground(ui.shape(readerMode?ProductUi.ACCENT:ProductUi.BG,10));
+        write.setContentDescription(readerMode?"切换到写字":"写字，当前模式");read.setContentDescription(readerMode?"读图，当前模式":"切换到读图");more.setVisibility(readerMode?View.GONE:View.VISIBLE);
+        boolean copied=android.os.SystemClock.uptimeMillis()<copiedUntil;copy.setText(copied?"已复制 ✓":"复制图");copy.setBackground(ui.shape(copied?0xffdcebd7:ProductUi.SOFT,10));draftCount.setText(draft.items().isEmpty()?"图片稿":draft.glyphs().size()+" 个字形");
+        if(reader!=null)reader.view.setVisibility(enabled&&readerMode?View.VISIBLE:View.GONE);
         if(!enabled)return;
-        queryLabel.setText((replace>=0?"替换第 "+(replace+1)+" 项 · ":"")+(query.isEmpty()?"中文选词；英文、数字可直接输入":query));
+        queryLabel.setText((replace>=0?"替换第 "+(replace+1)+" 项 · ":"")+(query.isEmpty()?"输入中文词语、英文或数字":query));
         candidates.removeAllViews();
         for(int i=page*4;i<Math.min(matches.size(),page*4+4);i++){
-            Lexicon.Match m=matches.get(i);LinearLayout tile=column();tile.setGravity(Gravity.CENTER);
+            Lexicon.Match m=matches.get(i);LinearLayout tile=column();tile.setGravity(Gravity.CENTER);tile.setBackground(new ProductUi(context).shape(ProductUi.PAPER,10));
             int shown=Math.min(4,m.entry.glyphs.size());
             LinearLayout glyphs=row();glyphs.setGravity(Gravity.CENTER);
             for(String id:m.entry.glyphs.subList(0,shown))glyphs.addView(glyph(id,shown==4?20:28));tile.addView(glyphs);
             TextView label=text(m.entry.label,11);label.setSingleLine(true);label.setGravity(Gravity.CENTER);tile.addView(label);
-            TextView reason=text(kind(m.kind)+(m.entry.glyphs.size()>3?" · "+m.entry.glyphs.size()+"字形":""),10);reason.setGravity(Gravity.CENTER);tile.addView(reason);
             tile.setContentDescription("外星候选 "+m.entry.label+" "+kind(m.kind));
             tile.setOnClickListener(v->choose(m.entry));
             tile.setOnLongClickListener(v->{toast(m.entry.label+" · "+kind(m.kind)+"："+m.matchedTerm+(m.entry.note.isEmpty()?"":"\n"+m.entry.note));return true;});
-            candidates.addView(tile,new LinearLayout.LayoutParams(0,-1,1));
+            LinearLayout.LayoutParams candidateParams=new LinearLayout.LayoutParams(0,-1,1);candidateParams.setMargins(dp(2),dp(2),dp(2),dp(2));candidates.addView(tile,candidateParams);
         }
-        hint.setText(query.isEmpty()?"逐词点选组合；点稿件中的词可替换，长按可删除":matches.isEmpty()?(Numerals.isInteger(Lexicon.normalize(query))?"整数最多支持 18 位十进制数字":"没有匹配结果，试试别的词或短语"):"共 "+matches.size()+" 项 · "+(page+1)+" / "+Math.max(1,(matches.size()+3)/4)+" 页 · 长按查看释义提示");
+        if(matches.isEmpty()&&query.isEmpty()){TextView guide=text("输入一个词语，在这里挑选字形",13);guide.setGravity(Gravity.CENTER);guide.setTextColor(ProductUi.MUTED);candidates.addView(guide,new LinearLayout.LayoutParams(-1,-1));}
+        hint.setText(query.isEmpty()?(draft.items().isEmpty()?"选字后组合成图片，复制到聊天中发送":"已选 "+draft.glyphs().size()+" 个字形 · 点词条替换，长按删除"):matches.isEmpty()?(Numerals.isInteger(Lexicon.normalize(query))?"整数最多支持 18 位十进制数字":"没有匹配结果，试试别的词或短语"):(page+1)+" / "+Math.max(1,(matches.size()+3)/4)+" 页 · 点选加入，长按看释义");
+        if(copied)hint.setText("图片已复制，回到输入框粘贴即可");
+        hint.setTextColor(copied?0xff4f6a42:ProductUi.MUTED);
         draftRow.removeAllViews();List<Lexicon.Entry> items=draft.items();
         for(int i=0;i<items.size();i++){
-            final int at=i;Lexicon.Entry e=items.get(i);LinearLayout tile=row();tile.setBackgroundColor(i==replace?0xffc5ddff:Color.WHITE);
+            final int at=i;Lexicon.Entry e=items.get(i);LinearLayout tile=row();tile.setBackgroundColor(i==replace?ProductUi.ACCENT:ProductUi.PAPER);
             for(String id:e.glyphs)tile.addView(glyph(id,32));
             tile.setContentDescription("图片稿第 "+(i+1)+" 项 "+e.label);
             tile.setOnClickListener(v->{if(!enabled||transitioning)return;replace=replace==at?-1:at;resetQuery();refresh();});
-            tile.setOnLongClickListener(v->{if(transitioning)return true;draft.remove(at);replace=-1;refresh();return true;});
+            tile.setOnLongClickListener(v->{if(transitioning)return true;draft.remove(at);persistDraft();replace=-1;refresh();return true;});
             LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-2,-1);lp.setMargins(dp(3),0,dp(3),0);draftRow.addView(tile,lp);
         }
         if(items.isEmpty())draftRow.addView(text("图片稿为空",12));
@@ -193,7 +260,7 @@ public final class AlienPanel {
         EditorInfo info=host.editorInfo();boolean supports=false;
         if(info!=null&&info.contentMimeTypes!=null)for(String type:info.contentMimeTypes)if(ClipDescription.compareMimeTypes("image/png",type))supports=true;
         if(!share&&isWechat(info)){toast("请用复制图，然后在微信中粘贴");return;}
-        if(!share&&!supports){toast("此输入框未声明图片支持，请用复制图或分享");return;}
+        if(!share&&!supports){toast("这个应用暂不支持直接插图，请用复制图或分享");return;}
         try{
             Uri uri=host.imageUri(images.renderDraft(draft));
             if(share){
@@ -203,7 +270,7 @@ public final class AlienPanel {
             }else{
                 InputConnection target=host.editor();
                 boolean ok=target!=null&&target.commitContent(new InputContentInfo(uri,new ClipDescription("外星文字",new String[]{"image/png"}),null),InputConnection.INPUT_CONTENT_GRANT_READ_URI_PERMISSION,null);
-                if(ok){draft.clear();replace=-1;refresh();}else toast("应用没有接收图片，稿件已保留");
+                if(ok){draft.clear();persistDraft();replace=-1;refresh();}else toast("应用没有接收图片，稿件已保留");
             }
         }catch(Exception e){shareReturnPackage=null;toast("图片操作未完成，稿件已保留");}
     }
@@ -229,15 +296,16 @@ public final class AlienPanel {
             Uri uri=host.imageUri(images.renderDraft(draft));
             ClipboardManager clipboard=(ClipboardManager)context.getSystemService(Context.CLIPBOARD_SERVICE);
             clipboard.setPrimaryClip(ClipData.newUri(context.getContentResolver(),"外星文字组合图",uri));
-            toast("组合图片已复制，可在支持图片粘贴的应用中粘贴");
-        }catch(Exception e){toast("图片复制未完成，稿件已保留");}
+            copiedUntil=android.os.SystemClock.uptimeMillis()+3000;refresh();
+            feedback.postDelayed(()->{if(android.os.SystemClock.uptimeMillis()>=copiedUntil)refresh();},3100);
+        }catch(Exception e){copy.setText("重试复制");hint.setText("复制未完成，请再试一次；图片稿已保留");}
     }
     private int dp(int value){return Math.round(value*context.getResources().getDisplayMetrics().density);}
     private LinearLayout row(){LinearLayout r=new LinearLayout(context);r.setOrientation(LinearLayout.HORIZONTAL);r.setGravity(Gravity.CENTER_VERTICAL);return r;}
     private LinearLayout column(){LinearLayout r=new LinearLayout(context);r.setOrientation(LinearLayout.VERTICAL);return r;}
-    private TextView text(String value,int size){TextView t=new TextView(context);t.setText(value);t.setTextSize(size);t.setTextColor(0xff152338);t.setPadding(dp(4),0,dp(4),0);return t;}
-    private Button button(String label,Runnable action){Button b=new Button(context);b.setText(label);b.setTextSize(11);b.setMinWidth(0);b.setMinimumWidth(0);b.setMinHeight(0);b.setMinimumHeight(0);b.setPadding(0,0,0,0);b.setOnClickListener(v->action.run());return b;}
-    private void weighted(LinearLayout row,View view,int height){row.addView(view,new LinearLayout.LayoutParams(0,dp(height),1));}
-    private ImageView glyph(String id,int size){ImageView v=new ImageView(context);v.setImageBitmap(images.glyph(id));v.setColorFilter(0xff152338,android.graphics.PorterDuff.Mode.SRC_IN);v.setLayoutParams(new LinearLayout.LayoutParams(dp(size),dp(size)));v.setContentDescription(id);return v;}
+    private TextView text(String value,int size){TextView t=new TextView(context);t.setText(value);t.setTextSize(size);t.setTextColor(ProductUi.INK);t.setPadding(dp(4),0,dp(4),0);return t;}
+    private Button button(String label,Runnable action){Button b=new ProductUi(context).button(label,false,action);b.setText(label);b.setTextSize(11);b.setMinWidth(0);b.setMinimumWidth(0);b.setMinHeight(0);b.setMinimumHeight(0);b.setPadding(0,0,0,0);b.setOnClickListener(v->action.run());return b;}
+    private void weighted(LinearLayout row,View view,int height){LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(0,dp(height),1);lp.setMargins(dp(2),0,dp(2),0);row.addView(view,lp);}
+    private ImageView glyph(String id,int size){ImageView v=new ImageView(context);v.setImageBitmap(images.glyph(id));v.setColorFilter(ProductUi.INK,android.graphics.PorterDuff.Mode.SRC_IN);v.setLayoutParams(new LinearLayout.LayoutParams(dp(size),dp(size)));v.setContentDescription(id);return v;}
     private void toast(String message){Toast.makeText(context,message,Toast.LENGTH_SHORT).show();}
 }

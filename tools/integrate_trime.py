@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Apply the small host adapter to the pinned Trime v3.3.13 checkout."""
 from pathlib import Path
+import re
 
 root = Path(__file__).resolve().parents[1] / 'trime'
 
@@ -47,6 +48,7 @@ patch(service, '    private lateinit var rime: RimeSession', '''    private var 
 patch(service, '        super.onCreate()\n        Timber.d("onCreate")', '        super.onCreate()\n        alien = createAlienPanel()\n        Timber.d("onCreate")')
 patch(service, '        cursorUpdateIndex += 1', '        if (alien?.capturesInput() == true) return\n        cursorUpdateIndex += 1')
 patch(service, '        composingText = ""\n        Timber.d("onStartInput: restarting=$restarting")', '        alien?.start(attribute, restarting)\n        composingText = ""\n        Timber.d("onStartInput: restarting=$restarting")')
+patch(service, '        Timber.d("onStartInputView: restarting=$restarting")', '        alien?.resumeView()\n        Timber.d("onStartInputView: restarting=$restarting")')
 patch(service, '    override fun onFinishInputView(finishingInput: Boolean) {', '''    override fun onFinishInput() {
         alien?.finish()
         super.onFinishInput()
@@ -136,15 +138,22 @@ patch(bar, '''            if (action.isNotEmpty()) {
 build = 'app/build.gradle.kts'
 patch(build, '        applicationId = "com.osfans.trime"', '        applicationId = "io.github.alieninput.trime"')
 patch(build, '        minSdk = 21', '        minSdk = 26')
-patch(build, '        versionCode = 20261101', '        versionCode = 20261112')
-patch(build, '        versionName = "3.3.13"', '        versionName = "0.2.0-alpha.2"')
+build_file = root / build
+build_text = build_file.read_text()
+version = (root.parent / 'VERSION').read_text().strip()
+build_text, changed_code = re.subn(r'(?m)^        versionCode = [0-9]+$', '        versionCode = 2026111701', build_text)
+build_text, changed_name = re.subn(r'(?m)^        versionName = "[^"]+"$', f'        versionName = "{version}"', build_text)
+if changed_code != 1 or changed_name != 1:
+    raise SystemExit('Inspect upstream version fields before building')
+build_file.write_text(build_text)
 patch(build, '    buildFeatures {', '''    sourceSets.getByName("main") {
         java.srcDir("../../semantic-core/src/main/java")
         java.srcDir("../../android-integration/src/main/java")
     }
 
     buildFeatures {''')
-patch(build, 'resValue("string", "trime_app_name", "@string/app_name_debug")', 'resValue("string", "trime_app_name", "外星人输入法·测试")')
+build_file.write_text(build_file.read_text().replace('外星人输入法·测试', '外星人输入法'))
+patch(build, 'resValue("string", "trime_app_name", "@string/app_name_debug")', 'resValue("string", "trime_app_name", "外星人输入法")')
 patch(build, '    id("com.osfans.trime.opencc-data")', '    // OpenCC data come from the pinned official APK in development builds.')
 patch(build, 'android {', '''if (!file("prebuilt/official-assets.json").exists()) {
     apply(plugin = "com.osfans.trime.opencc-data")
@@ -152,14 +161,65 @@ patch(build, 'android {', '''if (!file("prebuilt/official-assets.json").exists()
 
 android {''')
 
-manifest = 'app/src/main/AndroidManifest.xml'
-patch(manifest, '        <!-- Settings activity -->', '''        <provider
-            android:name="io.github.alieninput.androidsemantic.AlienImageProvider"
-            android:authorities="${applicationId}.alien-images"
-            android:exported="false"
-            android:grantUriPermissions="true" />
+# Rebuild only our manifest entries so repeated integration stays idempotent.
+manifest_file = root / 'app/src/main/AndroidManifest.xml'
+manifest_text = manifest_file.read_text()
+manifest_text = re.sub(r'(?m)^[ \t]*<(?:provider|activity)\s+android:name="io\.github\.alieninput\.androidsemantic\.(?:AlienImageProvider|ReadImageActivity|HomeActivity|WriteMessageActivity|ImagePickerActivity)"[\s\S]*?/>[ \t]*\n?', '', manifest_text)
+components = '        <provider android:name="io.github.alieninput.androidsemantic.AlienImageProvider" android:authorities="${applicationId}.alien-images" android:exported="false" android:grantUriPermissions="true" />\n\n'
+for activity in ['HomeActivity', 'ReadImageActivity', 'ImagePickerActivity']:
+    components += f'        <activity android:name="io.github.alieninput.androidsemantic.{activity}" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />\n\n'
+manifest_text = re.sub(r'(?m)^[ \t]*<!-- Settings activity -->', lambda m: components + '        <!-- Settings activity -->', manifest_text)
+manifest_text = manifest_text.replace('android:targetActivity=".ui.main.MainActivity"', 'android:targetActivity="io.github.alieninput.androidsemantic.HomeActivity"')
+manifest_file.write_text(re.sub(r'\n(?:[ \t]*\n){2,}', '\n\n', manifest_text))
+patch('app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt',
+      '        startActivity<MainActivity>()', '        startActivity<io.github.alieninput.androidsemantic.HomeActivity>()')
+patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
+      '        val optionMenuItems = listOf(',
+      '''        val readImageItem = menu.add("读图").apply {
+            setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM)
+            setOnMenuItemClickListener {
+                startActivity(Intent(this@MainActivity, io.github.alieninput.androidsemantic.ReadImageActivity::class.java))
+                true
+            }
+        }
+        val optionMenuItems = listOf(
+            readImageItem,''')
+patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
+      'import android.view.Menu\n', 'import android.view.Menu\nimport android.view.MenuItem\n')
+patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
+      'navController.navigateUp() || onSupportNavigateUp() || moveTaskToBack(false)',
+      'navController.navigateUp() || onSupportNavigateUp() || run { finish(); true }')
+patch('app/src/main/java/com/osfans/trime/ui/main/NavigationRoute.kt',
+      'label = ctx.getString(R.string.trime_app_name)', 'label = ctx.getString(R.string.alien_settings)')
+(root / 'app/src/main/res/drawable/ic_app_icon_foreground.xml').write_bytes(
+    (root.parent / 'android-integration/src/main/res/drawable/alien_launcher.xml').read_bytes())
+icon_background = root / 'app/src/main/res/values/ic_app_icon_background.xml'
+icon_background.write_text(re.sub(r'(<color name="ic_app_icon_background">)[^<]+', r'\g<1>#292A25', icon_background.read_text()))
+patch(service, '    override fun onDestroy() {', '    override fun onDestroy() {\n        alien?.destroy()')
+patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
+      '    private fun processIntent(intent: Intent?) {',
+      '    private fun processIntent(intent: Intent?) {\n        if (intent?.getBooleanExtra("alien_try_keyboard", false) == true) {\n            intent.removeExtra("alien_try_keyboard")\n            window.decorView.post { testInputPanel?.show(window) }\n        }')
+patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
+      '        checkNotificationPermission()', '        // Notification access remains optional; do not interrupt keyboard setup.')
+patch('app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt',
+      '        testInputPanel?.dismiss()', '        // Keep the practice editor when returning from the system photo picker.')
+# Product labels: keep diagnostics in the developer area, use ordinary language in the main flow.
+for relative, title, slogan, try_label in [
+    ('values-zh-rCN', '外星人输入法', '写下你的外星来信', '试写'),
+    ('values-zh-rTW', '外星人輸入法', '寫下你的外星來信', '試寫'),
+    ('values', 'Alien Input', 'Write your own message from aliens', 'Try keyboard'),
+]:
+    strings = root / f'app/src/main/res/{relative}/strings.xml'
+    text = strings.read_text()
+    for name, value in [('app_name_release', title), ('app_name_debug', title), ('trime_app_slogan', slogan), ('test_input', try_label)]:
+        text = re.sub(r'(<string name="' + name + r'">)[^<]*(</string>)', lambda m: m[1]+value+m[2], text)
+    text = re.sub(r'(<string name="setup__[^"]+">)(.*?)(</string>)',
+                  lambda m: m[1]+m[2].replace('同文输入法', '外星人输入法').replace('同文輸入法', '外星人輸入法').replace('<b>Trime</b>', '<b>Alien Input</b>')+m[3], text)
+    settings_label = '设置' if relative == 'values-zh-rCN' else '設定' if relative == 'values-zh-rTW' else 'Settings'
+    if 'name="alien_settings"' not in text:
+        text = text.replace('</resources>', f'    <string name="alien_settings">{settings_label}</string>\n</resources>')
+    strings.write_text(text)
 
-        <!-- Settings activity -->''')
 # Keep image styling in Settings > Keyboard; no new toolbar/home controls.
 patch('app/src/main/java/com/osfans/trime/ui/main/settings/KeyboardSettingsFragment.kt',
       '        screen.findPreference<Preference>("custom_sound_effect_name")?.apply {',
@@ -182,5 +242,48 @@ patch('app/src/main/java/com/osfans/trime/ui/main/settings/KeyboardSettingsFragm
         }
         screen.addPreference(imageColors)
         screen.findPreference<Preference>("custom_sound_effect_name")?.apply {''')
+
+
+# A restored native schema may not emit a schema-change notification. Seed the
+# cache before READY so the first keyboard uses the actual input alphabet.
+patch('app/src/main/java/com/osfans/trime/core/Rime.kt', '''            fullCheck,
+        )
+    }
+
+    private fun processKeyInner''', '''            fullCheck,
+        )
+        statusCached = getRimeStatus()
+        schemaCached = RimeSchema(statusCached.schemaId)
+    }
+
+    private fun processKeyInner''')
+
+keyboard = 'app/src/main/java/com/osfans/trime/ime/keyboard/KeyboardWindow.kt'
+patch(keyboard, '    private var currentKeyboardId = ""', '    private var layoutSchemaId = ""\n    private var currentKeyboardId = ""')
+patch(keyboard, '        attachKeyboard(evalKeyboard(".default"))', '        layoutSchemaId = rime.run { statusCached }.schemaId\n        attachKeyboard(evalKeyboard(".default"))')
+patch(keyboard, '''    override fun onStartInput(info: EditorInfo) {
+        val targetKeyboard =''', '''    override fun onStartInput(info: EditorInfo) {
+        val schemaId = rime.run { statusCached }.schemaId
+        val schemaChanged = layoutSchemaId != schemaId
+        if (schemaChanged) {
+            // Do not carry a locked QWERTY layout across a restored T9 schema.
+            layoutSchemaId = schemaId
+            lastLockKeyboardId = ""
+            lastKeyboardId = ""
+        }
+        val targetKeyboard =''')
+patch(keyboard, '''    override fun onRimeSchemaUpdated(schema: SchemaItem) {
+        switchKeyboard(".default")
+    }''', '''    override fun onRimeSchemaUpdated(schema: SchemaItem) {
+        layoutSchemaId = ""
+        onStartInput(service.currentInputEditorInfo)
+    }''')
+patch(service, '''                ColorManager.addOnChangedListener(onColorChangeListener)
+''', '''                ColorManager.addOnChangedListener(onColorChangeListener)
+                // Input view creation can precede the engine's READY callback.
+                if (isInputViewShown) inputView?.startInput(currentInputEditorInfo, true)
+''')
+
+patch(keyboard, '        switchKeyboard(targetKeyboard)\n        val isAsciiMode', '        switchKeyboard(if (schemaChanged && targetKeyboard.isEmpty()) ".default" else targetKeyboard)\n        val isAsciiMode')
 
 print('Trime adapter applied')

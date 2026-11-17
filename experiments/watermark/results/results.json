@@ -1,0 +1,5532 @@
+{
+  "scope": "Synthetic transformations of 8 generated/known alien images; not WeChat validation",
+  "device": "cpu",
+  "seed": 20261117,
+  "payload_bits": 75,
+  "rows": [
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.6,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 29.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 31.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 26.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 26.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 25.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 22.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 23.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 58.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 104.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 43.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 39.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 36.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 30.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 26.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 25.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 27.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 28.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 24.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 27.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 29.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 29.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 29.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 34.2,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 31.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 33.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 36.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 41.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 34.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 25.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 24.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 25.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 25.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.4,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 23.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 22.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 22.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 22.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 22.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.4,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 22.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 22.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 26.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 34.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 39.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 39.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 29.0,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 25.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 25.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 24.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 23.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 24.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.5,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.6,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.5,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 22.8,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 22.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 22.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 22.2,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 23.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.5,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 31.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 31.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 32.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 33.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 30.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 24.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 22.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 23.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 33.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 37.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 43.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 42.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 37.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 33.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 30.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 34.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.1,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 30.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 31.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 30.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 36.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 39.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 30.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 27.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.4,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 31.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 35.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 35.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 32.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 27.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 32.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 23.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 23.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.2,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 23.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 25.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 25.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.5,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 25.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 26.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 27.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 25.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 24.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.2,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 25.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 24.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 25.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 25.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 25.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.2,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.3,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.8,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 23.1,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.3,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 22.9,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 24.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.5,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 22.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 22.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 23.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 22.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 35.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 24.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 24.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.0,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 22.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 24.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 24.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 26.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 29.3,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 33.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 24.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 22.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 23.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.6,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 26.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 22.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.9,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Not a supported alien watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 23.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 26.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 23.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 23.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.6,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 23.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 22.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 22.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 23.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.3,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.3,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 30.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 32.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 24.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 22.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.5,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.0,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 29.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 38.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 59.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 95.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 38.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 26.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 24.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 25.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 24.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 25.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 24.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 23.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 22.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.4,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0835"
+        ],
+        [
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0835;F1047"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "Unexpected ECC schema"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 28.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 32.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 84.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 68.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 46.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 35.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.2,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0001",
+          "F0902"
+        ],
+        [
+          "F0834",
+          "F1047"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0001,F0902;F0834,F1047"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.9,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 24.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 24.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 24.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 24.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 26.2,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.9,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0299"
+        ],
+        [
+          "F0050",
+          "F0480",
+          "F0415"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0299;F0050,F0480,F0415"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 29.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 39.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 40.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 34.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 28.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 24.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 25.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 24.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 26.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.4,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0441"
+        ],
+        [
+          "F0704",
+          "F0616",
+          "F0444"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0441;F0704,F0616,F0444"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 30.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 31.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 28.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 25.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 26.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 23.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 24.8,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 25.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 27.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 23.8,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0706"
+        ],
+        [
+          "F0953",
+          "F0125",
+          "F0023"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0706;F0953,F0125,F0023"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 27.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 29.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 31.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 32.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 27.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 28.0,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 29.3,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 30.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 29.4,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 27.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "png_pixels_only",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 32.3,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_q90",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 35.1,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_q75",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 35.2,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_q50",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 30.7,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_q30",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 30.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "width360_q75",
+      "width": 360,
+      "height": 156,
+      "decode_ms": 30.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "width240_q75",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 29.5,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "width240_q50",
+      "width": 240,
+      "height": 104,
+      "decode_ms": 30.6,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "jpeg_3rounds",
+      "width": 480,
+      "height": 208,
+      "decode_ms": 29.1,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "crop5pct_each_edge_q75",
+      "width": 432,
+      "height": 188,
+      "decode_ms": 27.3,
+      "exact": true,
+      "wrong_message": false,
+      "status": "decoded",
+      "groups": [
+        [
+          "F0902"
+        ],
+        [
+          "F0834"
+        ],
+        [
+          "F1305",
+          "F1302"
+        ]
+      ],
+      "code": "ALIEN1|v6.12.4|F0902;F0834;F1305,F1302"
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "transform": "padding24_q75",
+      "width": 528,
+      "height": 256,
+      "decode_ms": 29.2,
+      "exact": false,
+      "wrong_message": false,
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    }
+  ],
+  "quality": [
+    {
+      "setting": "Q-1",
+      "sample": "v-me-50",
+      "encode_ms": 167.1,
+      "psnr_db": 51.68,
+      "mean_absolute_rgb": 0.129,
+      "max_rgb_change": 18,
+      "background_mean_change": 0.073,
+      "background_pixels_change_gt5_percent": 0.19
+    },
+    {
+      "setting": "Q-1",
+      "sample": "one",
+      "encode_ms": 155.0,
+      "psnr_db": 53.4,
+      "mean_absolute_rgb": 0.079,
+      "max_rgb_change": 20,
+      "background_mean_change": 0.048,
+      "background_pixels_change_gt5_percent": 0.13
+    },
+    {
+      "setting": "Q-1",
+      "sample": "two",
+      "encode_ms": 103.8,
+      "psnr_db": 52.11,
+      "mean_absolute_rgb": 0.125,
+      "max_rgb_change": 16,
+      "background_mean_change": 0.069,
+      "background_pixels_change_gt5_percent": 0.16
+    },
+    {
+      "setting": "Q-1",
+      "sample": "four-grouped",
+      "encode_ms": 153.7,
+      "psnr_db": 50.83,
+      "mean_absolute_rgb": 0.145,
+      "max_rgb_change": 21,
+      "background_mean_change": 0.09,
+      "background_pixels_change_gt5_percent": 0.3
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-1",
+      "encode_ms": 91.9,
+      "psnr_db": 50.88,
+      "mean_absolute_rgb": 0.175,
+      "max_rgb_change": 14,
+      "background_mean_change": 0.091,
+      "background_pixels_change_gt5_percent": 0.16
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-2",
+      "encode_ms": 101.1,
+      "psnr_db": 49.66,
+      "mean_absolute_rgb": 0.22,
+      "max_rgb_change": 18,
+      "background_mean_change": 0.122,
+      "background_pixels_change_gt5_percent": 0.28
+    },
+    {
+      "setting": "Q-1",
+      "sample": "random-3",
+      "encode_ms": 155.2,
+      "psnr_db": 51.94,
+      "mean_absolute_rgb": 0.142,
+      "max_rgb_change": 13,
+      "background_mean_change": 0.073,
+      "background_pixels_change_gt5_percent": 0.15
+    },
+    {
+      "setting": "Q-1",
+      "sample": "light-background",
+      "encode_ms": 92.9,
+      "psnr_db": 49.84,
+      "mean_absolute_rgb": 0.32,
+      "max_rgb_change": 12,
+      "background_mean_change": 0.28,
+      "background_pixels_change_gt5_percent": 0.18
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "v-me-50",
+      "encode_ms": 93.0,
+      "psnr_db": 48.1,
+      "mean_absolute_rgb": 0.209,
+      "max_rgb_change": 27,
+      "background_mean_change": 0.131,
+      "background_pixels_change_gt5_percent": 0.46
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "one",
+      "encode_ms": 91.1,
+      "psnr_db": 49.73,
+      "mean_absolute_rgb": 0.13,
+      "max_rgb_change": 31,
+      "background_mean_change": 0.085,
+      "background_pixels_change_gt5_percent": 0.35
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "two",
+      "encode_ms": 123.4,
+      "psnr_db": 48.52,
+      "mean_absolute_rgb": 0.202,
+      "max_rgb_change": 24,
+      "background_mean_change": 0.122,
+      "background_pixels_change_gt5_percent": 0.46
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "four-grouped",
+      "encode_ms": 99.3,
+      "psnr_db": 47.21,
+      "mean_absolute_rgb": 0.231,
+      "max_rgb_change": 32,
+      "background_mean_change": 0.155,
+      "background_pixels_change_gt5_percent": 0.71
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-1",
+      "encode_ms": 99.5,
+      "psnr_db": 47.33,
+      "mean_absolute_rgb": 0.277,
+      "max_rgb_change": 21,
+      "background_mean_change": 0.16,
+      "background_pixels_change_gt5_percent": 0.53
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-2",
+      "encode_ms": 204.1,
+      "psnr_db": 46.1,
+      "mean_absolute_rgb": 0.342,
+      "max_rgb_change": 27,
+      "background_mean_change": 0.208,
+      "background_pixels_change_gt5_percent": 1.0
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "random-3",
+      "encode_ms": 122.1,
+      "psnr_db": 48.37,
+      "mean_absolute_rgb": 0.227,
+      "max_rgb_change": 19,
+      "background_mean_change": 0.133,
+      "background_pixels_change_gt5_percent": 0.41
+    },
+    {
+      "setting": "Q-1.5",
+      "sample": "light-background",
+      "encode_ms": 98.6,
+      "psnr_db": 46.85,
+      "mean_absolute_rgb": 0.435,
+      "max_rgb_change": 18,
+      "background_mean_change": 0.369,
+      "background_pixels_change_gt5_percent": 0.77
+    },
+    {
+      "setting": "P-1",
+      "sample": "v-me-50",
+      "encode_ms": 118.2,
+      "psnr_db": 55.08,
+      "mean_absolute_rgb": 0.089,
+      "max_rgb_change": 8,
+      "background_mean_change": 0.04,
+      "background_pixels_change_gt5_percent": 0.0
+    },
+    {
+      "setting": "P-1",
+      "sample": "one",
+      "encode_ms": 96.6,
+      "psnr_db": 57.47,
+      "mean_absolute_rgb": 0.047,
+      "max_rgb_change": 9,
+      "background_mean_change": 0.016,
+      "background_pixels_change_gt5_percent": 0.0
+    },
+    {
+      "setting": "P-1",
+      "sample": "two",
+      "encode_ms": 97.1,
+      "psnr_db": 55.47,
+      "mean_absolute_rgb": 0.083,
+      "max_rgb_change": 8,
+      "background_mean_change": 0.032,
+      "background_pixels_change_gt5_percent": 0.0
+    },
+    {
+      "setting": "P-1",
+      "sample": "four-grouped",
+      "encode_ms": 107.2,
+      "psnr_db": 55.22,
+      "mean_absolute_rgb": 0.088,
+      "max_rgb_change": 8,
+      "background_mean_change": 0.037,
+      "background_pixels_change_gt5_percent": 0.0
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-1",
+      "encode_ms": 106.5,
+      "psnr_db": 53.66,
+      "mean_absolute_rgb": 0.125,
+      "max_rgb_change": 7,
+      "background_mean_change": 0.056,
+      "background_pixels_change_gt5_percent": 0.0
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-2",
+      "encode_ms": 105.6,
+      "psnr_db": 52.51,
+      "mean_absolute_rgb": 0.158,
+      "max_rgb_change": 8,
+      "background_mean_change": 0.067,
+      "background_pixels_change_gt5_percent": 0.01
+    },
+    {
+      "setting": "P-1",
+      "sample": "random-3",
+      "encode_ms": 107.6,
+      "psnr_db": 54.14,
+      "mean_absolute_rgb": 0.112,
+      "max_rgb_change": 7,
+      "background_mean_change": 0.048,
+      "background_pixels_change_gt5_percent": 0.0
+    },
+    {
+      "setting": "P-1",
+      "sample": "light-background",
+      "encode_ms": 108.0,
+      "psnr_db": 52.62,
+      "mean_absolute_rgb": 0.255,
+      "max_rgb_change": 7,
+      "background_mean_change": 0.233,
+      "background_pixels_change_gt5_percent": 0.0
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "v-me-50",
+      "encode_ms": 102.2,
+      "psnr_db": 51.6,
+      "mean_absolute_rgb": 0.15,
+      "max_rgb_change": 12,
+      "background_mean_change": 0.083,
+      "background_pixels_change_gt5_percent": 0.02
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "one",
+      "encode_ms": 110.5,
+      "psnr_db": 53.96,
+      "mean_absolute_rgb": 0.089,
+      "max_rgb_change": 13,
+      "background_mean_change": 0.046,
+      "background_pixels_change_gt5_percent": 0.0
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "two",
+      "encode_ms": 102.8,
+      "psnr_db": 52.02,
+      "mean_absolute_rgb": 0.139,
+      "max_rgb_change": 11,
+      "background_mean_change": 0.069,
+      "background_pixels_change_gt5_percent": 0.01
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "four-grouped",
+      "encode_ms": 129.1,
+      "psnr_db": 51.76,
+      "mean_absolute_rgb": 0.149,
+      "max_rgb_change": 11,
+      "background_mean_change": 0.08,
+      "background_pixels_change_gt5_percent": 0.04
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-1",
+      "encode_ms": 102.2,
+      "psnr_db": 50.21,
+      "mean_absolute_rgb": 0.205,
+      "max_rgb_change": 11,
+      "background_mean_change": 0.11,
+      "background_pixels_change_gt5_percent": 0.11
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-2",
+      "encode_ms": 111.0,
+      "psnr_db": 49.06,
+      "mean_absolute_rgb": 0.256,
+      "max_rgb_change": 12,
+      "background_mean_change": 0.132,
+      "background_pixels_change_gt5_percent": 0.14
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "random-3",
+      "encode_ms": 115.3,
+      "psnr_db": 50.7,
+      "mean_absolute_rgb": 0.184,
+      "max_rgb_change": 10,
+      "background_mean_change": 0.097,
+      "background_pixels_change_gt5_percent": 0.06
+    },
+    {
+      "setting": "P-1.5",
+      "sample": "light-background",
+      "encode_ms": 123.4,
+      "psnr_db": 50.29,
+      "mean_absolute_rgb": 0.323,
+      "max_rgb_change": 11,
+      "background_mean_change": 0.282,
+      "background_pixels_change_gt5_percent": 0.04
+    }
+  ],
+  "controls": [
+    {
+      "variant": "Q",
+      "sample": "v-me-50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "one",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "two",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "four-grouped",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "random-1",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "random-2",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "random-3",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "light-background",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "v-me-50-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "one-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "two-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "four-grouped-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "random-1-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "random-2-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "random-3-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "light-background-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "black",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "Q",
+      "sample": "white",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "v-me-50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "one",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "two",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "four-grouped",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "random-1",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "random-2",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "random-3",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "light-background",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "v-me-50-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "one-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "two-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "four-grouped-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "random-1-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "random-2-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "random-3-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "light-background-q50",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "black",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    },
+    {
+      "variant": "P",
+      "sample": "white",
+      "status": "unreadable",
+      "reason": "No ECC-valid watermark"
+    }
+  ],
+  "summary": [
+    {
+      "setting": "P-1",
+      "exact": 8,
+      "total": 88,
+      "wrong_messages": 0,
+      "decode_median_ms": 23.8,
+      "encode_median_ms": 106.8,
+      "mean_psnr_db": 54.52,
+      "by_transform": {
+        "png_pixels_only": {
+          "exact": 7,
+          "total": 8
+        },
+        "jpeg_q90": {
+          "exact": 1,
+          "total": 8
+        },
+        "jpeg_q75": {
+          "exact": 0,
+          "total": 8
+        },
+        "jpeg_q50": {
+          "exact": 0,
+          "total": 8
+        },
+        "jpeg_q30": {
+          "exact": 0,
+          "total": 8
+        },
+        "width360_q75": {
+          "exact": 0,
+          "total": 8
+        },
+        "width240_q75": {
+          "exact": 0,
+          "total": 8
+        },
+        "width240_q50": {
+          "exact": 0,
+          "total": 8
+        },
+        "jpeg_3rounds": {
+          "exact": 0,
+          "total": 8
+        },
+        "crop5pct_each_edge_q75": {
+          "exact": 0,
+          "total": 8
+        },
+        "padding24_q75": {
+          "exact": 0,
+          "total": 8
+        }
+      }
+    },
+    {
+      "setting": "P-1.5",
+      "exact": 12,
+      "total": 88,
+      "wrong_messages": 0,
+      "decode_median_ms": 27.4,
+      "encode_median_ms": 110.8,
+      "mean_psnr_db": 51.2,
+      "by_transform": {
+        "png_pixels_only": {
+          "exact": 7,
+          "total": 8
+        },
+        "jpeg_q90": {
+          "exact": 3,
+          "total": 8
+        },
+        "jpeg_q75": {
+          "exact": 1,
+          "total": 8
+        },
+        "jpeg_q50": {
+          "exact": 0,
+          "total": 8
+        },
+        "jpeg_q30": {
+          "exact": 0,
+          "total": 8
+        },
+        "width360_q75": {
+          "exact": 0,
+          "total": 8
+        },
+        "width240_q75": {
+          "exact": 0,
+          "total": 8
+        },
+        "width240_q50": {
+          "exact": 0,
+          "total": 8
+        },
+        "jpeg_3rounds": {
+          "exact": 0,
+          "total": 8
+        },
+        "crop5pct_each_edge_q75": {
+          "exact": 1,
+          "total": 8
+        },
+        "padding24_q75": {
+          "exact": 0,
+          "total": 8
+        }
+      }
+    },
+    {
+      "setting": "Q-1",
+      "exact": 10,
+      "total": 88,
+      "wrong_messages": 0,
+      "decode_median_ms": 25.5,
+      "encode_median_ms": 128.8,
+      "mean_psnr_db": 51.29,
+      "by_transform": {
+        "png_pixels_only": {
+          "exact": 6,
+          "total": 8
+        },
+        "jpeg_q90": {
+          "exact": 1,
+          "total": 8
+        },
+        "jpeg_q75": {
+          "exact": 1,
+          "total": 8
+        },
+        "jpeg_q50": {
+          "exact": 0,
+          "total": 8
+        },
+        "jpeg_q30": {
+          "exact": 0,
+          "total": 8
+        },
+        "width360_q75": {
+          "exact": 1,
+          "total": 8
+        },
+        "width240_q75": {
+          "exact": 0,
+          "total": 8
+        },
+        "width240_q50": {
+          "exact": 0,
+          "total": 8
+        },
+        "jpeg_3rounds": {
+          "exact": 0,
+          "total": 8
+        },
+        "crop5pct_each_edge_q75": {
+          "exact": 1,
+          "total": 8
+        },
+        "padding24_q75": {
+          "exact": 0,
+          "total": 8
+        }
+      }
+    },
+    {
+      "setting": "Q-1.5",
+      "exact": 12,
+      "total": 88,
+      "wrong_messages": 0,
+      "decode_median_ms": 25.9,
+      "encode_median_ms": 99.4,
+      "mean_psnr_db": 47.78,
+      "by_transform": {
+        "png_pixels_only": {
+          "exact": 7,
+          "total": 8
+        },
+        "jpeg_q90": {
+          "exact": 1,
+          "total": 8
+        },
+        "jpeg_q75": {
+          "exact": 1,
+          "total": 8
+        },
+        "jpeg_q50": {
+          "exact": 0,
+          "total": 8
+        },
+        "jpeg_q30": {
+          "exact": 0,
+          "total": 8
+        },
+        "width360_q75": {
+          "exact": 1,
+          "total": 8
+        },
+        "width240_q75": {
+          "exact": 0,
+          "total": 8
+        },
+        "width240_q50": {
+          "exact": 0,
+          "total": 8
+        },
+        "jpeg_3rounds": {
+          "exact": 1,
+          "total": 8
+        },
+        "crop5pct_each_edge_q75": {
+          "exact": 1,
+          "total": 8
+        },
+        "padding24_q75": {
+          "exact": 0,
+          "total": 8
+        }
+      }
+    }
+  ],
+  "negative_acceptances": 0,
+  "expected_groups": {
+    "v-me-50": [
+      [
+        "F0902"
+      ],
+      [
+        "F0834"
+      ],
+      [
+        "F1305",
+        "F1302"
+      ]
+    ],
+    "one": [
+      [
+        "F0834"
+      ]
+    ],
+    "two": [
+      [
+        "F0835"
+      ],
+      [
+        "F1047"
+      ]
+    ],
+    "four-grouped": [
+      [
+        "F0001",
+        "F0902"
+      ],
+      [
+        "F0834",
+        "F1047"
+      ]
+    ],
+    "random-1": [
+      [
+        "F0299"
+      ],
+      [
+        "F0050",
+        "F0480",
+        "F0415"
+      ]
+    ],
+    "random-2": [
+      [
+        "F0441"
+      ],
+      [
+        "F0704",
+        "F0616",
+        "F0444"
+      ]
+    ],
+    "random-3": [
+      [
+        "F0706"
+      ],
+      [
+        "F0953",
+        "F0125",
+        "F0023"
+      ]
+    ],
+    "light-background": [
+      [
+        "F0902"
+      ],
+      [
+        "F0834"
+      ],
+      [
+        "F1305",
+        "F1302"
+      ]
+    ]
+  }
+}

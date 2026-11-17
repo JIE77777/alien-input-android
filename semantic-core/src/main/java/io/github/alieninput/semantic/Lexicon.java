@@ -11,6 +11,11 @@ public final class Lexicon {
     public enum Kind { EXACT, ALIAS, RELATED, PARTIAL, TYPO, NUMBER }
 
     public static final class Entry {
+        public static Entry fromImage(List<String> glyphs,String label){
+            if(glyphs==null||glyphs.isEmpty()||glyphs.size()>120)throw new IllegalArgumentException("Invalid image group");
+            String sequence=String.join(",",glyphs);
+            return new Entry("IMAGE:"+sequence,label,sequence,"","image");
+        }
         public final String id, label, note, source;
         public final List<String> glyphs;
         private Entry(String id, String label, String sequence, String note, String source) {

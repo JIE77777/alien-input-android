@@ -1,0 +1,201 @@
+{
+  "main": [
+    {
+      "suite": "dynamic_glyphs",
+      "variant": "png",
+      "total": 108,
+      "correct": 108,
+      "wrong": 0,
+      "rejected": 0,
+      "top_correct": 108
+    },
+    {
+      "suite": "dynamic_glyphs",
+      "variant": "jpeg75",
+      "total": 108,
+      "correct": 108,
+      "wrong": 0,
+      "rejected": 0,
+      "top_correct": 108
+    },
+    {
+      "suite": "dynamic_glyphs",
+      "variant": "half_jpeg50",
+      "total": 108,
+      "correct": 108,
+      "wrong": 0,
+      "rejected": 0,
+      "top_correct": 108
+    },
+    {
+      "suite": "android_messages",
+      "variant": "png",
+      "total": 31,
+      "correct": 31,
+      "wrong": 0,
+      "rejected": 0,
+      "top_correct": 31
+    },
+    {
+      "suite": "android_messages",
+      "variant": "jpeg75",
+      "total": 31,
+      "correct": 31,
+      "wrong": 0,
+      "rejected": 0,
+      "top_correct": 31
+    },
+    {
+      "suite": "android_messages",
+      "variant": "half_jpeg50",
+      "total": 31,
+      "correct": 31,
+      "wrong": 0,
+      "rejected": 0,
+      "top_correct": 31
+    },
+    {
+      "suite": "static_regression",
+      "variant": "half_jpeg50",
+      "total": 1344,
+      "correct": 1337,
+      "wrong": 0,
+      "rejected": 7,
+      "top_correct": 1344
+    }
+  ],
+  "coarse": [
+    {
+      "suite": "dynamic_glyphs",
+      "variant": "png",
+      "total": 108,
+      "correct": 86,
+      "wrong": 0,
+      "rejected": 22,
+      "top_correct": 108
+    },
+    {
+      "suite": "dynamic_glyphs",
+      "variant": "jpeg75",
+      "total": 108,
+      "correct": 86,
+      "wrong": 0,
+      "rejected": 22,
+      "top_correct": 108
+    },
+    {
+      "suite": "dynamic_glyphs",
+      "variant": "half_jpeg50",
+      "total": 108,
+      "correct": 71,
+      "wrong": 0,
+      "rejected": 37,
+      "top_correct": 108
+    },
+    {
+      "suite": "android_messages",
+      "variant": "png",
+      "total": 31,
+      "correct": 29,
+      "wrong": 0,
+      "rejected": 2,
+      "top_correct": 31
+    },
+    {
+      "suite": "android_messages",
+      "variant": "jpeg75",
+      "total": 31,
+      "correct": 29,
+      "wrong": 0,
+      "rejected": 2,
+      "top_correct": 31
+    },
+    {
+      "suite": "android_messages",
+      "variant": "half_jpeg50",
+      "total": 31,
+      "correct": 29,
+      "wrong": 0,
+      "rejected": 2,
+      "top_correct": 31
+    }
+  ],
+  "palette_exact": 25,
+  "palette_total": 27,
+  "palette_wrong": 0,
+  "negative_controls": [
+    {
+      "case": "black",
+      "status": "unreadable"
+    },
+    {
+      "case": "white",
+      "status": "unreadable"
+    },
+    {
+      "case": "noise-0",
+      "status": "uncertain"
+    },
+    {
+      "case": "noise-1",
+      "status": "uncertain"
+    },
+    {
+      "case": "noise-2",
+      "status": "uncertain"
+    },
+    {
+      "case": "noise-3",
+      "status": "uncertain"
+    },
+    {
+      "case": "noise-4",
+      "status": "uncertain"
+    },
+    {
+      "case": "noise-5",
+      "status": "uncertain"
+    },
+    {
+      "case": "noise-6",
+      "status": "uncertain"
+    },
+    {
+      "case": "noise-7",
+      "status": "uncertain"
+    },
+    {
+      "case": "noise-8",
+      "status": "uncertain"
+    },
+    {
+      "case": "noise-9",
+      "status": "uncertain"
+    },
+    {
+      "case": "impossible-two-singletons",
+      "status": "uncertain"
+    }
+  ],
+  "max_rows_48_glyphs_120": true,
+  "number_round_trips": 1008,
+  "decimal_image_checks": 60,
+  "decimal_image_correct": 60,
+  "archives": [
+    {
+      "file": "results.json.gz",
+      "raw_sha256": "c509c6324b700b6d978f01f6530b3bde781aeacd79ee1845cd428719d1165bf3",
+      "bytes": 22494
+    },
+    {
+      "file": "coarse-results.json.gz",
+      "raw_sha256": "aba302e10fe8544be180ad125d19c6adf16a5726a7e662e78f3d97380e05dc59",
+      "bytes": 5646
+    },
+    {
+      "file": "holdout-results.json.gz",
+      "raw_sha256": "b274d6167953d8b124f6720aca54de20a43895093df2324a7c6a9cdcf240de0a",
+      "bytes": 409
+    }
+  ]
+}

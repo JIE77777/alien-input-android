@@ -5,9 +5,11 @@ cd "$(dirname "$0")/.."
 BT="$ANDROID_HOME/build-tools/35.0.0"
 PLATFORM="$ANDROID_HOME/platforms/android-35/android.jar"
 OUT="$PWD/build/device-checks"
+rm -rf "$OUT/classes" "$OUT/dex"
 mkdir -p "$OUT/classes" "$OUT/dex" "$OUT/assets/alien"
 cp lexicon/generated/lexicon.tsv "$OUT/assets/alien/lexicon.tsv"
 cp -R trime/app/src/main/assets/alien/glyphs "$OUT/assets/alien/"
+"$DEV_ENV_ROOT/venvs/game-assets/bin/python" tools/prepare_recognition_assets.py --output "$OUT/assets/alien"
 python3 - "$OUT/assets/shared" <<'PY'
 import shutil, sys
 from pathlib import Path
@@ -23,6 +25,7 @@ cat > "$OUT/AndroidManifest.xml" <<'XML'
 <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="35" />
 <application android:label="Alien integration checks" android:debuggable="true" android:extractNativeLibs="true">
 <provider android:name="io.github.alieninput.androidsemantic.AlienImageProvider" android:authorities="io.github.alieninput.checks.alien-images" android:exported="false" android:grantUriPermissions="true" />
+<activity android:name="io.github.alieninput.androidsemantic.ReadImageActivity" android:exported="false" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
 </application>
 <instrumentation android:name="io.github.alieninput.androidsemantic.DeviceChecks" android:targetPackage="io.github.alieninput.checks" />
 <instrumentation android:name="io.github.alieninput.androidsemantic.WindowProbe" android:targetPackage="io.github.alieninput.checks" />

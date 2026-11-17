@@ -1,0 +1,935 @@
+{
+  "date": "2026-11-17",
+  "scope": "Intact single-row canvas only, static 1344 F glyphs, pixel-only, no phrase boundaries",
+  "fixed_thresholds": {
+    "similarity": 0.91,
+    "margin": 0.025,
+    "layout": 0.9,
+    "layout_margin": 0.025
+  },
+  "recognition": [
+    {
+      "suite": "uniform_png",
+      "total": 1344,
+      "correct": 1342,
+      "wrong": 0,
+      "rejected": 2,
+      "top_exact": 1344,
+      "median_seconds": 0.0043
+    },
+    {
+      "suite": "uniform_jpeg75",
+      "total": 1344,
+      "correct": 1340,
+      "wrong": 0,
+      "rejected": 4,
+      "top_exact": 1344,
+      "median_seconds": 0.0044
+    },
+    {
+      "suite": "uniform_half_jpeg50",
+      "total": 1344,
+      "correct": 1337,
+      "wrong": 0,
+      "rejected": 7,
+      "top_exact": 1344,
+      "median_seconds": 0.0049
+    },
+    {
+      "suite": "original_half_jpeg50",
+      "total": 1344,
+      "correct": 1336,
+      "wrong": 0,
+      "rejected": 8,
+      "top_exact": 1344,
+      "median_seconds": 0.0049
+    },
+    {
+      "suite": "mixed_png",
+      "total": 128,
+      "correct": 128,
+      "wrong": 0,
+      "rejected": 0,
+      "top_exact": 128,
+      "median_seconds": 0.0085
+    },
+    {
+      "suite": "mixed_jpeg75",
+      "total": 128,
+      "correct": 127,
+      "wrong": 0,
+      "rejected": 1,
+      "top_exact": 128,
+      "median_seconds": 0.008
+    },
+    {
+      "suite": "mixed_half_jpeg50",
+      "total": 128,
+      "correct": 125,
+      "wrong": 0,
+      "rejected": 3,
+      "top_exact": 128,
+      "median_seconds": 0.0091
+    },
+    {
+      "suite": "mixed_half_jpeg30",
+      "total": 128,
+      "correct": 125,
+      "wrong": 0,
+      "rejected": 3,
+      "top_exact": 128,
+      "median_seconds": 0.009
+    },
+    {
+      "suite": "negative_controls",
+      "total": 66,
+      "correct": 0,
+      "wrong": 0,
+      "rejected": 66,
+      "top_exact": 0,
+      "median_seconds": 0.0765
+    },
+    {
+      "suite": "wechat_saved",
+      "total": 3,
+      "correct": 3,
+      "wrong": 0,
+      "rejected": 0,
+      "top_exact": 3,
+      "median_seconds": 0.0093
+    }
+  ],
+  "stress": [
+    {
+      "name": "translate_2px",
+      "total": 128,
+      "correct": 127,
+      "wrong": 0,
+      "rejected": 1
+    },
+    {
+      "name": "blur_1px",
+      "total": 128,
+      "correct": 126,
+      "wrong": 0,
+      "rejected": 2
+    },
+    {
+      "name": "rotate_1deg",
+      "total": 128,
+      "correct": 54,
+      "wrong": 0,
+      "rejected": 74
+    },
+    {
+      "name": "crop5pct",
+      "total": 128,
+      "correct": 2,
+      "wrong": 0,
+      "rejected": 126
+    },
+    {
+      "name": "padding24",
+      "total": 128,
+      "correct": 0,
+      "wrong": 0,
+      "rejected": 128
+    }
+  ],
+  "false_metadata_ignored": true,
+  "field": [
+    {
+      "file": "wechat-P2.jpg",
+      "sha256": "ddf363977ca6004b8c8c75d4d3adad0342bc45a16901d59f27b2ea83f75264be",
+      "status": "recognized",
+      "glyphs": [
+        "F0902",
+        "F0834",
+        "F1305",
+        "F1302"
+      ],
+      "phrase_boundaries": "unknown",
+      "best": {
+        "count": 4,
+        "layout_similarity": 0.99981,
+        "symbols": [
+          {
+            "id": "F0902",
+            "similarity": 0.9999,
+            "margin": 0.11011,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F0902",
+                "similarity": 0.9999
+              },
+              {
+                "id": "F0495",
+                "similarity": 0.88979
+              },
+              {
+                "id": "F0453",
+                "similarity": 0.84687
+              }
+            ]
+          },
+          {
+            "id": "F0834",
+            "similarity": 0.99978,
+            "margin": 0.05597,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F0834",
+                "similarity": 0.99978
+              },
+              {
+                "id": "F0837",
+                "similarity": 0.94381
+              },
+              {
+                "id": "F0458",
+                "similarity": 0.87219
+              }
+            ]
+          },
+          {
+            "id": "F1305",
+            "similarity": 0.9999,
+            "margin": 0.12805,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F1305",
+                "similarity": 0.9999
+              },
+              {
+                "id": "F1327",
+                "similarity": 0.87185
+              },
+              {
+                "id": "F1320",
+                "similarity": 0.76172
+              }
+            ]
+          },
+          {
+            "id": "F1302",
+            "similarity": 0.99994,
+            "margin": 0.24757,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F1302",
+                "similarity": 0.99994
+              },
+              {
+                "id": "F1304",
+                "similarity": 0.75237
+              },
+              {
+                "id": "F1307",
+                "similarity": 0.75025
+              }
+            ]
+          }
+        ],
+        "alignment_offset": [
+          0,
+          0
+        ]
+      },
+      "layout_margin": 0.22549,
+      "alternatives": [
+        {
+          "count": 2,
+          "layout_similarity": 0.77432,
+          "symbols": [
+            {
+              "id": "F0834",
+              "similarity": 0.99978,
+              "margin": 0.05597,
+              "accepted": true,
+              "candidates": [
+                {
+                  "id": "F0834",
+                  "similarity": 0.99978
+                },
+                {
+                  "id": "F0837",
+                  "similarity": 0.94381
+                },
+                {
+                  "id": "F0458",
+                  "similarity": 0.87219
+                }
+              ]
+            },
+            {
+              "id": "F1305",
+              "similarity": 0.9999,
+              "margin": 0.12805,
+              "accepted": true,
+              "candidates": [
+                {
+                  "id": "F1305",
+                  "similarity": 0.9999
+                },
+                {
+                  "id": "F1327",
+                  "similarity": 0.87185
+                },
+                {
+                  "id": "F1320",
+                  "similarity": 0.76172
+                }
+              ]
+            }
+          ],
+          "alignment_offset": [
+            0,
+            0
+          ]
+        },
+        {
+          "count": 3,
+          "layout_similarity": 0.28791,
+          "symbols": [
+            {
+              "id": "F0341",
+              "similarity": 0.34928,
+              "margin": 0.02528,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F0341",
+                  "similarity": 0.34928
+                },
+                {
+                  "id": "F0297",
+                  "similarity": 0.324
+                },
+                {
+                  "id": "F0841",
+                  "similarity": 0.32392
+                }
+              ]
+            },
+            {
+              "id": "F0868",
+              "similarity": 0.4158,
+              "margin": 0.0048,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F0868",
+                  "similarity": 0.4158
+                },
+                {
+                  "id": "F0555",
+                  "similarity": 0.411
+                },
+                {
+                  "id": "F0731",
+                  "similarity": 0.39509
+                }
+              ]
+            },
+            {
+              "id": "F1305",
+              "similarity": 0.33455,
+              "margin": 0.04285,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F1305",
+                  "similarity": 0.33455
+                },
+                {
+                  "id": "F1327",
+                  "similarity": 0.2917
+                },
+                {
+                  "id": "F0853",
+                  "similarity": 0.2905
+                }
+              ]
+            }
+          ],
+          "alignment_offset": [
+            0,
+            0
+          ]
+        },
+        {
+          "count": 1,
+          "layout_similarity": 0.21885,
+          "symbols": [
+            {
+              "id": "F0868",
+              "similarity": 0.4158,
+              "margin": 0.0048,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F0868",
+                  "similarity": 0.4158
+                },
+                {
+                  "id": "F0555",
+                  "similarity": 0.411
+                },
+                {
+                  "id": "F0731",
+                  "similarity": 0.39509
+                }
+              ]
+            }
+          ],
+          "alignment_offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "alignment_search": false,
+      "seconds": 0.0099
+    },
+    {
+      "file": "wechat-footer-32.jpg",
+      "sha256": "af1664d653e300f98474320b80f720a03afa14582557b3834719550823724a24",
+      "status": "recognized",
+      "glyphs": [
+        "F0902",
+        "F0834",
+        "F1305",
+        "F1302"
+      ],
+      "phrase_boundaries": "unknown",
+      "best": {
+        "count": 4,
+        "layout_similarity": 0.99987,
+        "symbols": [
+          {
+            "id": "F0902",
+            "similarity": 0.99988,
+            "margin": 0.11008,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F0902",
+                "similarity": 0.99988
+              },
+              {
+                "id": "F0495",
+                "similarity": 0.8898
+              },
+              {
+                "id": "F0453",
+                "similarity": 0.84704
+              }
+            ]
+          },
+          {
+            "id": "F0834",
+            "similarity": 0.99984,
+            "margin": 0.056,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F0834",
+                "similarity": 0.99984
+              },
+              {
+                "id": "F0837",
+                "similarity": 0.94384
+              },
+              {
+                "id": "F0458",
+                "similarity": 0.87241
+              }
+            ]
+          },
+          {
+            "id": "F1305",
+            "similarity": 0.99994,
+            "margin": 0.12827,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F1305",
+                "similarity": 0.99994
+              },
+              {
+                "id": "F1327",
+                "similarity": 0.87167
+              },
+              {
+                "id": "F1320",
+                "similarity": 0.7616
+              }
+            ]
+          },
+          {
+            "id": "F1302",
+            "similarity": 0.99997,
+            "margin": 0.24766,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F1302",
+                "similarity": 0.99997
+              },
+              {
+                "id": "F1304",
+                "similarity": 0.75231
+              },
+              {
+                "id": "F1307",
+                "similarity": 0.74981
+              }
+            ]
+          }
+        ],
+        "alignment_offset": [
+          0,
+          0
+        ]
+      },
+      "layout_margin": 0.21905,
+      "alternatives": [
+        {
+          "count": 2,
+          "layout_similarity": 0.78082,
+          "symbols": [
+            {
+              "id": "F0834",
+              "similarity": 0.99984,
+              "margin": 0.056,
+              "accepted": true,
+              "candidates": [
+                {
+                  "id": "F0834",
+                  "similarity": 0.99984
+                },
+                {
+                  "id": "F0837",
+                  "similarity": 0.94384
+                },
+                {
+                  "id": "F0458",
+                  "similarity": 0.87241
+                }
+              ]
+            },
+            {
+              "id": "F1305",
+              "similarity": 0.99994,
+              "margin": 0.12827,
+              "accepted": true,
+              "candidates": [
+                {
+                  "id": "F1305",
+                  "similarity": 0.99994
+                },
+                {
+                  "id": "F1327",
+                  "similarity": 0.87167
+                },
+                {
+                  "id": "F1320",
+                  "similarity": 0.7616
+                }
+              ]
+            }
+          ],
+          "alignment_offset": [
+            0,
+            0
+          ]
+        },
+        {
+          "count": 3,
+          "layout_similarity": 0.29001,
+          "symbols": [
+            {
+              "id": "F0341",
+              "similarity": 0.35115,
+              "margin": 0.02535,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F0341",
+                  "similarity": 0.35115
+                },
+                {
+                  "id": "F0841",
+                  "similarity": 0.3258
+                },
+                {
+                  "id": "F0297",
+                  "similarity": 0.32578
+                }
+              ]
+            },
+            {
+              "id": "F0868",
+              "similarity": 0.41596,
+              "margin": 0.00432,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F0868",
+                  "similarity": 0.41596
+                },
+                {
+                  "id": "F0555",
+                  "similarity": 0.41164
+                },
+                {
+                  "id": "F0731",
+                  "similarity": 0.39571
+                }
+              ]
+            },
+            {
+              "id": "F1305",
+              "similarity": 0.33356,
+              "margin": 0.04272,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F1305",
+                  "similarity": 0.33356
+                },
+                {
+                  "id": "F1327",
+                  "similarity": 0.29084
+                },
+                {
+                  "id": "F0853",
+                  "similarity": 0.28995
+                }
+              ]
+            }
+          ],
+          "alignment_offset": [
+            0,
+            0
+          ]
+        },
+        {
+          "count": 1,
+          "layout_similarity": 0.22087,
+          "symbols": [
+            {
+              "id": "F0868",
+              "similarity": 0.41596,
+              "margin": 0.00432,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F0868",
+                  "similarity": 0.41596
+                },
+                {
+                  "id": "F0555",
+                  "similarity": 0.41164
+                },
+                {
+                  "id": "F0731",
+                  "similarity": 0.39571
+                }
+              ]
+            }
+          ],
+          "alignment_offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "alignment_search": false,
+      "seconds": 0.0093
+    },
+    {
+      "file": "wechat-footer-64.jpg",
+      "sha256": "1ae66720012711267f9188cf303e95c3b658339b72cfe5c6cbd48119691a4d40",
+      "status": "recognized",
+      "glyphs": [
+        "F0902",
+        "F0834",
+        "F1305",
+        "F1302"
+      ],
+      "phrase_boundaries": "unknown",
+      "best": {
+        "count": 4,
+        "layout_similarity": 0.99986,
+        "symbols": [
+          {
+            "id": "F0902",
+            "similarity": 0.99987,
+            "margin": 0.11013,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F0902",
+                "similarity": 0.99987
+              },
+              {
+                "id": "F0495",
+                "similarity": 0.88974
+              },
+              {
+                "id": "F0453",
+                "similarity": 0.84686
+              }
+            ]
+          },
+          {
+            "id": "F0834",
+            "similarity": 0.99981,
+            "margin": 0.05584,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F0834",
+                "similarity": 0.99981
+              },
+              {
+                "id": "F0837",
+                "similarity": 0.94397
+              },
+              {
+                "id": "F0458",
+                "similarity": 0.87274
+              }
+            ]
+          },
+          {
+            "id": "F1305",
+            "similarity": 0.99993,
+            "margin": 0.12816,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F1305",
+                "similarity": 0.99993
+              },
+              {
+                "id": "F1327",
+                "similarity": 0.87177
+              },
+              {
+                "id": "F1320",
+                "similarity": 0.76177
+              }
+            ]
+          },
+          {
+            "id": "F1302",
+            "similarity": 0.99997,
+            "margin": 0.24829,
+            "accepted": true,
+            "candidates": [
+              {
+                "id": "F1302",
+                "similarity": 0.99997
+              },
+              {
+                "id": "F1304",
+                "similarity": 0.75168
+              },
+              {
+                "id": "F1307",
+                "similarity": 0.74962
+              }
+            ]
+          }
+        ],
+        "alignment_offset": [
+          0,
+          0
+        ]
+      },
+      "layout_margin": 0.22008,
+      "alternatives": [
+        {
+          "count": 2,
+          "layout_similarity": 0.77978,
+          "symbols": [
+            {
+              "id": "F0834",
+              "similarity": 0.99981,
+              "margin": 0.05584,
+              "accepted": true,
+              "candidates": [
+                {
+                  "id": "F0834",
+                  "similarity": 0.99981
+                },
+                {
+                  "id": "F0837",
+                  "similarity": 0.94397
+                },
+                {
+                  "id": "F0458",
+                  "similarity": 0.87274
+                }
+              ]
+            },
+            {
+              "id": "F1305",
+              "similarity": 0.99993,
+              "margin": 0.12816,
+              "accepted": true,
+              "candidates": [
+                {
+                  "id": "F1305",
+                  "similarity": 0.99993
+                },
+                {
+                  "id": "F1327",
+                  "similarity": 0.87177
+                },
+                {
+                  "id": "F1320",
+                  "similarity": 0.76177
+                }
+              ]
+            }
+          ],
+          "alignment_offset": [
+            0,
+            0
+          ]
+        },
+        {
+          "count": 3,
+          "layout_similarity": 0.29033,
+          "symbols": [
+            {
+              "id": "F0341",
+              "similarity": 0.35071,
+              "margin": 0.02572,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F0341",
+                  "similarity": 0.35071
+                },
+                {
+                  "id": "F0841",
+                  "similarity": 0.32499
+                },
+                {
+                  "id": "F0297",
+                  "similarity": 0.32496
+                }
+              ]
+            },
+            {
+              "id": "F0868",
+              "similarity": 0.41689,
+              "margin": 0.00571,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F0868",
+                  "similarity": 0.41689
+                },
+                {
+                  "id": "F0555",
+                  "similarity": 0.41117
+                },
+                {
+                  "id": "F0731",
+                  "similarity": 0.39603
+                }
+              ]
+            },
+            {
+              "id": "F1305",
+              "similarity": 0.33387,
+              "margin": 0.0428,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F1305",
+                  "similarity": 0.33387
+                },
+                {
+                  "id": "F1327",
+                  "similarity": 0.29107
+                },
+                {
+                  "id": "F0853",
+                  "similarity": 0.29009
+                }
+              ]
+            }
+          ],
+          "alignment_offset": [
+            0,
+            0
+          ]
+        },
+        {
+          "count": 1,
+          "layout_similarity": 0.22163,
+          "symbols": [
+            {
+              "id": "F0868",
+              "similarity": 0.41689,
+              "margin": 0.00571,
+              "accepted": false,
+              "candidates": [
+                {
+                  "id": "F0868",
+                  "similarity": 0.41689
+                },
+                {
+                  "id": "F0555",
+                  "similarity": 0.41117
+                },
+                {
+                  "id": "F0731",
+                  "similarity": 0.39603
+                }
+              ]
+            }
+          ],
+          "alignment_offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "alignment_search": false,
+      "seconds": 0.0092
+    }
+  ],
+  "archives": [
+    {
+      "file": "results.json.gz",
+      "uncompressed_sha256": "06a3becdd1951b30fc3d13da5b0a30ef4101d4208441fb4e521cd520a6e4b55d",
+      "compressed_bytes": 96609
+    },
+    {
+      "file": "stress-results.json.gz",
+      "uncompressed_sha256": "f11b9f50066ab0fc5381dfeadc6b773e5cf85d224e9b88e3566a4b0168f76112",
+      "compressed_bytes": 4930
+    },
+    {
+      "file": "baseline-results.json.gz",
+      "uncompressed_sha256": "fd8697787a1472d39b55e3e4a06618b1e25d7181e63dd87e8dc37c83eb6572e1",
+      "compressed_bytes": 96366
+    },
+    {
+      "file": "baseline-stress-results.json.gz",
+      "uncompressed_sha256": "737f5de351da99e16373983ea95dc63939fed8b3c383940bf1df92e65f04e96b",
+      "compressed_bytes": 4964
+    }
+  ]
+}

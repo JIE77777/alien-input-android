@@ -13,7 +13,7 @@ public final class PngMessageTest {
         if(!Arrays.equals(png,PngMessage.embed(png,groups)))throw new AssertionError("metadata replacement deterministic");
         png[20]^=1;
         try{PngMessage.read(png);throw new AssertionError("corrupt PNG accepted");}catch(IOException expected){}
-        for(String bad:Arrays.asList("ALIEN2|v6.12.4|F0835","ALIEN1|unknown|F0835","ALIEN1|v6.12.4|","ALIEN1|v6.12.4|../../secret","ALIEN1|v6.12.4|F0835;")){
+        for(String bad:Arrays.asList("ALIEN1|v6.12.4|F9999","ALIEN2|v6.12.4|F0835","ALIEN1|unknown|F0835","ALIEN1|v6.12.4|","ALIEN1|v6.12.4|../../secret","ALIEN1|v6.12.4|F0835;")){
             try{PngMessage.decode(bad);throw new AssertionError("bad code accepted");}catch(IOException expected){}
         }
         System.out.println("PASS PNG/text round trip, phrase boundaries, absent metadata, replacement and invalid inputs");

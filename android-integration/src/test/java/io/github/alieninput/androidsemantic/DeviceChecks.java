@@ -144,6 +144,7 @@ public final class DeviceChecks extends Instrumentation {
     }
     private void click(View root,String value,boolean description){View v=find(root,value,description);check(v!=null,"visible action: "+value);v.performClick();}
     private void checkPanel(){
+        ImageDraftStore.save(getTargetContext(),Collections.emptyList());
         final android.content.Intent[] launched={null};
         Context context=new android.content.ContextWrapper(getTargetContext()){
             @Override public void startActivity(android.content.Intent intent){launched[0]=intent;}
@@ -167,25 +168,27 @@ public final class DeviceChecks extends Instrumentation {
         panel.connection.commitText("food",1);click(root,"外星候选 食物 别名",true);
         panel.toggleVisibility();check(root.getVisibility()==View.GONE&&!panel.capturesInput(),"collapse restores ordinary input");
         panel.toggleVisibility();check(root.getVisibility()==View.VISIBLE&&find(root,"图片稿第 2 项 食物",true)!=null,"reopening preserves ordered draft");
+        click(root,"复制图",false);check(find(root,"已复制 ✓",false)!=null,"copy has persistent visible feedback");
+        check(find(root,"图片已复制，回到输入框粘贴即可",false)!=null,"copy explains where to paste");
         check(real.getEditable().toString().equals("existing"),"query text never reaches host editor");
-        click(root,"插入图",false);check(sent[0]==1,"explicit PNG delivery attempted");
+        panel.insertImage();check(sent[0]==1,"explicit PNG delivery attempted");
         check(find(root,"图片稿第 2 项 食物",true)!=null,"rejected image preserves draft");
         click(root,"图片稿第 2 项 食物",true);panel.connection.commitText("吃饭",1);
         click(root,"外星候选 吃喝 · 食物 别名",true);
         check(find(root,"图片稿第 2 项 吃喝 · 食物",true)!=null,"phrase replacement stays one item");
         panel.connection.deleteSurroundingTextInCodePoints(1,0);
         check(find(root,"图片稿第 2 项 吃喝 · 食物",true)==null,"backspace removes entire phrase");
-        accept[0]=true;click(root,"插入图",false);check(sent[0]==2,"accepted PNG delivery");
+        accept[0]=true;panel.insertImage();check(sent[0]==2,"accepted PNG delivery");
         check(find(root,"图片稿为空",false)!=null,"accepted image clears draft");
         try(InputStream stream=context.getContentResolver().openInputStream(last[0])){check(stream!=null&&stream.read()==137,"PNG URI readable");}
         catch(IOException e){throw new AssertionError(e);}
         info.packageName="com.tencent.mm";panel.start(info,false);click(root,"外星",false);
         panel.connection.commitText("你",1);click(root,"外星候选 你 释义",true);
         panel.connection.commitText("食物",1);click(root,"外星候选 食物 释义",true);
-        int before=sent[0];check(find(root,"插入图",false).getVisibility()==View.GONE,"WeChat hides incompatible direct insertion");click(root,"插入图",false);
+        int before=sent[0];panel.insertImage();
         check(sent[0]==before,"WeChat bypasses editor content insertion");
         check(launched[0]==null,"WeChat never opens image share automatically");
-        click(root,"分享",false);check(launched[0]!=null,"only explicit share opens chooser");
+        panel.shareImage();check(launched[0]!=null,"only explicit share opens chooser");
         android.content.Intent shared=launched[0].getParcelableExtra(android.content.Intent.EXTRA_INTENT);
         check("image/png".equals(shared.getType())&&shared.getPackage()==null,"explicit share uses generic PNG intent");
         check(!shared.hasExtra(android.content.Intent.EXTRA_TEXT),"image share never includes URI as text");
@@ -198,9 +201,25 @@ public final class DeviceChecks extends Instrumentation {
         check(panel.enabled()&&find(root,"图片稿第 2 项 食物",true)!=null,"return from share preserves combined draft");
         panel.connection.commitText("食物",1);panel.start(info,false);check(!panel.enabled()&&panel.connection.confirmed().isEmpty(),"new editor resets mode and query");
         panel.start(info,false);panel.toggleVisibility();
+        check(!ImageDraftStore.read(context).isEmpty(),"draft survives switching editors");
+        panel.clearDraft();
         panel.connection.commitText("1234",1);click(root,"外星候选 1234 数值",true);
         check(find(root,"图片稿第 1 项 1234",true)!=null,"decimal digits produce selectable native number draft");
         check(real.getEditable().toString().equals("existing"),"numeric query stays out of host editor");
+        launched[0]=null;click(root,"读图",false);
+        check(launched[0]==null&&find(root,"粘贴图片",false)!=null,"reader stays inside keyboard");
+        panel.connection.commitText("你",1);
+        check(find(root,"输入中文词语、英文或数字",false)==null&&find(root,"你",false)!=null,"typing from reader returns to query");
+        panel.connection.clear();click(root,"读图",false);
+        panel.pickImage();
+        check(launched[0]!=null&&launched[0].getComponent().getClassName().endsWith("ImagePickerActivity"),"gallery uses picker bridge only");
+        check((launched[0].getFlags()&android.content.Intent.FLAG_ACTIVITY_MULTIPLE_TASK)!=0,"reader has its own returnable task");
+        EditorInfo bridge=new EditorInfo();bridge.packageName=info.packageName;bridge.inputType=InputType.TYPE_NULL;panel.finish();panel.start(bridge,false);check(!panel.enabled(),"same-package picker bridge does not consume return target");
+        EditorInfo picker=new EditorInfo();picker.inputType=InputType.TYPE_CLASS_TEXT;picker.packageName="com.android.providers.media";
+        panel.finish();panel.start(picker,false);check(!panel.capturesInput(),"photo picker search uses ordinary input");
+        ImageDraftStore.append(context,Collections.singletonList(Collections.singletonList("F0306")));
+        panel.finish();panel.start(info,false);
+        check(panel.capturesInput()&&ImageDraftStore.read(context).size()==2,"return from reader resumes alien keyboard and imported draft");
         info.inputType=InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD;panel.start(info,false);
         check(!find(root,"外星",false).isEnabled(),"password editor disables alien mode");
         panel.finish();

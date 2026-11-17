@@ -28,11 +28,28 @@ public final class Numerals {
         }
         return Collections.unmodifiableList(result);
     }
+    /** Decimal interpretation only when the caller treats a complete run as one number. */
+    public static String decode(List<String> ids){
+        if(ids==null||ids.isEmpty()||ids.size()>23)return null;
+        boolean negative=ids.get(0).equals("F0098");int start=negative?1:0;if(start==ids.size())return null;
+        BigInteger value=BigInteger.ZERO;
+        for(int i=start;i<ids.size();i++){
+            String id=ids.get(i);int coefficient=-1,power=0;
+            if(id.equals("F1301"))coefficient=0;
+            else if(isGenerated(id)){coefficient=id.charAt(1)-'0';power=power(id);}
+            else for(int c=1;c<=6;c++)for(int p=0;p<4;p++)if(ROWS[c][p].equals(id)){coefficient=c;power=p;}
+            if(coefficient<0)return null;
+            value=value.add(BigInteger.valueOf(7).pow(power).multiply(BigInteger.valueOf(coefficient)));
+        }
+        if(negative)value=value.negate();String result=value.toString();
+        if(value.abs().toString().length()>MAX_DECIMAL_DIGITS||!encode(result).equals(ids))return null;
+        return result;
+    }
     public static boolean isGenerated(String id){
         if(id==null||!id.matches("N[1-6]P[1-9][0-9]?"))return false;
         int power=Integer.parseInt(id.substring(3));return power>=4&&power<=MAX_POWER;
     }
-    public static boolean isGlyphId(String id){return id!=null&&(id.matches("F\\d{4}")||isGenerated(id));}
+    public static boolean isGlyphId(String id){return id!=null&&((id.matches("F\\d{4}")&&Integer.parseInt(id.substring(1))>=1&&Integer.parseInt(id.substring(1))<=1344)||isGenerated(id));}
     public static String baseGlyph(String id){
         if(!isGenerated(id))throw new IllegalArgumentException("Invalid generated numeral");
         return ROWS[id.charAt(1)-'0'][0];

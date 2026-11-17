@@ -1,0 +1,38 @@
+{
+  "trustmark_Q.yaml": {
+    "url": "https://cai-watermark.adobe.net/watermarking/trustmark-models/trustmark_Q.yaml",
+    "md5": "fe40df84a7feeebfceb7a7678d7e6ec6",
+    "sha256": "43f37103f92efa8bd6b1c5902bb537cc12a981dc699fca19d9bb7de8c62d03d9",
+    "bytes": 2009
+  },
+  "decoder_Q.ckpt": {
+    "url": "https://cai-watermark.adobe.net/watermarking/trustmark-models/decoder_Q.ckpt",
+    "md5": "4ced90e9cfe13e3295ad082887fe9187",
+    "sha256": "e3d9cea5406a26590735719f8f15cb10802b11852ae69047eaf4cf17214df781",
+    "bytes": 47652460
+  },
+  "encoder_Q.ckpt": {
+    "url": "https://cai-watermark.adobe.net/watermarking/trustmark-models/encoder_Q.ckpt",
+    "md5": "700328b8754db934b2f6cb5e5185d81f",
+    "sha256": "dc382c3f6b4fd568b27d6fbb763d6ffc2d2587126d84afe9d5ee95b4c5d99826",
+    "bytes": 17302074
+  },
+  "trustmark_P.yaml": {
+    "url": "https://cai-watermark.adobe.net/watermarking/trustmark-models/trustmark_P.yaml",
+    "md5": "fe40df84a7feeebfceb7a7678d7e6ec6",
+    "sha256": "43f37103f92efa8bd6b1c5902bb537cc12a981dc699fca19d9bb7de8c62d03d9",
+    "bytes": 2009
+  },
+  "decoder_P.ckpt": {
+    "url": "https://cai-watermark.adobe.net/watermarking/trustmark-models/decoder_P.ckpt",
+    "md5": "9450972bc0c3c217cb7b8220dd2f7a3c",
+    "sha256": "f5f1d570c889c5908c6e4a28c07dc90cf33990ebaf24037254ebe0b8849b1bdc",
+    "bytes": 47647180
+  },
+  "encoder_P.ckpt": {
+    "url": "https://cai-watermark.adobe.net/watermarking/trustmark-models/encoder_P.ckpt",
+    "md5": "0a18f6de6d57c6ef7dda30ce6154a775",
+    "sha256": "659d427f72d16eea4e8fbda175ae72e3a78830dc6cf44b63642a5a4b28a2b4e2",
+    "bytes": 17301306
+  }
+}

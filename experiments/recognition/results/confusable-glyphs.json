@@ -1,0 +1,149 @@
+[
+  {
+    "expected": "F0033",
+    "id": "F0033",
+    "similarity": 1.0,
+    "margin": 0.02203,
+    "accepted": false,
+    "candidates": [
+      {
+        "id": "F0033",
+        "similarity": 1.0
+      },
+      {
+        "id": "F0093",
+        "similarity": 0.97797
+      },
+      {
+        "id": "F0201",
+        "similarity": 0.84979
+      }
+    ]
+  },
+  {
+    "expected": "F0093",
+    "id": "F0093",
+    "similarity": 1.0,
+    "margin": 0.02203,
+    "accepted": false,
+    "candidates": [
+      {
+        "id": "F0093",
+        "similarity": 1.0
+      },
+      {
+        "id": "F0033",
+        "similarity": 0.97797
+      },
+      {
+        "id": "F0201",
+        "similarity": 0.86885
+      }
+    ]
+  },
+  {
+    "expected": "F0242",
+    "id": "F0242",
+    "similarity": 1.0,
+    "margin": 0.02588,
+    "accepted": true,
+    "candidates": [
+      {
+        "id": "F0242",
+        "similarity": 1.0
+      },
+      {
+        "id": "F0214",
+        "similarity": 0.97412
+      },
+      {
+        "id": "F0265",
+        "similarity": 0.95799
+      }
+    ]
+  },
+  {
+    "expected": "F0243",
+    "id": "F0243",
+    "similarity": 1.0,
+    "margin": 0.02626,
+    "accepted": true,
+    "candidates": [
+      {
+        "id": "F0243",
+        "similarity": 1.0
+      },
+      {
+        "id": "F0213",
+        "similarity": 0.97374
+      },
+      {
+        "id": "F0266",
+        "similarity": 0.95837
+      }
+    ]
+  },
+  {
+    "expected": "F0247",
+    "id": "F0247",
+    "similarity": 1.0,
+    "margin": 0.02506,
+    "accepted": true,
+    "candidates": [
+      {
+        "id": "F0247",
+        "similarity": 1.0
+      },
+      {
+        "id": "F0840",
+        "similarity": 0.97494
+      },
+      {
+        "id": "F0338",
+        "similarity": 0.95543
+      }
+    ]
+  },
+  {
+    "expected": "F0817",
+    "id": "F0817",
+    "similarity": 1.0,
+    "margin": 0.0266,
+    "accepted": true,
+    "candidates": [
+      {
+        "id": "F0817",
+        "similarity": 1.0
+      },
+      {
+        "id": "F0830",
+        "similarity": 0.9734
+      },
+      {
+        "id": "F0874",
+        "similarity": 0.85902
+      }
+    ]
+  },
+  {
+    "expected": "F0840",
+    "id": "F0840",
+    "similarity": 1.0,
+    "margin": 0.02506,
+    "accepted": true,
+    "candidates": [
+      {
+        "id": "F0840",
+        "similarity": 1.0
+      },
+      {
+        "id": "F0247",
+        "similarity": 0.97494
+      },
+      {
+        "id": "F0229",
+        "similarity": 0.96163
+      }
+    ]
+  }
+]
