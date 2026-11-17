@@ -16,3 +16,5 @@ jobs:
         run: bash tools/test-semantic.sh
       - name: Experimental watermark payload integrity
         run: python3 -m unittest discover -s experiments/watermark -p "test_*.py" -v
+      - name: Recognition numeral codec and grouping ambiguity
+        run: python3 -m unittest discover -s experiments/recognition -p "test_*.py" -v

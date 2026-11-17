@@ -1,65 +1,74 @@
 # 外星字形直接识别原型
 
-离线实验，未接入 Android APK。输入为图片，输出为静态字形 ID 顺序及候选；不依赖水印、PNG 元数据、文件名、网络服务或神经模型。使用现有字库和生成器的布局约束；尚未还原游戏全部几何组合规则。
+离线实验，尚未接入 Android 输入法。根据图片像素返回字形顺序、各行候选及可能的整数值，不读取水印、PNG 元数据、文件名映射或原始文字。
 
-本轮结果见 [实验报告](results/REPORT.md)。在当前固定画布上表现良好，不能视为任意截图 OCR 或普遍微信成功率。
+当前支持固定生产画布中的 **多行、最多 120 个字形、1344 个静态 F 字形和 108 个动态 N 数字字形**。参见 [多行与数字实验](results/multiline/REPORT.md)；之前单行基线的原始结果仍保留在 [第一轮报告](results/REPORT.md)。
 
-## 范围
+## 输入范围和输出含义
 
-- 1344 个 F 字形，单行 1～4 个，480×208 画布或等比缩放版本，输入宽度 240～4096。
-- 100×100 字位中的字形、112 像素字距，居中排版。整体对齐补偿范围为标准画布坐标 ±2 像素。
-- 同时读取原始素材与统一遮罩两种模板；相同 ID 的不同风格先合并，再比较候选差距。
-- 按前景与背景的颜色距离提取形状，本轮测试包含黑底浅色和浅色底黑字。
-- 不支持多行、任意截图定位、明显裁切/旋转、动态 N 数字、未知字库版本；当前词组边界输出 `unknown`。
-- 本原型不尝试恢复原始中文输入。字形到释义属于词典查询，词组解释需要另外处理。
+- 使用生产 ImageLayout 的 480 像素标准宽度、112 像素字距、100 像素字形及逐行居中规则。
+- 单行高度 208；多行高度 `112 × 行数 + 32`。允许等比缩小或放大，输入宽度 240～4096，总像素不超过 1600 万。
+- 在最多 120 字形、相邻两行不能合并的约束下，最多允许 48 行。Android 样张覆盖到 40 行/120 字形；48 行上界另用合成样张验证。
+- 静态字形同时加载原始、统一遮罩两种模板。动态数字模板由 Android 正式绘图函数导出，完整覆盖 `N1P4`～`N6P21`。
+- 结果为 `recognized`、`uncertain` 或 `unreadable`。任何一行未确认，整条 `glyphs` 就为 null；各行候选仍保留，供未来交互确认。
+- `phrase_boundaries=unknown`：换行位置不等于词组边界。
+- `numeric_candidates` 只解释规范的连续数字序列，始终带 `requires_group_confirmation=true`。例如“49、1”与“50”的字形顺序可能相同，识别器不能凭图判断原来是几次输入。
+- 不保证任意截图定位、裁切或旋转。默认配色测试较好，低对比度配色中的超长整数可能返回不确定。
 
 ## 运行
 
-Python 3.9 已验证。可复用本地已有 `alien-watermark` 虚拟环境，但本实验只依赖 NumPy 和 Pillow；不加载 TrustMark、PyTorch 或模型权重。若单独建立环境，安装本目录的 requirements.txt。
-
-从仓库根目录执行：
+Python 3.9，NumPy 2.0.2、Pillow 11.3.0。无需神经网络或模型权重，可复用已有 alien-watermark 虚拟环境。
 
 ```sh
 RECOGNITION_PY="$HOME/project/dev-env/venvs/alien-watermark/bin/python"
 "$RECOGNITION_PY" tools/prepare_uniform_glyphs.py --output build/uniform-glyphs/glyphs
-
 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 "$RECOGNITION_PY" experiments/recognition/recognize.py \
-  --glyph-dir build/uniform-glyphs/glyphs \
-  --glyph-dir app/src/main/assets/glyphs \
-  --input experiments/watermark/results/wechat-P2.jpg
+  --glyph-dir build/uniform-glyphs/glyphs --glyph-dir app/src/main/assets/glyphs \
+  --input experiments/recognition/fixtures/android/number-123456.png
 ```
 
-`recognized` 返回字形顺序，退出码 0；`uncertain` 保留候选但 `glyphs=null`；`unreadable` 表示不支持或没有可接受区域，后两者退出码 2。相似度是算法分数，不是正确概率。
+CLI 默认使用 `fixtures/android/glyphs`，可用 `--generated-dir` 指定其他经过验证的动态模板。Python API 需显式传入 `generated_dir`；省略则为静态字库模式，供第一轮实验复现。`--no-alignment` 禁用 ±2 像素的小范围平移搜索。
 
-## 识别过程
+成功退出码为 0；不确定或不支持为 2。相似度是算法分数，不是概率。不会生成带有虚构词组边界的 ALIEN1 编码。
 
-1. 检查尺寸和比例，估计四角背景，标准化前景对比度。
-2. 枚举 1～4 个居中字位，不把一个字内部分离的笔画切成多个字。
-3. 对字位做轻微平滑和 48×48 特征化，用归一化点积比较整字模板，保留前三名。
-4. 将候选按生成器规则重新排列，对照整行正文图像，惩罚无法解释的笔画和错误字数。
-5. 基础判断不通过时搜索整体 ±2 像素平移；同一字形序列的不同对齐结果合并，防止将其误当成多个答案。
-6. 字形相似度、候选差距或整行匹配不足时返回不确定。
+## 怎样利用生成规则
 
-阈值在首轮测试前设定：字形相似度 ≥0.91，第一和第二候选差 ≥0.025，整行相似度 ≥0.90，不同序列差 ≥0.025。对齐改进没有降低这些阈值。该阈值尚未通过独立大规模真实图片校准。
+1. 从画布尺寸推断合法行数，按生产行距划分行；每行独立枚举 1～4 个居中字位。
+2. 用模板比较字形，再把候选按布局重新绘制，与整行正文对照。
+3. 基础判断不通过时搜索 ±2 像素偏移；合并同一字形序列的不同对齐结果。
+4. 动态数字额外根据幂次候选，将图形分为上方横线区域与下方基础数字区域，分别比较后等权合并，避免大量横线淹没基础数字的差别。保留原尺寸和半宽缩放两种模板变体。
+5. 数字细节验证要求整体粗匹配 ≥0.91、与静态字候选差 ≥0.025、结构得分 ≥0.94、结构候选差 ≥0.025、两个区域各 ≥0.90，并且细节候选位于粗匹配前三名。
+6. 仍保留整行相似度 ≥0.90、不同字形序列差 ≥0.025；普通字形的相似度 ≥0.91 和候选差 ≥0.025 不变。
+7. 数字解释严格使用生产 Numerals 的七进制规则，校验规范顺序、重复位、零和正负号，且限制为 18 位十进制整数。
 
-正文比较范围为标准画布 y=48..160；底部水印区域完全不参与识别。输入假设是独立消息图片，不是带有其他上下文的聊天截图。
+数字模板允许的全部 108 种字形中，有些最高位系数组合会超出 18 位十进制范围；可以识别其字形，但不会输出超范围的整数候选。
 
-## 复现实验
+## 复现验证
 
 ```sh
-OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 "$RECOGNITION_PY" experiments/recognition/benchmark.py \
+python3 -m unittest discover -s experiments/recognition -p 'test_*.py' -v
+OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 "$RECOGNITION_PY" experiments/recognition/evaluate_multiline.py \
+  --fixtures experiments/recognition/fixtures/android \
   --uniform build/uniform-glyphs/glyphs --original app/src/main/assets/glyphs \
-  --output build/recognition --field-dir experiments/watermark/results
-
-OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 "$RECOGNITION_PY" experiments/recognition/stress.py \
+  --output build/recognition-multiline
+OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 "$RECOGNITION_PY" experiments/recognition/holdout_multiline.py \
+  --fixtures experiments/recognition/fixtures/android \
   --uniform build/uniform-glyphs/glyphs --original app/src/main/assets/glyphs \
-  --output build/recognition
+  --output build/recognition-multiline
 ```
 
-两个实验命令均可加 `--no-alignment` 并另指定输出目录，复现最初不做平移搜索的基线。
+评估脚本可添加 `--coarse-numbers --skip-static`，对比不使用数字结构复核的结果。完整逐项数据使用 gzip JSON 留档，summary.json 提供汇总。第一轮 benchmark.py / stress.py 保留用于静态单行测试，但其历史负样本与范围描述仅适用于当时的静态识别器。
 
-基准包括全字库单字、固定随机种子的 1～4 字消息、两种前景/背景、JPEG 和缩小、无效输入及旧微信实验文件。压力测试包含整体偏移、模糊、旋转、裁切、加边，以及伪造 PNG 元数据的对照。
+重新生成 Android 参考样张：
 
-为了减少仓库中大量机械行差异，完整逐项结果以无损 gzip JSON 存档；`results/summary.json` 为可直接阅读的汇总。解压后结构与测试程序生成的 JSON 一致。
+```sh
+source "$HOME/project/dev-env/android-env.sh"
+bash tools/build-recognition-fixtures.sh
+adb install --no-incremental -r build/recognition-fixtures/fixtures.apk
+adb shell am instrument -w io.github.alieninput.recognitionfixtures/io.github.alieninput.androidsemantic.RecognitionFixtures
+adb exec-out run-as io.github.alieninput.recognitionfixtures tar -cf - -C files recognition-fixtures > build/recognition-fixtures/android-fixtures.tar
+```
 
-原型代码沿用独立模块的 MIT 许可；使用的字形仍遵循仓库 THIRD_PARTY_NOTICES.md。
+独立检查包仅调用生产绘图代码导出合成测试图片，无活动界面，不访问剪贴板、不切换输入法、不联网。导出后先比对来源和哈希，不静默替换冻结的模板或期望结果。
+
+原型代码沿用独立模块 MIT 许可；字形权利与许可仍遵循仓库 THIRD_PARTY_NOTICES.md。
