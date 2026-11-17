@@ -36,6 +36,7 @@ alien.mkdir(exist_ok=True)
 for name in ('lexicon.tsv', 'manifest.json'):
     shutil.copyfile(root / 'lexicon/generated' / name, alien / name)
 shutil.copytree(root / 'app/src/main/assets/glyphs', alien / 'glyphs', dirs_exist_ok=True)
+shutil.copytree(root / 'app/src/main/assets/glyphs', alien / 'recognition-originals', dirs_exist_ok=True)
 for name in ('LICENSE.txt', 'THIRD_PARTY_NOTICES.txt'):
     shutil.copyfile(root / 'app/src/main/assets' / name, alien / name)
 for path in (root / 'rime').glob('*.yaml'):
@@ -48,4 +49,5 @@ double = root / 'vendor/rime-double-pinyin/double_pinyin_flypy.schema.yaml'
 if not double.is_file():
     raise SystemExit('Missing pinned vendor/rime-double-pinyin checkout')
 shutil.copyfile(double, assets / 'shared' / double.name)
+subprocess.run([str(glyph_python), str(root / 'tools/prepare_recognition_assets.py'), '--output', str(alien)], check=True)
 print('Prepared pinned native library, Rime data, alien dictionary and glyphs')

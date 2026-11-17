@@ -1,5 +1,5 @@
 diff --git a/app/build.gradle.kts b/app/build.gradle.kts
-index 76d686e..53b277c 100644
+index 76d686e..46797c6 100644
 --- a/app/build.gradle.kts
 +++ b/app/build.gradle.kts
 @@ -9,24 +9,28 @@ plugins {
@@ -13,7 +13,7 @@ index 76d686e..53b277c 100644
      alias(libs.plugins.kotlin.parcelize)
      alias(libs.plugins.ksp)
  }
-
+ 
 +if (!file("prebuilt/official-assets.json").exists()) {
 +    apply(plugin = "com.osfans.trime.opencc-data")
 +}
@@ -22,7 +22,7 @@ index 76d686e..53b277c 100644
      namespace = "com.osfans.trime"
      compileSdk = 37
      buildToolsVersion = "37.0.0"
-
+ 
      defaultConfig {
 -        applicationId = "com.osfans.trime"
 -        minSdk = 21
@@ -31,15 +31,15 @@ index 76d686e..53b277c 100644
          targetSdk = 37
 -        versionCode = 20261101
 -        versionName = "3.3.13"
-+        versionCode = 20261112
-+        versionName = "0.2.0-alpha.2"
-
++        versionCode = 2026111701
++        versionName = "0.3.0-beta.1"
+ 
          multiDexEnabled = true
          buildConfigField("String", "BUILDER", "\"${project.builder}\"")
 @@ -41,6 +45,11 @@ android {
          archivesName = "${android.defaultConfig.applicationId}-$buildVersionName"
      }
-
+ 
 +    sourceSets.getByName("main") {
 +        java.srcDir("../../semantic-core/src/main/java")
 +        java.srcDir("../../android-integration/src/main/java")
@@ -51,29 +51,40 @@ index 76d686e..53b277c 100644
 @@ -70,7 +79,7 @@ android {
          debug {
              applicationIdSuffix = ".debug"
-
+ 
 -            resValue("string", "trime_app_name", "@string/app_name_debug")
-+            resValue("string", "trime_app_name", "外星人输入法·测试")
++            resValue("string", "trime_app_name", "外星人输入法")
          }
          all {
              // remove META-INF/version-control-info.textproto
 diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
-index 4d110b9..a9c1c39 100644
+index 4d110b9..ce1854d 100644
 --- a/app/src/main/AndroidManifest.xml
 +++ b/app/src/main/AndroidManifest.xml
-@@ -79,6 +79,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
+@@ -79,6 +79,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
                  tools:node="remove" />
          </provider>
-
-+        <provider
-+            android:name="io.github.alieninput.androidsemantic.AlienImageProvider"
-+            android:authorities="${applicationId}.alien-images"
-+            android:exported="false"
-+            android:grantUriPermissions="true" />
+ 
++        <provider android:name="io.github.alieninput.androidsemantic.AlienImageProvider" android:authorities="${applicationId}.alien-images" android:exported="false" android:grantUriPermissions="true" />
++
++        <activity android:name="io.github.alieninput.androidsemantic.HomeActivity" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
++
++        <activity android:name="io.github.alieninput.androidsemantic.WriteMessageActivity" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
++
++        <activity android:name="io.github.alieninput.androidsemantic.ReadImageActivity" android:exported="false" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.Material.Light.NoActionBar" />
 +
          <!-- Settings activity -->
          <activity
              android:name=".ui.main.MainActivity"
+@@ -118,7 +126,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
+             android:name="com.osfans.trime.MainLauncherAlias"
+             android:exported="true"
+             android:label="@string/trime_app_name"
+-            android:targetActivity=".ui.main.MainActivity">
++            android:targetActivity="io.github.alieninput.androidsemantic.HomeActivity">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+ 
 diff --git a/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt b/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt
 index c188927..2b41f5f 100644
 --- a/app/src/main/java/com/osfans/trime/core/data/UserDataManager.kt
@@ -87,7 +98,7 @@ index c188927..2b41f5f 100644
            - schema: luna_pinyin_simp
 +          - schema: double_pinyin_flypy
      """
-
+ 
      private val lock = Mutex()
 diff --git a/app/src/main/java/com/osfans/trime/ime/bar/InputBarDelegate.kt b/app/src/main/java/com/osfans/trime/ime/bar/InputBarDelegate.kt
 index ca2fcce..3249430 100644
@@ -111,7 +122,7 @@ index 319e436..993bfa6 100644
 @@ -64,6 +64,15 @@ class AlwaysUi(
          }
      }
-
+ 
 +    private val alienButton = ToolButton(
 +        ctx,
 +        ToolBar.Button(foreground = ToolBar.Button.Foreground(style = "外星", fontSize = 12f)),
@@ -122,7 +133,7 @@ index 319e436..993bfa6 100644
 +    }
 +
      val buttonsUi = ButtonsBarUi(ctx, scope, onButtonClick)
-
+ 
      val clipboardUi = ClipboardSuggestionUi(ctx, scope)
 @@ -107,10 +116,17 @@ class AlwaysUi(
                  centerVertically()
@@ -144,7 +155,7 @@ index 319e436..993bfa6 100644
                  endOfParent()
                  centerVertically()
 @@ -142,6 +158,7 @@ class AlwaysUi(
-
+ 
      /** Restyles the toolbar area after a scheme switch. */
      fun refreshColors() {
 +        alienButton.refreshColors()
@@ -158,11 +169,11 @@ index 92ea752..8995c18 100644
 @@ -163,6 +163,8 @@ class InputView(
              return dp(value)
          }
-
+ 
 +    private val alienPanelView = service.alienPanel.createView().apply { id = View.generateViewId() }
 +
      val keyboardView: View
-
+ 
      /** Restyles colors after a scheme switch without rebuilding the view tree. */
 @@ -196,10 +198,17 @@ class InputView(
                          centerInParent()
@@ -189,7 +200,7 @@ index d2e71bf..d693189 100644
 +++ b/app/src/main/java/com/osfans/trime/ime/core/TrimeInputMethodService.kt
 @@ -68,6 +68,33 @@ import timber.log.Timber
  /** [輸入法][InputMethodService]主程序  */
-
+ 
  open class TrimeInputMethodService : LifecycleInputMethodService() {
 +    private var alien: io.github.alieninput.androidsemantic.AlienPanel? = null
 +    val alienPanel: io.github.alieninput.androidsemantic.AlienPanel get() = checkNotNull(alien)
@@ -220,7 +231,7 @@ index d2e71bf..d693189 100644
 +
      private lateinit var rime: RimeSession
      private val jobs = Channel<Job>(capacity = Channel.UNLIMITED)
-
+ 
 @@ -205,6 +232,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          InputFeedbackManager.init(this)
          registerReceiver()
@@ -237,7 +248,7 @@ index d2e71bf..d693189 100644
 +            currentInputConnection?.performEditorAction(action)
          }
      }
-
+ 
 @@ -443,6 +471,7 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
              candidatesStart,
              candidatesEnd,
@@ -257,7 +268,7 @@ index d2e71bf..d693189 100644
 @@ -589,6 +619,11 @@ open class TrimeInputMethodService : LifecycleInputMethodService() {
          }
      }
-
+ 
 +    override fun onFinishInput() {
 +        alien?.finish()
 +        super.onFinishInput()
@@ -291,7 +302,7 @@ index 8ec02b3..623bb25 100644
 +                            ic?.deleteSurroundingText(1, 0)
                          }
                      }
-
+ 
                      delta > 0 -> {
                          if (deletedTextBuffer.isNotEmpty()) {
 -                            ic.commitText(deletedTextBuffer.removeFirst(), 1)
@@ -299,6 +310,56 @@ index 8ec02b3..623bb25 100644
                          }
                      }
                  }
+diff --git a/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt b/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt
+index b67148c..bd4ff4d 100644
+--- a/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt
++++ b/app/src/main/java/com/osfans/trime/ui/main/MainActivity.kt
+@@ -8,6 +8,7 @@ package com.osfans.trime.ui.main
+ import android.content.Intent
+ import android.os.Bundle
+ import android.view.Menu
++import android.view.MenuItem
+ import android.view.ViewGroup
+ import androidx.activity.addCallback
+ import androidx.activity.enableEdgeToEdge
+@@ -118,7 +119,7 @@ class MainActivity : AppCompatActivity() {
+                 return@setNavigationOnClickListener
+             }
+             // "minimize" the activity if we can't go back
+-            navController.navigateUp() || onSupportNavigateUp() || moveTaskToBack(false)
++            navController.navigateUp() || onSupportNavigateUp() || run { finish(); true }
+         }
+         onBackPressedDispatcher.addCallback {
+             if (binding.testInputPanel.isVisible) {
+@@ -168,7 +169,15 @@ class MainActivity : AppCompatActivity() {
+     }
+ 
+     private fun setupToolbarMenu(menu: Menu) {
++        val readImageItem = menu.add("读图").apply {
++            setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM)
++            setOnMenuItemClickListener {
++                startActivity(Intent(this@MainActivity, io.github.alieninput.androidsemantic.ReadImageActivity::class.java))
++                true
++            }
++        }
+         val optionMenuItems = listOf(
++            readImageItem,
+             menu.item(R.string.deploy, R.drawable.ic_baseline_refresh_reversed_24, showAsAction = true) {
+                 viewModel.rime.launchOnReady { it.deploy() }
+             },
+diff --git a/app/src/main/java/com/osfans/trime/ui/main/NavigationRoute.kt b/app/src/main/java/com/osfans/trime/ui/main/NavigationRoute.kt
+index 5be7ab9..d06725c 100644
+--- a/app/src/main/java/com/osfans/trime/ui/main/NavigationRoute.kt
++++ b/app/src/main/java/com/osfans/trime/ui/main/NavigationRoute.kt
+@@ -69,7 +69,7 @@ sealed class NavigationRoute : Parcelable {
+             val ctx = controller.context
+ 
+             fragment<MainFragment, Main> {
+-                label = ctx.getString(R.string.trime_app_name)
++                label = ctx.getString(R.string.alien_settings)
+             }
+ 
+             fragment<SchemaListFragment, SchemaList> {
 diff --git a/app/src/main/java/com/osfans/trime/ui/main/TestInputPanel.kt b/app/src/main/java/com/osfans/trime/ui/main/TestInputPanel.kt
 index c635ee2..13d3d0f 100644
 --- a/app/src/main/java/com/osfans/trime/ui/main/TestInputPanel.kt
@@ -315,7 +376,7 @@ index c635ee2..13d3d0f 100644
 @@ -188,7 +188,7 @@ constructor(
          )
      }
-
+ 
 -    private val input: EditText = editText {
 +    private val input: EditText = view({ context -> io.github.alieninput.androidsemantic.AlienPreviewEditor(context) }) {
          background = StateListDrawable().apply {
@@ -327,7 +388,7 @@ index 88865d2..301c131 100644
 +++ b/app/src/main/java/com/osfans/trime/ui/main/settings/KeyboardSettingsFragment.kt
 @@ -15,6 +15,24 @@ import kotlinx.coroutines.launch
  class KeyboardSettingsFragment : PreferenceDelegateFragment(AppPrefs.defaultInstance().keyboard) {
-
+ 
      override fun onPreferenceUiCreated(screen: PreferenceScreen) {
 +        val imageColors = androidx.preference.ListPreference(requireContext()).apply {
 +            key = "alien_image_palette"
@@ -350,3 +411,223 @@ index 88865d2..301c131 100644
          screen.findPreference<Preference>("custom_sound_effect_name")?.apply {
              setOnPreferenceClickListener {
                  lifecycleScope.launch {
+diff --git a/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt b/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt
+index 0fa2a87..1b33fbc 100644
+--- a/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt
++++ b/app/src/main/java/com/osfans/trime/ui/setup/SetupActivity.kt
+@@ -73,7 +73,7 @@ class SetupActivity : FragmentActivity() {
+     }
+ 
+     private fun completeSetup() {
+-        startActivity<MainActivity>()
++        startActivity<io.github.alieninput.androidsemantic.HomeActivity>()
+         finish()
+     }
+ 
+diff --git a/app/src/main/res/drawable/ic_app_icon_foreground.xml b/app/src/main/res/drawable/ic_app_icon_foreground.xml
+index ede482b..cd8120c 100644
+--- a/app/src/main/res/drawable/ic_app_icon_foreground.xml
++++ b/app/src/main/res/drawable/ic_app_icon_foreground.xml
+@@ -1,22 +1,4 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-
+-<!--
+-  ~ SPDX-FileCopyrightText: 2015 - 2025 Rime community
+-  ~ SPDX-License-Identifier: GPL-3.0-or-later
+-  -->
+-
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-  <group android:scaleX="0.4004963"
+-      android:scaleY="0.4004963"
+-      android:translateX="25.477318"
+-      android:translateY="21.442587">
+-    <group android:translateY="134.87401">
+-      <path android:pathData="M128.15625,-0L15.078125,-0L15.078125,-11.8125L65.703125,-11.8125L65.703125,-41.046875L32.515625,-41.046875Q28.015625,-41.046875,24.921875,-44.140625Q21.828125,-47.234375,21.828125,-52.296875L21.828125,-96.75L35.328125,-96.75L35.328125,-58.484375Q35.328125,-53.421875,39.828125,-53.421875L65.703125,-53.421875L65.703125,-106.875L78.65625,-106.875L78.65625,-53.421875L102.28125,-53.421875Q107.90625,-53.421875,107.90625,-58.484375L107.90625,-96.75L120.84375,-96.75L120.84375,-52.296875Q120.84375,-47.234375,117.75,-44.140625Q114.65625,-41.046875,109.59375,-41.046875L78.65625,-41.046875L78.65625,-11.8125L128.15625,-11.8125L128.15625,-0Z"
+-          android:fillColor="#000000"/>
+-    </group>
+-  </group>
++<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
++    <path android:pathData="M30,40 L78,40 L78,72 L30,72 Z M30,40 L54,59 L78,40" android:fillColor="#00000000" android:strokeColor="#EAD59D" android:strokeWidth="3.2" android:strokeLineJoin="round" android:strokeLineCap="round" />
++    <path android:pathData="M54,24 L54,32 M50,28 L58,28" android:fillColor="#00000000" android:strokeColor="#EAD59D" android:strokeWidth="2.6" android:strokeLineCap="round" />
+ </vector>
+diff --git a/app/src/main/res/values-zh-rCN/strings.xml b/app/src/main/res/values-zh-rCN/strings.xml
+index 785df7c..211a545 100644
+--- a/app/src/main/res/values-zh-rCN/strings.xml
++++ b/app/src/main/res/values-zh-rCN/strings.xml
+@@ -7,8 +7,8 @@
+ 
+ <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+     <!-- 输入法平台名称  -->
+-    <string name="app_name_release">同文输入法</string>
+-    <string name="app_name_debug">同文输入法（调试）</string>
++    <string name="app_name_release">外星人输入法</string>
++    <string name="app_name_debug">外星人输入法</string>
+     <string name="qq_group_1">同文 QQ 群 1</string>
+     <string name="qq_group_2">同文 QQ 群 2</string>
+     <string name="rime_qq_group">中州韵 QQ 群</string>
+@@ -61,12 +61,12 @@
+     <string name="deploy_finish">部署完成</string>
+     <string name="system_default">系统默认</string>
+     <string name="key_swipe_travel">触发按键滑动手势的距离</string>
+-    <string name="trime_app_slogan">击响中文之韵</string>
++    <string name="trime_app_slogan">写下你的外星来信</string>
+     <string name="custom_sound_effect_name">自定义按键音效</string>
+     <string name="setup__next">下一步</string>
+     <string name="done">完成</string>
+-    <string name="setup__enable_ime_hint">在语言和输入设置中启用<b>同文输入法</b></string>
+-    <string name="setup__select_ime_hint">选择<b>同文输入法</b>作为默认输入法</string>
++    <string name="setup__enable_ime_hint">在语言和输入设置中启用<b>外星人输入法</b></string>
++    <string name="setup__select_ime_hint">选择<b>外星人输入法</b>作为默认输入法</string>
+     <string name="setup__enable_ime">启用输入法</string>
+     <string name="setup__select_ime">选择输入法</string>
+     <string name="setup__prev">上一步</string>
+@@ -88,7 +88,7 @@
+     <string name="quick_bar">快捷栏</string>
+     <string name="copy_done">已复制</string>
+     <string name="hook_shift_space">点击空格时，忽略Shift的锁定状态</string>
+-    <string name="test_input">测试输入</string>
++    <string name="test_input">试写</string>
+     <string name="text">文本</string>
+     <string name="number">数字</string>
+     <string name="password">密码</string>
+@@ -151,7 +151,7 @@
+     <string name="enable_landscape_mode">启用横屏模式</string>
+     <string name="split_space_percent">自动分割键盘比例</string>
+     <string name="setup__step_three">第 3 步</string>
+-    <string name="setup__select_data_path_hint">选择<b>同文输入法</b>如何存储 Rime 数据</string>
++    <string name="setup__select_data_path_hint">选择<b>外星人输入法</b>如何存储 Rime 数据</string>
+     <string name="setup__select_data_path">选择外部数据目录…</string>
+     <string name="setup__data_path_imported">数据文件夹导入成功</string>
+     <string name="setup__data_path_import_failed">数据文件夹导入失败</string>
+@@ -250,4 +250,5 @@
+     <string name="word_segment">分词</string>
+     <string name="star_success">收藏成功</string>
+     <string name="ignore_system_gesture_insets">忽略系统手势边衬区</string>
++    <string name="alien_settings">设置</string>
+ </resources>
+diff --git a/app/src/main/res/values-zh-rTW/strings.xml b/app/src/main/res/values-zh-rTW/strings.xml
+index a643b6d..20891c8 100644
+--- a/app/src/main/res/values-zh-rTW/strings.xml
++++ b/app/src/main/res/values-zh-rTW/strings.xml
+@@ -7,8 +7,8 @@
+ 
+ <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+     <!-- 輸入法平臺名稱  -->
+-    <string name="app_name_release">同文輸入法</string>
+-    <string name="app_name_debug">同文輸入法（除錯模式）</string>
++    <string name="app_name_release">外星人輸入法</string>
++    <string name="app_name_debug">外星人輸入法</string>
+     <!-- Preference settings -->
+     <string name="qq_group_1">同文 QQ 羣 1</string>
+     <string name="qq_group_2">同文 QQ 羣 2</string>
+@@ -65,12 +65,12 @@
+     <string name="open_source_licenses">開放源代碼軟體許可</string>
+     <string name="system_default">系統預設</string>
+     <string name="key_swipe_travel">觸發滑動手勢的最短距離</string>
+-    <string name="trime_app_slogan">擊響中文之韻</string>
++    <string name="trime_app_slogan">寫下你的外星來信</string>
+     <string name="custom_sound_effect_name">自訂按鍵音效</string>
+     <string name="setup__next">下一步</string>
+     <string name="done">完成</string>
+-    <string name="setup__enable_ime_hint">在語言和輸入設定中啟用<b>同文輸入法</b></string>
+-    <string name="setup__select_ime_hint">選擇<b>同文輸入法</b>作為預設輸入法</string>
++    <string name="setup__enable_ime_hint">在語言和輸入設定中啟用<b>外星人輸入法</b></string>
++    <string name="setup__select_ime_hint">選擇<b>外星人輸入法</b>作為預設輸入法</string>
+     <string name="setup__enable_ime">啟用輸入法</string>
+     <string name="setup__select_ime">選擇輸入法</string>
+     <string name="setup__prev">上一步</string>
+@@ -92,7 +92,7 @@
+     <string name="quick_bar">快捷欄</string>
+     <string name="copy_done">已複製</string>
+     <string name="hook_shift_space">點擊空格時，忽略Shift的鎖定狀態</string>
+-    <string name="test_input">測試輸入</string>
++    <string name="test_input">試寫</string>
+     <string name="text">文字</string>
+     <string name="number">數字</string>
+     <string name="password">密碼</string>
+@@ -152,7 +152,7 @@
+     <string name="enable_landscape_mode">啟用橫屏模式</string>
+     <string name="split_space_percent">自動分割鍵盤比例</string>
+     <string name="setup__step_three">第 3 步</string>
+-    <string name="setup__select_data_path_hint">選擇<b>同文輸入法</b>如何儲存 Rime 資料</string>
++    <string name="setup__select_data_path_hint">選擇<b>外星人輸入法</b>如何儲存 Rime 資料</string>
+     <string name="setup__select_data_path">選擇外部資料夾…</string>
+     <string name="setup__data_path_imported">資料夾匯入成功</string>
+     <string name="setup__data_path_import_failed">資料夾匯入失敗</string>
+@@ -251,4 +251,5 @@
+     <string name="word_segment">分词</string>
+     <string name="star_success">收藏成功</string>
+     <string name="ignore_system_gesture_insets">忽略系統手勢插邊</string>
++    <string name="alien_settings">設定</string>
+ </resources>
+diff --git a/app/src/main/res/values/ic_app_icon_background.xml b/app/src/main/res/values/ic_app_icon_background.xml
+index f5cbb0d..768a459 100644
+--- a/app/src/main/res/values/ic_app_icon_background.xml
++++ b/app/src/main/res/values/ic_app_icon_background.xml
+@@ -7,5 +7,5 @@ SPDX-License-Identifier: GPL-3.0-or-later
+ -->
+ 
+ <resources>
+-    <color name="ic_app_icon_background">#FFFFFF</color>
++    <color name="ic_app_icon_background">#292A25</color>
+ </resources>
+\ No newline at end of file
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+index b22352a..26ea699 100644
+--- a/app/src/main/res/values/strings.xml
++++ b/app/src/main/res/values/strings.xml
+@@ -7,8 +7,8 @@
+ 
+ <resources xmlns:xliff="urn:oasis:names:en:xliff:document:1.2">
+     <!-- Input Method Platform Tittle  -->
+-    <string name="app_name_release">Trime</string>
+-    <string name="app_name_debug">Trime (Debug)</string>
++    <string name="app_name_release">Alien Input</string>
++    <string name="app_name_debug">Alien Input</string>
+     <!-- Preference settings -->
+     <string name="qq_group_1">Trime QQ group 1</string>
+     <string name="qq_group_2">Trime QQ group 2</string>
+@@ -65,12 +65,12 @@
+     <string name="open_source_licenses">Open Source Licenses</string>
+     <string name="system_default">System default</string>
+     <string name="key_swipe_travel">Min travel for gesture</string>
+-    <string name="trime_app_slogan">Rimes with Your Keystrokes on Android</string>
++    <string name="trime_app_slogan">Write your own message from aliens</string>
+     <string name="custom_sound_effect_name">Custom key Sound Effect</string>
+     <string name="setup__next">Next</string>
+     <string name="done">Done</string>
+-    <string name="setup__enable_ime_hint">Enable <b>Trime</b> in Language and input settings</string>
+-    <string name="setup__select_ime_hint">Select <b>Trime</b> as your default input method</string>
++    <string name="setup__enable_ime_hint">Enable <b>Alien Input</b> in Language and input settings</string>
++    <string name="setup__select_ime_hint">Select <b>Alien Input</b> as your default input method</string>
+     <string name="setup__enable_ime">Enable Input Method</string>
+     <string name="setup__select_ime">Select Input Method</string>
+     <string name="setup__prev">Prev</string>
+@@ -92,7 +92,7 @@
+     <string name="quick_bar">Quick bar</string>
+     <string name="copy_done">Copied to clipboard!</string>
+     <string name="hook_shift_space">Ignore Shift locked for Space</string>
+-    <string name="test_input">Test input</string>
++    <string name="test_input">Try keyboard</string>
+     <string name="text">Text</string>
+     <string name="number">Number</string>
+     <string name="password">Password</string>
+@@ -152,7 +152,7 @@
+     <string name="enable_landscape_mode">Enable Landscape Mode</string>
+     <string name="split_space_percent">Auto Split Keyboard Space Ratio</string>
+     <string name="setup__step_three">Setup 3</string>
+-    <string name="setup__select_data_path_hint">Choose how <b>Trime</b> stores Rime data</string>
++    <string name="setup__select_data_path_hint">Choose how <b>Alien Input</b> stores Rime data</string>
+     <string name="setup__select_data_path">Select external data directory…</string>
+     <string name="setup__data_path_imported">Data folder imported successfully</string>
+     <string name="setup__data_path_import_failed">Failed to import data folder</string>
+@@ -251,4 +251,5 @@
+     <string name="word_segment">Word segment</string>
+     <string name="star_success">Star success</string>
+     <string name="ignore_system_gesture_insets">Ignore system gesture insets</string>
++    <string name="alien_settings">Settings</string>
+ </resources>

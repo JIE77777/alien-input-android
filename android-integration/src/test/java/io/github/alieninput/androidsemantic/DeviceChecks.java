@@ -144,6 +144,7 @@ public final class DeviceChecks extends Instrumentation {
     }
     private void click(View root,String value,boolean description){View v=find(root,value,description);check(v!=null,"visible action: "+value);v.performClick();}
     private void checkPanel(){
+        ImageDraftStore.save(getTargetContext(),Collections.emptyList());
         final android.content.Intent[] launched={null};
         Context context=new android.content.ContextWrapper(getTargetContext()){
             @Override public void startActivity(android.content.Intent intent){launched[0]=intent;}
@@ -185,7 +186,7 @@ public final class DeviceChecks extends Instrumentation {
         int before=sent[0];check(find(root,"插入图",false).getVisibility()==View.GONE,"WeChat hides incompatible direct insertion");click(root,"插入图",false);
         check(sent[0]==before,"WeChat bypasses editor content insertion");
         check(launched[0]==null,"WeChat never opens image share automatically");
-        click(root,"分享",false);check(launched[0]!=null,"only explicit share opens chooser");
+        panel.shareImage();check(launched[0]!=null,"only explicit share opens chooser");
         android.content.Intent shared=launched[0].getParcelableExtra(android.content.Intent.EXTRA_INTENT);
         check("image/png".equals(shared.getType())&&shared.getPackage()==null,"explicit share uses generic PNG intent");
         check(!shared.hasExtra(android.content.Intent.EXTRA_TEXT),"image share never includes URI as text");
@@ -198,9 +199,14 @@ public final class DeviceChecks extends Instrumentation {
         check(panel.enabled()&&find(root,"图片稿第 2 项 食物",true)!=null,"return from share preserves combined draft");
         panel.connection.commitText("食物",1);panel.start(info,false);check(!panel.enabled()&&panel.connection.confirmed().isEmpty(),"new editor resets mode and query");
         panel.start(info,false);panel.toggleVisibility();
+        check(!ImageDraftStore.read(context).isEmpty(),"draft survives switching editors");
+        click(root,"清空",false);
         panel.connection.commitText("1234",1);click(root,"外星候选 1234 数值",true);
         check(find(root,"图片稿第 1 项 1234",true)!=null,"decimal digits produce selectable native number draft");
         check(real.getEditable().toString().equals("existing"),"numeric query stays out of host editor");
+        info.privateImeOptions="alien-compose";panel.start(info,false);panel.toggleVisibility();
+        check(!panel.capturesInput(),"standalone composer keeps keyboard input in its own search field");
+        info.privateImeOptions=null;
         info.inputType=InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD;panel.start(info,false);
         check(!find(root,"外星",false).isEnabled(),"password editor disables alien mode");
         panel.finish();

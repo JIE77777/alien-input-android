@@ -26,10 +26,12 @@ public final class NumeralsTest {
         for(String invalid:new String[]{"N0P4","N1P3","N7P4","N1P22","N1P04","N1P9999999999"})check(!Numerals.isGenerated(invalid),"bounded generated ID");
         List<List<String>> groups=Arrays.asList(Numerals.encode("123456"),Numerals.encode("-2401"));
         check(PngMessage.decode(PngMessage.encode(groups)).groups.equals(groups),"generated numerals survive encoded message");
+        for(List<String> invalid:Arrays.asList(Arrays.asList("F1302","F1302"),Arrays.asList("F1301","F1302"),Arrays.asList("F1302","F1305"),Arrays.asList("F0098","F1301"),Arrays.asList("N6P21")))check(Numerals.decode(invalid)==null,"ambiguous/noncanonical numeric run");
+        for(String invalid:new String[]{"F0000","F1345","F9999"})check(!Numerals.isGlyphId(invalid),"unknown image glyph rejected");
         System.out.println("PASS "+checks+" native integer conversion and numeric search checks");
     }
     private static void verify(Lexicon lexicon,String number,Map<String,BigInteger> values){
-        List<String> glyphs=Numerals.encode(number);BigInteger result=BigInteger.ZERO;boolean negative=false;
+        List<String> glyphs=Numerals.encode(number);check(new BigInteger(number).toString().equals(Numerals.decode(glyphs)),"native integer reading "+number);BigInteger result=BigInteger.ZERO;boolean negative=false;
         for(String id:glyphs){
             if(id.equals("F0098")){negative=true;continue;}
             BigInteger value=values.get(id);
